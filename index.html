@@ -9,6 +9,8 @@
   <!-- ฟอนต์ไทยอ่านง่าย -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap" >
   <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="Pictures/FVC-Approve-Rev01.png">
+
 </head>
 <body>
   <!-- ===== Header ===== -->
@@ -18,7 +20,7 @@
         <div class="btn-primary">FVC</div>
         <div class="brand__name">Forward Vision Consultant </div>
       </a>
-
+      
       <div class="nav__links">
         <a href="#about">เกี่ยวกับเรา</a>
         <a href="Services.html">บริการ</a>
@@ -33,17 +35,14 @@
   <!-- ===== Hero ===== -->
   <section class="hero">
     <div class="hero__inner">
-      <div>
-        <h1 class="hero__title">ผู้รับเหมางานก่อสร้าง<br> </h1>
-        <p class="hero__text">ประกอบธุรกิจรับเหมาก่อสร้าง รวมถึงให้บริการออกแบบ จัดหา และรับเหมาติดตั้งระบบวิศวกรรม สามารถแบ่งลักษณะของงานหลัก ได้ดังนี้ งานก่อสร้างโยธา งานติดตั้งระบบไฟฟ้า 
-        งานเครื่องกล ระบบสื่อสารโทรคมนาคม ระบบปรับอากาศ ระบบสุขาภิบาล และระบบป้องกันอัคคีภัย</p>
+      <div><h1 class="hero__title">ผู้รับเหมางานก่อสร้าง<br> </h1>
+        <p class="hero__text">บริการของเราเริ่มต้นตั้งแต่การออกแบบไปจนถึงการขอใบอนุญาตก่อสร้างในนิคมอุตสาหกรรม (กนอ.) และได้กำหนดกลยุทธ์การบริหารจัดการเพื่อลดต้นทุนและเพิ่มประสิทธิภาพ ซึ่งเป็นนโยบายสำคัญ เรามีวิศวกรผู้เชี่ยวชาญและการพัฒนาบุคลากรอย่างต่อเนื่อง เราได้รับมาตรฐาน ISO9001:2015</p>
         <div class="hero__cta">
           <a href="#projects" class="btn-primary">ดูผลงาน</a>
           <a class="btn-primary" 
           href="#services" >บริการของเรา</a>
         </div>
 
-        
       </div>
       <div class="hero__card" role="group" aria-label="จุดเด่นองค์กร">
         <div class="hero__icon">🏗️</div>
@@ -68,7 +67,7 @@
     <div class="about">
       <div class="about__card">
         <h3 style="margin-top:0">วิสัยทัศน์</h3>
-        <p>มุ่งสู่การเป็นผู้นำด้านงานก่อสร้างและติดตั้งระบบวิศวกรรมแบบครบวงจร ด้วยคุณภาพ ความปลอดภัย และความยั่งยืน</p>
+        <p>Forward Vision Consultant คือผู้ให้บริการด้านไฟฟ้า เครื่องกล และก่อสร้างที่มีประสิทธิภาพ เพื่อความพึงพอใจสูงสุดของลูกค้า</p>
         <div class="about__grid">
           <div class="kpi"><b>100+</b> โครงการ</div>
           <div class="kpi"><b>10+ ปี</b> ประสบการณ์</div>
@@ -76,11 +75,10 @@
         </div>
       </div>
       <div class="about__card">
-        <h3 style="margin-top:0">กลุ่มธุรกิจ</h3>
+        <h3 style="margin-top:0">กลุ่มบริษัท</h3>
         <ul style="margin:0 0 10px 18px">
-          <li>Civil Construction (อาคาร โรงงาน โครงสร้างพื้นฐาน)</li>
-          <li>EE งานระบบไsฟฟ้า</li>
-          <li> ICT งานระบบสื่อสารโทรคมนาคม</li>
+          <li>FORWARD VISION CONSULTANT CO.,LTD บริษัทออกแบบและที่ปรึกษา</li>
+          <li>THAI THARIT CO.,LTD บริษัท วิศวกรรมและรับเหมาก่อสร้าง</li>
         </ul>
         <a class="chip" href="Services.html">สำรวจบริการทั้งหมด</a>
       </div>
@@ -88,8 +86,7 @@
   </section>
 
   <!-- ===== Services ===== -->
-  <section id="services">
-    <div class="wrap">
+  <section id="services"class="wrap">
       <div class="section__head">
         <div>
           <h2 class="section__title">บริการของเรา</h2>
@@ -99,7 +96,7 @@
         </a>
       </div>
       <div class="Services_cards">
-        <a class="Services_card" href="https://ple.co.th/th/csa-th/">
+        <a class="Services_card" href="Services/โยธา.html">
           <div class="Services_card__media" aria-hidden="true" ><img alt="CSA" src="Pictures/2afe0683-553c-4413-890a-e48b988534cc.png"></div>
             <div class="Services_card__body">
             <h3 class="Services_card__title">งานก่อสร้างโยธา</h3>
@@ -124,7 +121,6 @@
           </div>
         </a>
       </div>
-    </div>
   </section>
 
   <!-- ===== Projects ===== -->
@@ -132,41 +128,44 @@
     <div class="section__head">
       <div>
         <h2 class="section__title">โครงการเด่น</h2>
-        <p class="section__desc">ตัวอย่างโครงการเด่นจากโครงกการทั้งหมดขอเรา</p>
+        <p class="section__desc">ตัวอย่างโครงการเด่นจากโครงกการทั้งหมดของเรา</p>
       </div>
       <a class="chip" href="Project.html">ดูทั้งหมด</a>
     </div>
     <div class="projects__grid">
-      <figure class="project">
+      <a class="project" href="Project/01_ติดตั้งหม้อแปลง.html">
         <img alt="ติดตั้งหม้อแปลงและตู้ MDB" src="Pictures/LINE_ALBUM_Project  Installation TR at CPF สมุทราสาคร_250820_1.jpg">
-        <figcaption class="project__badge">ติดตั้งหม้อแปลงและตู้ MDB</figcaption></figure>
-      <figure class="project">
-        <img alt="Sonepar" src="Pictures/S__45506562.jpg"><figcaption class="project__badge">Design-ก่อสร้าง Office Trainning Sonepar</figcaption></figure>
+        <fig caption class="project__badge">ติดตั้งหม้อแปลงและตู้ MDB</figcaption></a>
+      <a class="project" href="#">
+        <img alt="Sonepar" src="Pictures/S__45506562.jpg"><figcaption class="project__badge">Design-ก่อสร้าง Office Trainning Sonepar</figcaption></a>
+      <a class="project" href="#">
+        <img alt="Sonepar" src="Pictures/LINE_ALBUM_งานเดินสายเคเบิ้ล  CP อุตสาหกรรม บรรจุภั.jpg"><figcaption class="project__badge">Installation Access Point </figcaption></a>
     </div>
   </section>
 
-  <!-- ===== Contact / CTA ===== -->
-  <section id="contact" style="background:linear-gradient(180deg,#f8fafc,#eef2f7)">
-    <div class="wrap">
-      <div class="section__head">
-        <div>
-          <h2 class="section__Contact_title">ติดต่อเรา</h2>
-          <p class="section__Contact_desc">104 หมู่บ้านไอดี-ไซน์ 21 ถนน เลียบคลองสอง แขวงบางชัน เขตคลองสามวา กรุงเทพมหานคร 10510</p>
-        </div>
-      </div>
-      <form class="about__card" onsubmit="event.preventDefault(); alert('ส่งคำขอเรียบร้อย (ตัวอย่าง)');">
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px">
-          <label>ชื่อ-นามสกุล<br><input required placeholder="ระบุชื่อ" style="width:100%; padding:12px; border:1px solid var(--border); border-radius:12px"></label>
-          <label>อีเมล<br><input type="email" required placeholder="name@example.com" style="width:100%; padding:12px; border:1px solid var(--border); border-radius:12px"></label>
-          <label style="grid-column:1/-1">รายละเอียดโครงการ<br><textarea rows="4" placeholder="ต้องการขอใบเสนอราคาสำหรับ..." style="width:100%; padding:12px; border:1px solid var(--border); border-radius:12px"></textarea></label>
-        </div>
-        <div style="display:flex; gap:10px; margin-top:12px">
-          <button class="btn-primary" type="submit">ส่งคำขอ</button>
-        </div>
-      </form>
+  <!-- ===== Logo Ticker ===== -->
+<section id="container" class="wrap">
+  <div class="section__head">
+      <h2 class="section__title">ลูกค้าที่ไว้วางใจเรา</h2>
     </div>
-  </section>
-  
+  <div class="logo-ticker" id="ticker" aria-label="แถบโลโก้ลูกค้าแบบเลื่อนต่อเนื่อง">
+    <div class="ticker__viewport">
+      <div class="ticker__track" id="track">
+        <!-- วางโลโก้จริงของคุณตรงนี้ -->
+        <a class="logo" href="#" title="Client A"><img src="Pictures/CPF_Logo.svg.png" alt="Client A"></a>
+        <a class="logo" href="#" title="Client B"><img src="Pictures/images.png" alt="Client B"></a>
+        <a class="logo" href="#" title="Client C"><img src="Pictures/พันธ์ไทย.jfif" alt="Client C"></a>
+        <a class="logo" href="#" title="Client D"><img src="Pictures/157911_logo_20201030163615.webp" alt="Client D"></a>
+        <a class="logo" href="#" title="Client D"><img src="Pictures/LogoCPPC-100.png" alt="Client D"></a>
+        <a class="logo" href="#" title="Client D"><img src="Pictures/images (1).png" alt="Client D"></a>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
   <!-- ===== Footer ===== -->
   <section id="Footer" class="site-footer">
     <div class="wrap">
@@ -179,9 +178,9 @@
         </div>
         <div class="footer__col">
           <h4>บริษัท</h4>
-          <a href="#about">ประวัติองค์กร</a>
-          <a href="#about">วิสัยทัศน์และพันธกิจ</a>
-          <a href="#about">โครงสร้างธุรกิจ</a>
+          <a href="https://ple.co.th/th/background-th/">ประวัติองค์กร</a>
+          <a href="https://ple.co.th/th/vision-and-mission-th/">วิสัยทัศน์และพันธกิจ</a>
+          <a href="https://ple.co.th/th/business-group-structure-th/">โครงสร้างธุรกิจ</a>
         </div>
         <div class="footer__col">
           <h4>บริการ</h4>
@@ -191,9 +190,8 @@
         </div>
         <div class="footer__col">
           <h4>ติดต่อ</h4>
-          <a href="#contact">ส่งคำขอ</a>
-          <a href="tel:0XX-XXX-XXXX">โทร 0XX-XXX-X</a>
-          <a href="mailto:XXXXXX@fvc.co.th">XXXX@fvc.co.th</a>
+          <a href="contact.html">ติดต่อเรา</a>
+          <a href="https://ple.co.th/th/work-with-us-th/">ต้องการรวมงานกันเรา</a>
         </div>
       </div>
       <div class="footer__bottom">
@@ -214,11 +212,26 @@
         <button id="closeMenu" class="nav__toggle" style="border-color:rgba(255,255,255,.25)">ปิด</button>
       </div>
       <a href="index.html" onclick="toggleMenu(false)">หน้าแรก</a>
-      <a href="index.html"onclick="toggleMenu(false)">เกี่ยวกับเรา</a>
+
+    <div class="menu" id="menuRoot">
+      <div class="item">
+        <a class="head" aria-expanded="false">เกี่ยวกับเรา<span class="caret"></span></a>
+        <div class="panel" role="region" aria-label="เกี่ยวกับเรา">
+          <div class="panel-inner">
+            <a href="#">เกี่ยวกับบริษัท</a>
+            <a href="#">โครงสร้างองค์กร</a>
+            <a href="#">การกำกับดูแลกิจการที่ดี</a>
+            <a href="#">กฎบัตรคณะกรรมการบริษัท</a>
+          </div>
+        </div>
+      </div>
+    </div>  
+    
       <a href="Services.html" onclick="toggleMenu(false)">บริการ</a>
       <a href="Project.html" onclick="toggleMenu(false)">โครงการ</a>
       <a href="index.html" onclick="toggleMenu(false)">ข่าวสาร</a>
       <a href="contact.html" class="btn-primary" style="display:inline-block; margin-top:10px" onclick="toggleMenu(false)">ติดต่อเรา</a>
+
     </div>
   </div>
 
@@ -241,6 +254,59 @@
     drawer.addEventListener('touchmove', (e) => {
       if (!e.target.closest('.drawer__panel')) e.preventDefault();
       }, { passive:false });
+  </script> 
+
+  <script>
+      /*เลื่อยโลโก้*/
+    function setupLogoTicker(root){
+    const track = root.querySelector('#track');
+    const viewport = root.querySelector('.ticker__viewport');
+    const speed = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--speed')) || 100;
+
+    // ทำซ้ำโลโก้จนเต็มพื้นที่
+    const minWidth = viewport.clientWidth * 2;
+    let totalWidth = track.scrollWidth;
+    while (totalWidth < minWidth) {
+      [...track.children].forEach(node => track.appendChild(node.cloneNode(true)));
+      totalWidth = track.scrollWidth;
+    }
+    const shift = -Math.floor(totalWidth / 2); // ระยะเลื่อน
+    const duration = Math.abs(shift) / speed;  // วินาที
+    track.style.setProperty('--to', shift + 'px');
+    track.style.setProperty('--duration', duration + 's');
+    track.classList.add('anim');
+    }
+
+    setupLogoTicker(document.getElementById('ticker'));
   </script>
+
+  <script>
+  const toggle = document.getElementById('toggle');
+  const menuRoot = document.getElementById('menuRoot');
+
+  // โหมดแอคคอร์เดียน: เปิดทีละหัวข้อ (เหมือนภาพ)
+  menuRoot.addEventListener('click', (e)=>{
+    const head = e.target.closest('.head');
+    if(!head) return;
+    const item = head.closest('.item');
+
+    // ปิดตัวอื่น
+    menuRoot.querySelectorAll('.item.open').forEach(li=>{
+      if(li !== item){
+        li.classList.remove('open');
+        li.querySelector('.head').setAttribute('aria-expanded','false');
+        li.querySelector('.panel').style.maxHeight = 0;
+      }
+    });
+
+    // เปิด/ปิดตัวที่คลิก
+    item.classList.toggle('open');
+    const open = item.classList.contains('open');
+    head.setAttribute('aria-expanded', open);
+    const panel = item.querySelector('.panel');
+    panel.style.maxHeight = open ? '320px' : 0; // ปรับได้ตามจำนวนลิงก์
+  });
+</script>
+  
 </body>
 </html>
