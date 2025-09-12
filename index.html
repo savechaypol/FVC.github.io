@@ -26,9 +26,9 @@
       --shadow: 0 10px 30px rgba(0, 71, 250, 0.12);
       --radius: 18px;
       --radius-sm: 12px;
-      --max: 1200px;
+      --max: 1300px;
     }
-  
+    
     *{box-sizing:border-box}
     html,body{margin:0;padding:0}
     body{font-family:"Kanit",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif; color:var(--text); background:#f8fafc; line-height:1.6}
@@ -38,13 +38,12 @@
     .site-header{position:sticky;top:0;z-index:40;background:rgba(11,27,43,.85);backdrop-filter:saturate(150%) blur(8px);border-bottom:1px solid rgba(255,255,255,.08)}
     .nav{max-width:var(--max);margin:auto;display:flex;align-items:center;gap:18px;padding:12px 20px;color:#e2e8f0}   
     .brand{display:flex;align-items:center;gap:12px}
-    .brand__logo{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--primary),#38bdf8);display:grid;place-items:center;color:white;font-weight:700;box-shadow:0 6px 16px rgba(14,165,233,.45)}
     .brand__name{font-weight:700;letter-spacing:.3px}
     .nav__links{margin-left:auto;display:flex;gap:14px;align-items:center}
     .nav__links a{padding:10px 12px;border-radius:10px;color:#e5e7eb}
-    .nav__links a:hover{background:rgba(255,255,255,.08)}
-    .btn-primary{background:var(--primary); color:white; padding:10px 14px; border-radius:12px; font-weight:600; box-shadow:0 8px 18px rgba(14,165,233,.35)}
-    .btn-primary:hover{filter:brightness(1.05)}
+    .nav__links a:hover{background:rgba(235, 230, 230, 0.08)}
+    .btn-primary{display:flex;background:var(--primary); color:white; padding:10px 10px; border-radius:12px; font-weight:600; box-shadow:0 8px 18px rgba(14,165,233,.35)}
+    .btn-primary:hover{filter:brightness(1.1);}
     .nav__toggle{display:none;margin-left:auto;background:transparent;border:1px solid rgba(255,255,255,.15);color:#e5e7eb;padding:8px 10px;border-radius:10px;}
     /* ===== Hero ===== */
     .hero{position:relative;background:radial-gradient(1200px 600px at 70% -20%, rgba(14,165,233,.35), transparent 60%), radial-gradient(800px 400px at 20% -20%, rgba(3, 220, 248, 0.25), transparent 60%), var(--bg); color:#e5e7eb;mask-image: linear-gradient(to bottom, black 90%, transparent 100%);}
@@ -73,27 +72,29 @@
     .kpi{background:#f1f5f9; border:1px dashed #d8e0ea; border-radius:16px; padding:16px; text-align:center;}
     .kpi b{display:block; font-size:22px;}
     /* ===== Services ===== */
-    .Services_cards{display:grid; grid-template-columns: repeat(3,1fr); gap:16px;padding: 10px 0;               }
-    .Services_card {background: #fff;border: 1px solid #e5e7eb;/*ขอบ*/border-radius: 16px;/*ความโค้งขอบ*/box-shadow: 0 4px 12px rgba(0,0,0,0.08);overflow: hidden;transition: transform .3s ease, box-shadow 0.3s ease;}
+    .Services_cards{display:grid; grid-template-columns: repeat(3,1fr); gap:16px;padding: 10px 0;}
+    .Services_card {background: #fff;border: 1px solid #e5e7eb;border-radius: 16px;box-shadow: 0 4px 12px rgba(0,0,0,0.08);overflow: hidden;transition: transform .3s ease, box-shadow 0.3s ease;}
     .Services_card:hover {transition: transform .4s ease, box-shadow .4s ease;transform: scale(1.05); box-shadow: 0 12px 24px rgba(0,0,0,0.2);}
-    .Services_card__media img {width: 100%;height: 200px;object-fit: cover;   /* ให้รูปไม่เพี้ยน */display: block;}
+    .Services_card__media img {width: 100%;height: 200px;object-fit: cover;display: block;}
     .Services_card__body {padding: 16px;}
     .Services_card__title {margin: 0 0 8px;font-size: 18px;font-weight: 700;color: #0f172a;}
     .Services_card__text {font-size: 14px;line-height: 1.5;color: #374151;margin: 0 0 12px;}
     .chip {display: inline-block;background: #e5e5e7;color: #030303;font-size: 12px;font-weight: 600;padding: 4px 10px;border-radius: 999px;}
-    /* ===== Projects ===== */
-    .projects__grid {display: flex;gap: 50px;padding: 10px 0px;overflow-x: auto;scroll-behavior: smooth;scrollbar-width: none;-webkit-overflow-scrolling: touch;}
-    .project {flex: 0 0 350px;height: 300px;border-radius: 16px;overflow: hidden;background: #0f172a;position: relative;transition: transform .3s ease, box-shadow 0.3s ease;}
-    .project:hover {transition: transform .4s ease, box-shadow .4s ease;transform: scale(1.05); box-shadow: 0 12px 24px rgba(0,0,0,0.2);}
-    .project img {width: 100%;height: 100%;object-fit: cover;border: 5px solid var(--border);border-radius: 16px;overflow: hidden;}
-    .project__badge {position: absolute;left: 10px;bottom: 10px;background: rgba(255,255,255,.92);color: #0f172a;padding: 6px 10px;border-radius: 999px;font-size: 12px;font-weight: 600;}
+    .chip:hover {transition: transform .4s ease, box-shadow .4s ease;transform: scale(1.2); box-shadow: 0 12px 24px rgba(0,0,0,0.2);}
+    /* ===== Projects  horizontal cards ===== */
+    .projects__grid{display:flex; gap:22px;padding:10px 4px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+    .projects__grid::-webkit-scrollbar{display:none}
+    .project{position:relative;flex:0 0 400px;height:300px;border-radius:16px;overflow:hidden;background:#0f172a;border:3px solid rgba(0, 60, 255, 0.12);box-shadow:0 12px 300px rgba(0,0,0,.25);scroll-snap-align:center;transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;}
+    .project:hover{transform:translateY(-6px) scale(1.02);border-color:#30e3ff;}
+    .project img{width:100%; height:100%;object-fit:cover; display:block;transform:scale(1.02);transition:transform .45s ease;}
+    .project:hover img{ transform:scale(1.07) }
+    .project__badge{position:absolute; left:10px; bottom:10px;background:rgba(255,255,255,.92);color:#0f172a; font-weight:700; font-size:12px;padding:6px 10px; border-radius:999px;backdrop-filter: blur(6px);}
     /* ===== Footer ===== */
-    .site-footer{background:#0b1220;color:#cbd5e1;}
+    .site-footer{background:#0b1220;color:#ffffff;}
     .footer__grid{display:grid; grid-template-columns: 1.2fr repeat(3,1fr); gap:20px;}
     .footer__col h4{margin:0 0 10px;}
     .footer__col a{display:block; color:#cbd5e1;/**/ padding:6px 0; opacity:.9;}
-    .footer__col a:hover{opacity:1;}
-    .footer__col b:hover{opacity:1;}
+    .footer__col a:hover{opacity:1;filter:brightness(10);}
     .footer__bottom{border-top:1px solid rgba(255, 255, 255, 0.08); margin-top:26px; padding-top:16px; display:flex; align-items:center; justify-content:space-between; gap:12px;}
     /* ===== Responsive ===== */
     @media (max-width: 1024px){
@@ -105,22 +106,16 @@
     .nav__links{display:none}
     .nav__toggle{display:inline-flex}
     .cards{grid-template-columns: 1fr 1fr}
-    .projects__grid{grid-template-columns: 1fr 1fr}
     .news__list{grid-template-columns:1fr}
     .footer__grid{grid-template-columns:1fr 1fr}
-    body {
-    background: url("Pictures/mobile_fullscreen_vertical.png") no-repeat center center;
-    background-size: cover;
-    background-attachment: scroll; /* กันภาพกระตุกเวลาเลื่อนในมือถือ */
-  }
     }
     @media (max-width: 640px){
     .news__list{grid-template-columns:1fr}
     .cards{grid-template-columns:1fr}
-    .projects__grid{grid-template-columns:1fr}
     .footer__grid{grid-template-columns:1fr}
     .Services_cards{grid-template-columns:1fr}
     .about__grid{grid-template-columns:1fr}
+    .project{ flex-basis: 78vw; height: 230px; }
     }
     /* ===== Mobile drawer ===== */
     .drawer{ position:fixed; z-index:40;inset:0; background:rgba(2,6,23,.55); backdrop-filter: blur(4px);visibility:hidden;opacity:0;transition: opacity .6s ease, visibility 0s linear .6s;}
@@ -128,7 +123,8 @@
     .drawer__panel{position:absolute; right:0; top:0; bottom:0; width:min(86vw,360px); background:#0e2136; color:#e5e7eb;padding:18px; box-shadow:-10px 0 30px rgba(2,8,23,.4);transform:translateX(100%);transition:transform .6s ease-in-out;}
     .drawer.is-open .drawer__panel{transform:translateX(0);}
     .drawer__panel a{display:block; padding:12px 10px; border-radius:10px;text-decoration:none;color:inherit;}
-    .drawer__panel a:hover{background:rgba(247,246,246,0.06);}  
+    .drawer__panel a:hover{background:rgba(247,246,246,0.06);}
+    /* ===== แถบเมนุย่อยเลื่อยลงมา ===== */
     .item{position:relative}
     .head .caret{width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-top:6px solid currentColor;transition:transform .2s ease;margin-left:auto;}
     .item.open .head .caret{transform:rotate(180deg)}
@@ -153,19 +149,25 @@
     .text-animate .char {display: inline-block;opacity: 0;transform: translateY(-80px);animation: dropIn .65s forwards;will-change: transform, opacity;}
     .text-animate .space {display: inline-block;width: .33em;}
     @keyframes dropIn {60% { transform: translateY(8px); }to{ opacity: 1; transform: translateY(0); }}
-  @media (prefers-reduced-motion: reduce){
-  .text-animate .char {opacity: 1 !important;transform: none !important;animation: none !important;}}
+    @media (prefers-reduced-motion: reduce){
+    .text-animate .char {opacity: 1 !important;transform: none !important;animation:  none !important;}}
+    /* === เนื้อหาค่อยๆโผล่ === */
+    .rv-all{opacity:0;transform: translateY(14px);transition:opacity 3s cubic-bezier(.2,.6,.2,1),transform 3s cubic-bezier(.2,.6,.2,1),filter 3s cubic-bezier(.2,.6,.2,1);transition-delay: var(--d, 0ms);}
+    .rv-all.in{opacity:1;transform:none;filter:none;}
+    @media (prefers-reduced-motion: reduce){
+    .rv-all{opacity:1 !important; transform:none !important; filter:none !important}}
   </style>
 </head>
 <body>
   <!-- ===== Header ===== -->
-  <header class="site-header">
-    <nav class="nav">
-      <a href="#" class="brand" aria-label="Forward Vision Consultant">
-        <div class="btn-primary">FVC</div>
-        <div class="brand__name">Forward Vision Consultant </div>
+  <header class="site-header ">
+    <nav class="nav ">
+      <a href="#" class="brand " aria-label="Forward Vision Consultant">
+        <div class="btn-primary">FVC&nbsp;<img src="Pictures/logo_white.png" alt="FVC Emoji" width="25" height="25">
+        </div>
+        <div class="brand__name ">Forward Vision Consultant </div>
       </a>
-      <div class="nav__links">
+      <div class="nav__links ">
         <a href="#about">เกี่ยวกับเรา</a>
         <a href="Services.html">บริการ</a>
         <a href="Project.html">โครงการ</a>
@@ -178,20 +180,20 @@
 
   <!-- ===== Hero ===== -->
   <section class="hero">
-    <div class="hero__inner reveal ">
+    <div class="hero__inner  ">
       <div><h1 class="hero__title text-animate">ฟอร์เวิร์ด วิชั่น คอนซัลแทนท์<br> </h1>
-        <p class="hero__text ">บริการของเราเริ่มต้นตั้งแต่การออกแบบไปจนถึงการขอใบอนุญาตก่อสร้างในนิคมอุตสาหกรรม (กนอ.) และได้กำหนดกลยุทธ์การบริหารจัดการเพื่อลดต้นทุนและเพิ่มประสิทธิภาพ ซึ่งเป็นนโยบายสำคัญ เรามีวิศวกรผู้เชี่ยวชาญและการพัฒนาบุคลากรอย่างต่อเนื่อง เราได้รับมาตรฐาน ISO9001:2015</p>
-        <div class="hero__cta">
-          <a href="#projects" class="btn-primary">ดูผลงาน</a>
-          <a class="btn-primary" 
+        <p class="hero__text rv-all">บริการของเราเริ่มต้นตั้งแต่การออกแบบไปจนถึงการขอใบอนุญาตก่อสร้างในนิคมอุตสาหกรรม (กนอ.) และได้กำหนดกลยุทธ์การบริหารจัดการเพื่อลดต้นทุนและเพิ่มประสิทธิภาพ ซึ่งเป็นนโยบายสำคัญ เรามีวิศวกรผู้เชี่ยวชาญและการพัฒนาบุคลากรอย่างต่อเนื่อง เราได้รับมาตรฐาน ISO9001:2015</p>
+        <div class="nav__links ">
+          <a href="#projects" class="btn-primary rv-all">ดูผลงาน</a>
+          <a class="btn-primary rv-all" 
           href="#services" >บริการของเรา</a>
         </div>
       </div>
       <div class="hero__card " role="group" aria-label="จุดเด่นองค์กร">
         <div class="hero__icon">🏗️</div>
         <div>
-          <h4>ประสบการณ์กว่า 10 ปี</h4>
-          <p>งานก่อสร้างโยธา งานติดตั้งระบบไฟฟ้า ระบบสื่อสารโทรคมนาคม ระบบปรับอากาศ ระบบสุขาภิบาล และระบบป้องกันอัคคีภัย ตามมาตรฐานอุตสาหกรรม</p>
+          <h4 class="text-animate " >  ประสบการณ์กว่า 10 ปี</h4>
+          <p class="rv-all">งานก่อสร้างโยธา งานติดตั้งระบบไฟฟ้า ระบบสื่อสารโทรคมนาคม ระบบปรับอากาศ ระบบสุขาภิบาล และระบบป้องกันอัคคีภัย ตามมาตรฐานอุตสาหกรรม</p>
         </div>
       </div>
     </div>
@@ -202,7 +204,7 @@
     <div class="section__head reveal">
       <div>
         <h2 class="section__title text-animate">เกี่ยวกับบริษัท</h2>
-        <p class="section__desc">ก่อตั้งโดยทีมวิศวกรผู้เชี่ยวชาญ ให้บริการงานวิศวกรรม</p>
+        <p class="section__desc rv-all">ก่อตั้งโดยทีมวิศวกรผู้เชี่ยวชาญ ให้บริการงานวิศวกรรม</p>
       </div>
       <a class="chip" href="#">ดูวิสัยทัศน์และพันธกิจ</a>
     </div>
@@ -233,21 +235,21 @@
       <div class="section__head">
         <div>
           <h2 class="section__title text-animate">บริการของเรา</h2>
-          <p class="section__desc">ออกแบบ จัดหา ติดตั้ง ทดสอบ เดินระบบ และบำรุงรักษา</p>
+          <p class="section__desc rv-all">ออกแบบ จัดหา ติดตั้ง ทดสอบ เดินระบบ และบำรุงรักษา</p>
         </div>
         <a class="chip" href="Services.html">ดูทั้งหมด
         </a>
       </div>
       <div class="Services_cards">
-        <a class="Services_card " href="Services/โยธา.html">
-          <div class="Services_card__media" aria-hidden="true" ><img alt="CSA" src="Pictures/2afe0683-553c-4413-890a-e48b988534cc.png"></div>
+        <a class="Services_card " href="Services/Civil.html">
+          <div class="Services_card__media " aria-hidden="true" ><img alt="CSA" src="Pictures/2afe0683-553c-4413-890a-e48b988534cc.png"></div>
             <div class="Services_card__body">
             <h3 class="Services_card__title">Civil Engineering</h3>
             <p class="Services_card__text">ให้บริการงานก่อสร้างโยธาอย่างมีคุณภาพสูง มีความปลอดภัยและตรงตามความคาดหวังทุกประการ </p>
             <span class="chip">Civil</span>
           </div>
         </a>
-        <a class="Services_card" href="https://ple.co.th/th/electrical-systems-th/">
+        <a class="Services_card" href="Services/Electrical.html">
           <div class="Services_card__media" style="background-image:linear-gradient(135deg,#111827,#334155)" aria-hidden="true"><img alt="EE" src="Pictures/11bb6939-87cd-4471-827c-fd140e84307a.png"></div>
           <div class="Services_card__body">
             <h3 class="Services_card__title">Electrical Engineering</h3>
@@ -255,7 +257,7 @@
             <span class="chip">EE</span>
           </div>
         </a>
-        <a class="Services_card " href="https://ple.co.th/th/ict-and-security-system-th/">
+        <a class="Services_card " href="Services/Mechanical.html">
           <div class="Services_card__media" style="background-image:linear-gradient(135deg,#0f172a,#1f2937)" aria-hidden="true"><img alt="Cm" src="Pictures/acd4fd33-8f5e-45b8-9c47-852de875ab75.png"></div>
           <div class="Services_card__body">
             <h3 class="Services_card__title">Mechanical Engineering</h3>
@@ -270,19 +272,28 @@
     <div class="section__head">
       <div>
         <h2 class="section__title text-animate">โครงการเด่น</h2>
-        <p class="section__desc">ตัวอย่างโครงการเด่นจากโครงกการทั้งหมดของเรา</p>
+        <p class="section__desc rv-all">ตัวอย่างโครงการเด่นจากโครงกการทั้งหมดของเรา</p>
       </div>
       <a class="chip" href="Project.html">ดูทั้งหมด</a>
     </div>
-    <div class="projects__grid">
-      <a class="project" href="Project/01_ติดตั้งหม้อแปลง.html">
-        <img alt="ติดตั้งหม้อแปลงและตู้ MDB" src="Pictures/LINE_ALBUM_Project  Installation TR at CPF สมุทราสาคร_250820_1.jpg">
-        <fig caption class="project__badge">ติดตั้งหม้อแปลงและตู้ MDB</figcaption></a>
-      <a class="project" href="#">
-        <img alt="Sonepar" src="Pictures/S__45506562.jpg"><figcaption class="project__badge">Design-ก่อสร้าง Office Trainning Sonepar</figcaption></a>
-      <a class="project" href="#">
-        <img alt="Sonepar" src="Pictures/LINE_ALBUM_งานเดินสายเคเบิ้ล  CP อุตสาหกรรม บรรจุภั.jpg"><figcaption class="project__badge">Installation Access Point </figcaption></a>
-    </div>
+    <div class="projects__grid" id="projectsTrack" aria-label="โครงการ">
+    <a class="project" href="Project/01_ติดตั้งหม้อแปลง.html">
+      <img loading="lazy" alt="ติดตั้งหม้อแปลงและตู้ MDB"
+           src="Pictures/LINE_ALBUM_Project  Installation TR at CPF สมุทราสาคร_250820_1.jpg">
+      <figcaption class="project__badge">ติดตั้งหม้อแปลงและตู้ MDB</figcaption>
+    </a>
+
+    <a class="project" href="#">
+      <img loading="lazy" alt="Sonepar" src="Pictures/S__45506562.jpg">
+      <figcaption class="project__badge">Design-ก่อสร้าง Office Training Sonepar</figcaption>
+    </a>
+
+    <a class="project" href="#">
+      <img loading="lazy" alt="Installation Access Point"
+           src="Pictures/LINE_ALBUM_งานเดินสายเคเบิ้ล  CP อุตสาหกรรม บรรจุภั.jpg">
+      <figcaption class="project__badge">Installation Access Point</figcaption>
+    </a>
+  </div>
   </section>
   <!-- ===== Logo Ticker ===== -->
 <section id="container" class="wrap">
@@ -308,7 +319,7 @@
       <div class="footer__grid">
         <div class="footer__col">
           <div class="brand" style="margin-bottom:8px">
-            <div class="btn-primary">FVC</div>
+            <div class="btn-primary">FVC&nbsp;<img src="Pictures/logo_white.png" alt="FVC Emoji" width="25" height="25"></div>
             <div class="brand__name">Forward Vision Consultant</div></div>
           <p style="margin:0 0 10px; color:#94a3b8">ผู้รับเหมางานก่อสร้าง</p>
         </div>
@@ -320,9 +331,9 @@
         </div>
         <div class="footer__col">
           <h4>บริการ</h4>
-          <a href="#services">CSA</a>
-          <a href="#services">EE</a>
-          <a href="#services">ICT</a>
+          <a href="Services/Civil.html">Civil</a>
+          <a href="Services/Electrical.html">Electrical</a>
+          <a href="Services/Mechanical.html">Mechanical</a>
         </div>
         <div class="footer__col">
           <h4>ติดต่อ</h4>
@@ -353,8 +364,6 @@
           <div class="panel-inner">
             <a href="#">เกี่ยวกับบริษัท</a>
             <a href="#">โครงสร้างองค์กร</a>
-            <a href="#">การกำกับดูแลกิจการที่ดี</a>
-            <a href="#">กฎบัตรคณะกรรมการบริษัท</a>
           </div>
         </div>
       </div>
@@ -365,7 +374,7 @@
       <a href="contact.html" class="btn-primary" style="display:inline-block; margin-top:10px" onclick="toggleMenu(false)">ติดต่อเรา</a>
     </div>
   </div>
-
+  
   <script>//<!-- ===== แผงเมนูเลื่อนออกมาทางขวา ===== -->
     const drawer = document.getElementById('drawer');
     const openBtn = document.getElementById('openMenu');
@@ -404,7 +413,7 @@
     setupLogoTicker(document.getElementById('ticker'));
   </script>
 
-  <script>
+  <script>//<!-- ===== แถบเมนูย่อยเลื่อยลงมา ===== -->
   const toggle = document.getElementById('toggle');
   const menuRoot = document.getElementById('menuRoot');
   menuRoot.addEventListener('click', (e)=>{
@@ -426,65 +435,24 @@
   });
   </script>
   <script>//<!-- ===== เนื้อหาล่นลงมา ===== -->
-    function animateLetters(selector, { delayStep = 0.06, startDelay = 0 } = {}) {
-    const seg = ('Intl' in window && 'Segmenter' in Intl)
-      ? new Intl.Segmenter('th', { granularity: 'grapheme' })
-      : null;
-    document.querySelectorAll(selector).forEach(el => {
-      const text = el.textContent;
-      el.textContent = '';
-      const units = seg
-        ? Array.from(seg.segment(text), s => s.segment)
-        : Array.from(text);
-      let i = 0;
-      for (const u of units) {
-        if (u === ' ') {     
-          const sp = document.createElement('span');
-          sp.className = 'space';
-          sp.textContent = ' ';
-          el.appendChild(sp);
-          continue;
-        }
-        const span = document.createElement('span');
-        span.className = 'char';
-        span.textContent = u;
-        span.style.animationDelay = (startDelay + i * delayStep) + 's';
-        el.appendChild(span);
-        i++;
-      }
-    });
-  }
-  animateLetters('h1.text-animate, h2.text-animate', {
-    delayStep: 0.06,
-    startDelay: 0     
-  });
-  const repIo = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      const el = entry.target;
-      if (entry.isIntersecting) {
-        const text = el.textContent.replace(/\s+/g, ' ').trim();
-        const original = Array.from(el.querySelectorAll('.char,.space')).map(n => n.textContent).join('');
-        if (original) {
-          el.textContent = original;
-        }
-        animateLettersNode(el);
-      } else {
-        const txt = Array.from(el.querySelectorAll('.char,.space')).map(n => n.textContent).join('');
-        if (txt) el.textContent = txt;
-      }
-    });
-  }, { threshold: 0.15 });
-  function animateLettersNode(el, delayStep = 0.06, startDelay = 0) {
-    const seg = ('Intl' in window && 'Segmenter' in Intl)
-      ? new Intl.Segmenter('th', { granularity: 'grapheme' })
-      : null;
+    (function(){
+  const SELECTOR   = 'h1.text-animate, h2.text-animate, h3.text-animate, h4.text-animate, p.text-animate, .text-animate';
+  const DELAY_STEP = 0.06;   // วินาทีต่ออักขระ
+  const START_DELAY= 0.00;   // หน่วงเริ่มต้นทั้งบล็อก
+  const REPLAY     = false;  // true = ออกจากจอแล้วรีเซ็ตเพื่อเล่นซ้ำทุกครั้ง
 
-    const text = el.textContent;
+  const hasSeg = 'Intl' in window && 'Segmenter' in Intl;
+  const seg    = hasSeg ? new Intl.Segmenter('th', { granularity:'grapheme' }) : null;
+
+  function splitToSpans(el){
+    if (!el.dataset.orig) el.dataset.orig = el.textContent;
+    const text  = el.dataset.orig;
     el.textContent = '';
+
     const units = seg ? Array.from(seg.segment(text), s => s.segment) : Array.from(text);
     let i = 0;
-    for (const u of units) {
-      if (u === ' ') {
+    for (const u of units){
+      if (u === ' '){
         const sp = document.createElement('span');
         sp.className = 'space';
         sp.textContent = ' ';
@@ -494,11 +462,49 @@
       const span = document.createElement('span');
       span.className = 'char';
       span.textContent = u;
-      span.style.animationDelay = (startDelay + i * delayStep) + 's';
+      // ตั้งดีเลย์ทีละตัว
+      span.style.animationDelay = (START_DELAY + i * DELAY_STEP) + 's';
       el.appendChild(span);
       i++;
     }
+    el.dataset.ready = '1';
+    // ให้เบราว์เซอร์คำนวณ layout ก่อน จากนั้นเปิดเล่น
+    requestAnimationFrame(()=> el.dataset.in = '1');
   }
+
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      const el = e.target;
+      if (e.isIntersecting){
+        if (el.dataset.ready !== '1') splitToSpans(el);
+        else el.dataset.in = '1';
+        if (!REPLAY) io.unobserve(el); // เล่นครั้งเดียว
+      }else if (REPLAY){
+        // รีเซ็ตเพิ่อให้เล่นใหม่เมื่อกลับเข้าจอ
+        el.dataset.in = '0';
+        el.textContent = el.dataset.orig || el.textContent;
+        el.dataset.ready = '0';
+      }
+    });
+  }, { threshold: 0.18, rootMargin: '0px 0px -8% 0px' });
+
+  document.querySelectorAll(SELECTOR).forEach(el => io.observe(el));
+})();
+    </script>
+    <script>//<!-- ===== เนื้อหาค่อยๆโผล่ ===== -->
+    (() => {
+    const els = document.querySelectorAll('.rv-all');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');   // เล่นแอนิเมชัน “ทั้งบล็อก”
+        io.unobserve(e.target);          // เล่นครั้งเดียว
+        }
+        });
+      }, { threshold: 0.18, rootMargin: '0px 0px -8% 0px' });
+
+      els.forEach(el => io.observe(el));
+    })();
     </script>
 </body>
 </html>
