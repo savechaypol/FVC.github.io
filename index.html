@@ -143,7 +143,13 @@
     .logo img {height:50px;width:auto;display:block;}
     @keyframes scroll { to { transform:translateX(var(--to)) } }
     .logo-ticker:hover .ticker__track.anim {animation-play-state: paused;}
-    
+    /* ===== ตัวอักษรล่นลงมา ===== */
+    .text-animate {display: inline-block;white-space:pre-wrap;}
+    .text-animate .char {display: inline-block;opacity: 0;transform: translateY(-80px);animation: dropIn .65s forwards;will-change: transform, opacity;}
+    .text-animate .space {display: inline-block;width: .33em;}
+    @keyframes dropIn {60% { transform: translateY(8px); }to{ opacity: 1; transform: translateY(0); }}
+  @media (prefers-reduced-motion: reduce){
+  .text-animate .char {opacity: 1 !important;transform: none !important;animation: none !important;}}
   </style>
 </head>
 <body>
@@ -168,7 +174,7 @@
   <!-- ===== Hero ===== -->
   <section class="hero">
     <div class="hero__inner reveal ">
-      <div><h1 class="hero__title text-animate">ฟอร์เวิร์ด วิชั่น คอนซัลแทนท์<br> </h1>
+      <div><h1 class="hero__title">ฟอร์เวิร์ด วิชั่น คอนซัลแทนท์<br> </h1>
         <p class="hero__text ">บริการของเราเริ่มต้นตั้งแต่การออกแบบไปจนถึงการขอใบอนุญาตก่อสร้างในนิคมอุตสาหกรรม (กนอ.) และได้กำหนดกลยุทธ์การบริหารจัดการเพื่อลดต้นทุนและเพิ่มประสิทธิภาพ ซึ่งเป็นนโยบายสำคัญ เรามีวิศวกรผู้เชี่ยวชาญและการพัฒนาบุคลากรอย่างต่อเนื่อง เราได้รับมาตรฐาน ISO9001:2015</p>
         <div class="hero__cta">
           <a href="#projects" class="btn-primary">ดูผลงาน</a>
