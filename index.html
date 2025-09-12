@@ -102,13 +102,17 @@
     .news{grid-template-columns:1fr}
     }
     @media (max-width: 768px){
-    .background-size{display:cover}
     .nav__links{display:none}
     .nav__toggle{display:inline-flex}
     .cards{grid-template-columns: 1fr 1fr}
     .projects__grid{grid-template-columns: 1fr 1fr}
     .news__list{grid-template-columns:1fr}
     .footer__grid{grid-template-columns:1fr 1fr}
+    body {
+    background: url("Pictures/67382df8-c035-4632-991d-d7274420f6c6.png") no-repeat center center;
+    background-size: cover;
+    background-attachment: scroll; /* กันภาพกระตุกเวลาเลื่อนในมือถือ */
+  }
     }
     @media (max-width: 640px){
     .news__list{grid-template-columns:1fr}
