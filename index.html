@@ -361,11 +361,10 @@
     </div>
   </div>
 
-  <script>
+  <script>//<!-- ===== แผงเมนูเลื่อนออกมาทางขวา ===== -->
     const drawer = document.getElementById('drawer');
     const openBtn = document.getElementById('openMenu');
     const closeBtn = document.getElementById('closeMenu');
-
     function toggleMenu(force){
       const open = (typeof force === 'boolean') ? force : !drawer.classList.contains('is-open');
       drawer.classList.toggle('is-open', open);
@@ -375,48 +374,38 @@
     openBtn.addEventListener('click', () => toggleMenu(true));
     closeBtn.addEventListener('click', () => toggleMenu(false));
     drawer.addEventListener('click', (e)=>{ if(e.target===drawer) toggleMenu(false) });
-
-    // ป้องกันสกรอลเมื่อแตะเลื่อนขณะเปิดบนมือถือบางรุ่น (เสริมความเนียน)
     drawer.addEventListener('touchmove', (e) => {
       if (!e.target.closest('.drawer__panel')) e.preventDefault();
       }, { passive:false });
   </script> 
 
-  <script>
-      /*เลื่อยโลโก้*/
+  <script>//<!-- ===== เลื่อยโลโก้เลื่อยๆ ===== -->
     function setupLogoTicker(root){
     const track = root.querySelector('#track');
     const viewport = root.querySelector('.ticker__viewport');
     const speed = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--speed')) || 100;
-
-    // ทำซ้ำโลโก้จนเต็มพื้นที่
     const minWidth = viewport.clientWidth * 2;
     let totalWidth = track.scrollWidth;
     while (totalWidth < minWidth) {
       [...track.children].forEach(node => track.appendChild(node.cloneNode(true)));
       totalWidth = track.scrollWidth;
     }
-    const shift = -Math.floor(totalWidth / 2); // ระยะเลื่อน
-    const duration = Math.abs(shift) / speed;  // วินาที
+    const shift = -Math.floor(totalWidth / 2);
+    const duration = Math.abs(shift) / speed;
     track.style.setProperty('--to', shift + 'px');
     track.style.setProperty('--duration', duration + 's');
     track.classList.add('anim');
     }
-
     setupLogoTicker(document.getElementById('ticker'));
   </script>
 
   <script>
   const toggle = document.getElementById('toggle');
   const menuRoot = document.getElementById('menuRoot');
-
-  // โหมดแอคคอร์เดียน: เปิดทีละหัวข้อ (เหมือนภาพ)
   menuRoot.addEventListener('click', (e)=>{
     const head = e.target.closest('.head');
     if(!head) return;
     const item = head.closest('.item');
-
-    // ปิดตัวอื่น
     menuRoot.querySelectorAll('.item.open').forEach(li=>{
       if(li !== item){
         li.classList.remove('open');
@@ -424,13 +413,11 @@
         li.querySelector('.panel').style.maxHeight = 0;
       }
     });
-
-    // เปิด/ปิดตัวที่คลิก
     item.classList.toggle('open');
     const open = item.classList.contains('open');
     head.setAttribute('aria-expanded', open);
     const panel = item.querySelector('.panel');
-    panel.style.maxHeight = open ? '320px' : 0; // ปรับได้ตามจำนวนลิงก์
+    panel.style.maxHeight = open ? '320px' : 0; // 
   });
   </script>
   <script>//<!-- ===== เนื้อหาล่นลงมา ===== -->
@@ -438,19 +425,15 @@
     const seg = ('Intl' in window && 'Segmenter' in Intl)
       ? new Intl.Segmenter('th', { granularity: 'grapheme' })
       : null;
-
     document.querySelectorAll(selector).forEach(el => {
       const text = el.textContent;
-      el.textContent = ''; // เคลียร์ของเดิมออก
-
-      // สร้างอาร์เรย์ graphemes แบบปลอดภัย
+      el.textContent = '';
       const units = seg
         ? Array.from(seg.segment(text), s => s.segment)
-        : Array.from(text); // fallback (อาจทำให้วรรณยุกต์หลุดในบางตัว)
-
+        : Array.from(text);
       let i = 0;
       for (const u of units) {
-        if (u === ' ') {        // ช่องว่าง: ทำเป็น span เฉพาะกันหาย/ยุบ
+        if (u === ' ') {     
           const sp = document.createElement('span');
           sp.className = 'space';
           sp.textContent = ' ';
@@ -466,41 +449,26 @@
       }
     });
   }
-
-  // เรียกใช้งานกับหัวข้อที่ต้องการ
-  // ตัวอย่าง: เล่นกับทุก h1 และ h2 ที่ติด .text-animate
   animateLetters('h1.text-animate, h2.text-animate', {
-    delayStep: 0.06,   // เว้นทีละ 0.06s
-    startDelay: 0      // เริ่มหน่วงจาก 0
+    delayStep: 0.06,
+    startDelay: 0     
   });
-
-  /**
-   * (ทางเลือก) เล่นซ้ำเมื่อเลื่อนเข้า–ออกจอ
-   * ใช้ร่วมกับคลาส .text-animate ได้
-   */
   const repIo = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       const el = entry.target;
       if (entry.isIntersecting) {
-        // รีสตาร์ทแอนิเมชัน: ลบ/เพิ่ม DOM เพื่อรีเพลย์
         const text = el.textContent.replace(/\s+/g, ' ').trim();
-        // ป้องกันรีเพลย์ช้ำ: เคลียร์แล้วสร้างใหม่
         const original = Array.from(el.querySelectorAll('.char,.space')).map(n => n.textContent).join('');
         if (original) {
-          // rebuild ใช้ข้อความเดิมจาก nodes เผื่อมีวรรณยุกต์
           el.textContent = original;
         }
-        // สร้างใหม่อีกรอบ
         animateLettersNode(el);
       } else {
-        // ออกจากจอ: เคลียร์ให้เหลือ plain text เพื่อไม่สะสม DOM
         const txt = Array.from(el.querySelectorAll('.char,.space')).map(n => n.textContent).join('');
         if (txt) el.textContent = txt;
       }
     });
   }, { threshold: 0.15 });
-
-  // ตัวช่วย: สร้างตัวอักษรแบบ grapheme ให้ element เดี่ยว
   function animateLettersNode(el, delayStep = 0.06, startDelay = 0) {
     const seg = ('Intl' in window && 'Segmenter' in Intl)
       ? new Intl.Segmenter('th', { granularity: 'grapheme' })
@@ -526,9 +494,6 @@
       i++;
     }
   }
-
-  // ผูก observer เฉพาะตัวที่ต้องการเล่นซ้ำ (เติมคลาส .text-animate-repeat)
-  document.querySelectorAll('.text-animate.text-animate-repeat').forEach(el => repIo.observe(el));
     </script>
 </body>
 </html>
