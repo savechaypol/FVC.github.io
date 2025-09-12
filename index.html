@@ -433,38 +433,6 @@
     panel.style.maxHeight = open ? '320px' : 0; // ปรับได้ตามจำนวนลิงก์
   });
   </script>
-  <script>//<!-- ===== เนื้อหาล่นลงมา ===== -->
-    function animateLetters(selector, { delayStep = 0.06, startDelay = 0 } = {}) {
-    const seg = ('Intl' in window && 'Segmenter' in Intl)
-      ? new Intl.Segmenter('th', { granularity: 'grapheme' })
-      : null;
-    document.querySelectorAll(selector).forEach(el => {
-      const text = el.textContent;
-      el.textContent = '';
-      const units = seg
-        ? Array.from(seg.segment(text), s => s.segment)
-        : Array.from(text);
-      let i = 0;
-      for (const u of units) {
-        if (u === ' ') {
-          const sp = document.createElement('span');
-          sp.className = 'space';
-          sp.textContent = ' ';
-          el.appendChild(sp);
-          continue;
-        }
-        const span = document.createElement('span');
-        span.className = 'char';
-        span.textContent = u;
-        span.style.animationDelay = (startDelay + i * delayStep) + 's';
-        el.appendChild(span);
-        i++;
-        }
-      });
-    }
-    animateLetters('h1,h2,h3,h4,p', {delayStep: 0.1,  startDelay: 0     
-    });
-    
-    </script>
+  
 </body>
 </html>
