@@ -143,6 +143,11 @@
     .logo img {height:50px;width:auto;display:block;}
     @keyframes scroll { to { transform:translateX(var(--to)) } }
     .logo-ticker:hover .ticker__track.anim {animation-play-state: paused;}
+    /* ===== ตัวอักษรล่นลงมา ===== */
+    .text-animate {display: inline-block;white-space:pre-wrap;}
+    .text-animate .char {display: inline-block;opacity: 0;transform: translateY(-80px);animation: dropIn .65s forwards;will-change: transform, opacity;}
+    .text-animate .space {display: inline-block;width: .33em;}
+    @keyframes dropIn {60% { transform: translateY(8px); }to{ opacity: 1; transform: translateY(0); }}
   </style>
 </head>
 <body>
@@ -167,7 +172,7 @@
   <!-- ===== Hero ===== -->
   <section class="hero">
     <div class="hero__inner reveal ">
-      <div><h1 class="hero__title">ฟอร์เวิร์ด วิชั่น คอนซัลแทนท์<br> </h1>
+      <div><h1 class="hero__title text-animate">ฟอร์เวิร์ด วิชั่น คอนซัลแทนท์<br> </h1>
         <p class="hero__text ">บริการของเราเริ่มต้นตั้งแต่การออกแบบไปจนถึงการขอใบอนุญาตก่อสร้างในนิคมอุตสาหกรรม (กนอ.) และได้กำหนดกลยุทธ์การบริหารจัดการเพื่อลดต้นทุนและเพิ่มประสิทธิภาพ ซึ่งเป็นนโยบายสำคัญ เรามีวิศวกรผู้เชี่ยวชาญและการพัฒนาบุคลากรอย่างต่อเนื่อง เราได้รับมาตรฐาน ISO9001:2015</p>
         <div class="hero__cta">
           <a href="#projects" class="btn-primary">ดูผลงาน</a>
@@ -425,7 +430,39 @@
     const panel = item.querySelector('.panel');
     panel.style.maxHeight = open ? '320px' : 0; // ปรับได้ตามจำนวนลิงก์
   });
-</script>
-  
+  </script>
+  <script>//<!-- ===== เนื้อหาล่นลงมา ===== -->
+    function animateLetters(selector, { delayStep = 0.06, startDelay = 0 } = {}) {
+    const seg = ('Intl' in window && 'Segmenter' in Intl)
+      ? new Intl.Segmenter('th', { granularity: 'grapheme' })
+      : null;
+    document.querySelectorAll(selector).forEach(el => {
+      const text = el.textContent;
+      el.textContent = '';
+      const units = seg
+        ? Array.from(seg.segment(text), s => s.segment)
+        : Array.from(text);
+      let i = 0;
+      for (const u of units) {
+        if (u === ' ') {
+          const sp = document.createElement('span');
+          sp.className = 'space';
+          sp.textContent = ' ';
+          el.appendChild(sp);
+          continue;
+        }
+        const span = document.createElement('span');
+        span.className = 'char';
+        span.textContent = u;
+        span.style.animationDelay = (startDelay + i * delayStep) + 's';
+        el.appendChild(span);
+        i++;
+        }
+      });
+    }
+    animateLetters('h1,h2,h3,h4,p', {delayStep: 0.1,  startDelay: 0     
+    });
+    
+    </script>
 </body>
 </html>
