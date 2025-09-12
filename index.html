@@ -174,7 +174,7 @@
   <!-- ===== Hero ===== -->
   <section class="hero">
     <div class="hero__inner reveal ">
-      <div><h1 class="hero__title">ฟอร์เวิร์ด วิชั่น คอนซัลแทนท์<br> </h1>
+      <div><h1 class="hero__title text-animate">ฟอร์เวิร์ด วิชั่น คอนซัลแทนท์<br> </h1>
         <p class="hero__text ">บริการของเราเริ่มต้นตั้งแต่การออกแบบไปจนถึงการขอใบอนุญาตก่อสร้างในนิคมอุตสาหกรรม (กนอ.) และได้กำหนดกลยุทธ์การบริหารจัดการเพื่อลดต้นทุนและเพิ่มประสิทธิภาพ ซึ่งเป็นนโยบายสำคัญ เรามีวิศวกรผู้เชี่ยวชาญและการพัฒนาบุคลากรอย่างต่อเนื่อง เราได้รับมาตรฐาน ISO9001:2015</p>
         <div class="hero__cta">
           <a href="#projects" class="btn-primary">ดูผลงาน</a>
@@ -196,7 +196,7 @@
   <section id="about" class="wrap">
     <div class="section__head reveal">
       <div>
-        <h2 class="section__title">เกี่ยวกับบริษัท</h2>
+        <h2 class="section__title text-animate">เกี่ยวกับบริษัท</h2>
         <p class="section__desc">ก่อตั้งโดยทีมวิศวกรผู้เชี่ยวชาญ ให้บริการงานวิศวกรรม</p>
       </div>
       <a class="chip" href="#">ดูวิสัยทัศน์และพันธกิจ</a>
@@ -227,7 +227,7 @@
   <section id="services"class="wrap">
       <div class="section__head">
         <div>
-          <h2 class="section__title ">บริการของเรา</h2>
+          <h2 class="section__title text-animate">บริการของเรา</h2>
           <p class="section__desc">ออกแบบ จัดหา ติดตั้ง ทดสอบ เดินระบบ และบำรุงรักษา</p>
         </div>
         <a class="chip" href="Services.html">ดูทั้งหมด
@@ -264,7 +264,7 @@
   <section id="projects" class="wrap">
     <div class="section__head">
       <div>
-        <h2 class="section__title">โครงการเด่น</h2>
+        <h2 class="section__title text-animate">โครงการเด่น</h2>
         <p class="section__desc">ตัวอย่างโครงการเด่นจากโครงกการทั้งหมดของเรา</p>
       </div>
       <a class="chip" href="Project.html">ดูทั้งหมด</a>
@@ -282,7 +282,7 @@
   <!-- ===== Logo Ticker ===== -->
 <section id="container" class="wrap">
   <div class="section__head">
-      <h2 class="section__title">ลูกค้าที่ไว้วางใจเรา</h2>
+      <h2 class="section__title text-animate">ลูกค้าที่ไว้วางใจเรา</h2>
     </div>
   <div class="logo-ticker" id="ticker" aria-label="แถบโลโก้ลูกค้าแบบเลื่อนต่อเนื่อง">
     <div class="ticker__viewport">
@@ -433,6 +433,102 @@
     panel.style.maxHeight = open ? '320px' : 0; // ปรับได้ตามจำนวนลิงก์
   });
   </script>
-  
+  <script>//<!-- ===== เนื้อหาล่นลงมา ===== -->
+    function animateLetters(selector, { delayStep = 0.06, startDelay = 0 } = {}) {
+    const seg = ('Intl' in window && 'Segmenter' in Intl)
+      ? new Intl.Segmenter('th', { granularity: 'grapheme' })
+      : null;
+
+    document.querySelectorAll(selector).forEach(el => {
+      const text = el.textContent;
+      el.textContent = ''; // เคลียร์ของเดิมออก
+
+      // สร้างอาร์เรย์ graphemes แบบปลอดภัย
+      const units = seg
+        ? Array.from(seg.segment(text), s => s.segment)
+        : Array.from(text); // fallback (อาจทำให้วรรณยุกต์หลุดในบางตัว)
+
+      let i = 0;
+      for (const u of units) {
+        if (u === ' ') {        // ช่องว่าง: ทำเป็น span เฉพาะกันหาย/ยุบ
+          const sp = document.createElement('span');
+          sp.className = 'space';
+          sp.textContent = ' ';
+          el.appendChild(sp);
+          continue;
+        }
+        const span = document.createElement('span');
+        span.className = 'char';
+        span.textContent = u;
+        span.style.animationDelay = (startDelay + i * delayStep) + 's';
+        el.appendChild(span);
+        i++;
+      }
+    });
+  }
+
+  // เรียกใช้งานกับหัวข้อที่ต้องการ
+  // ตัวอย่าง: เล่นกับทุก h1 และ h2 ที่ติด .text-animate
+  animateLetters('h1.text-animate, h2.text-animate', {
+    delayStep: 0.06,   // เว้นทีละ 0.06s
+    startDelay: 0      // เริ่มหน่วงจาก 0
+  });
+
+  /**
+   * (ทางเลือก) เล่นซ้ำเมื่อเลื่อนเข้า–ออกจอ
+   * ใช้ร่วมกับคลาส .text-animate ได้
+   */
+  const repIo = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const el = entry.target;
+      if (entry.isIntersecting) {
+        // รีสตาร์ทแอนิเมชัน: ลบ/เพิ่ม DOM เพื่อรีเพลย์
+        const text = el.textContent.replace(/\s+/g, ' ').trim();
+        // ป้องกันรีเพลย์ช้ำ: เคลียร์แล้วสร้างใหม่
+        const original = Array.from(el.querySelectorAll('.char,.space')).map(n => n.textContent).join('');
+        if (original) {
+          // rebuild ใช้ข้อความเดิมจาก nodes เผื่อมีวรรณยุกต์
+          el.textContent = original;
+        }
+        // สร้างใหม่อีกรอบ
+        animateLettersNode(el);
+      } else {
+        // ออกจากจอ: เคลียร์ให้เหลือ plain text เพื่อไม่สะสม DOM
+        const txt = Array.from(el.querySelectorAll('.char,.space')).map(n => n.textContent).join('');
+        if (txt) el.textContent = txt;
+      }
+    });
+  }, { threshold: 0.15 });
+
+  // ตัวช่วย: สร้างตัวอักษรแบบ grapheme ให้ element เดี่ยว
+  function animateLettersNode(el, delayStep = 0.06, startDelay = 0) {
+    const seg = ('Intl' in window && 'Segmenter' in Intl)
+      ? new Intl.Segmenter('th', { granularity: 'grapheme' })
+      : null;
+
+    const text = el.textContent;
+    el.textContent = '';
+    const units = seg ? Array.from(seg.segment(text), s => s.segment) : Array.from(text);
+    let i = 0;
+    for (const u of units) {
+      if (u === ' ') {
+        const sp = document.createElement('span');
+        sp.className = 'space';
+        sp.textContent = ' ';
+        el.appendChild(sp);
+        continue;
+      }
+      const span = document.createElement('span');
+      span.className = 'char';
+      span.textContent = u;
+      span.style.animationDelay = (startDelay + i * delayStep) + 's';
+      el.appendChild(span);
+      i++;
+    }
+  }
+
+  // ผูก observer เฉพาะตัวที่ต้องการเล่นซ้ำ (เติมคลาส .text-animate-repeat)
+  document.querySelectorAll('.text-animate.text-animate-repeat').forEach(el => repIo.observe(el));
+    </script>
 </body>
 </html>
