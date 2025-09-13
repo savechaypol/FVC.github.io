@@ -5,16 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Forward Vision Consultant </title>
   <meta name="description" content="หน้าเว็บไซต์โครง FVC" />
-
   <!-- ฟอนต์ไทยอ่านง่าย -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap" >
   <link rel="icon" type="image/png" href="Pictures/FVC-Approve-Rev01.png">
   <style>
-    
     :root{
       body{
       background: url('Pictures/67382df8-c035-4632-991d-d7274420f6c6.png') no-repeat center center fixed;background-size: cover;}
-      
       --bg:#0b1b2b;
       --bg-soft:#0f253c;
       --primary:#0ea5e9;
@@ -28,7 +25,6 @@
       --radius-sm: 12px;
       --max: 1300px;
     }
-    
     *{box-sizing:border-box}
     html,body{margin:0;padding:0}
     body{font-family:"Kanit",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif; color:var(--text); background:#f8fafc; line-height:1.6}
@@ -47,7 +43,7 @@
     .nav__toggle{display:none;margin-left:auto;background:transparent;border:1px solid rgba(255,255,255,.15);color:#e5e7eb;padding:8px 10px;border-radius:10px;}
     /* ===== Hero ===== */
     .hero{position:relative;background:radial-gradient(1200px 600px at 70% -20%, rgba(14,165,233,.35), transparent 60%), radial-gradient(800px 400px at 20% -20%, rgba(3, 220, 248, 0.25), transparent 60%), var(--bg); color:#e5e7eb;mask-image: linear-gradient(to bottom, black 90%, transparent 100%);}
-    .hero__inner{max-width:var(--max); margin:auto; padding:80px 20px 56px; display:grid; grid-template-columns: 1.2fr 1fr; gap:30px; align-items:center;}
+    .hero__inner{max-width:var(--max); margin:auto; padding:80px 0px 56px; display:grid; grid-template-columns: 1.2fr 1fr; gap:30px; align-items:center;}
     .hero__title{font-size:clamp(25px,3.6vw,40px); line-height:1.15; margin:0 0 10px; font-weight:700;}
     .hero__text{color:#cbd5e1; margin:0 0 20px;}
     .hero__cta{display:flex; gap:12px; flex-wrap:wrap;}
@@ -81,7 +77,7 @@
     .Services_card__text {font-size: 14px;line-height: 1.5;color: #374151;margin: 0 0 12px;}
     .chip {display: inline-block;background: #e5e5e7;color: #030303;font-size: 12px;font-weight: 600;padding: 4px 10px;border-radius: 999px;}
     .chip:hover {transition: transform .4s ease, box-shadow .4s ease;transform: scale(1.2); box-shadow: 0 12px 24px rgba(0,0,0,0.2);}
-    /* ===== Projects  horizontal cards ===== */
+    /* ===== Projects ===== */
     .projects__grid{display:flex; gap:22px;padding:10px 4px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
     .projects__grid::-webkit-scrollbar{display:none}
     .project{position:relative;flex:0 0 400px;height:300px;border-radius:16px;overflow:hidden;background:#0f172a;border:3px solid rgba(0, 60, 255, 0.12);box-shadow:0 12px 300px rgba(0,0,0,.25);scroll-snap-align:center;transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;}
@@ -100,23 +96,20 @@
     @media (max-width: 1024px){
     .hero__inner{grid-template-columns:1fr}
     .about{grid-template-columns:1fr}
-    .news{grid-template-columns:1fr}
-    }
+    .news{grid-template-columns:1fr}}
     @media (max-width: 768px){
     .nav__links{display:none}
     .nav__toggle{display:inline-flex}
     .cards{grid-template-columns: 1fr 1fr}
     .news__list{grid-template-columns:1fr}
-    .footer__grid{grid-template-columns:1fr 1fr}
-    }
+    .footer__grid{grid-template-columns:1fr 1fr}}
     @media (max-width: 640px){
     .news__list{grid-template-columns:1fr}
     .cards{grid-template-columns:1fr}
     .footer__grid{grid-template-columns:1fr}
     .Services_cards{grid-template-columns:1fr}
     .about__grid{grid-template-columns:1fr}
-    .project{ flex-basis: 78vw; height: 230px; }
-    }
+    .project{ flex-basis: 78vw; height: 230px; }}
     /* ===== Mobile drawer ===== */
     .drawer{ position:fixed; z-index:40;inset:0; background:rgba(2,6,23,.55); backdrop-filter: blur(4px);visibility:hidden;opacity:0;transition: opacity .6s ease, visibility 0s linear .6s;}
     .drawer.is-open{visibility:visible;opacity:1;transition: opacity .6s ease;}
@@ -132,7 +125,7 @@
     .panel-inner{padding:12px 18px 16px;background:rgba(96, 96, 102, 0.06);}
     .sub-toggle::after{content:"";width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:6px solid currentColor;transition:transform .18s ease;margin-left:auto}
     .subitem.open > .sub-toggle::after{transform:rotate(180deg)}
-    /*เลื่อนโลโก้*/
+    /* ===== โลโก่เลื่อน ===== */
     :root {--gap:36px;--speed:50;}
     .logo-ticker {position: relative;border-radius: 16px;padding: 18px;overflow: hidden;}
     .logo-ticker::before,
@@ -152,10 +145,14 @@
     @media (prefers-reduced-motion: reduce){
     .text-animate .char {opacity: 1 !important;transform: none !important;animation:  none !important;}}
     /* === เนื้อหาค่อยๆโผล่ === */
-    .rv-all{opacity:0;transform: translateY(14px);transition:opacity 3s cubic-bezier(.2,.6,.2,1),transform 3s cubic-bezier(.2,.6,.2,1),filter 3s cubic-bezier(.2,.6,.2,1);transition-delay: var(--d, 0ms);}
-    .rv-all.in{opacity:1;transform:none;filter:none;}
+    [data-pop]{opacity: 0;transform: translate3d(var(--x,0), var(--y,12px), 0) scale(.94);will-change: transform, opacity;}
+    [data-pop].is-in{animation: pop-reveal var(--dur, 5s) var(--ease, cubic-bezier(.16,1,.3,1)) both;animation-delay: var(--delay, 0ms);}
+    @keyframes pop-reveal{
+    0%   { opacity:0; transform: translate3d(var(--x,0), var(--y,12px), 0) scale(.94); }
+    60%  { opacity:1; transform: translate3d(0,0,0) scale(1.02); }
+    100% { opacity:1; transform: translate3d(0,0,0) scale(1); }}
     @media (prefers-reduced-motion: reduce){
-    .rv-all{opacity:1 !important; transform:none !important; filter:none !important}}
+    [data-pop]{ opacity:1 !important; transform:none !important; animation:none !important; }}
   </style>
 </head>
 <body>
@@ -177,15 +174,14 @@
       <button class="nav__toggle" id="openMenu" aria-label="เปิดเมนู">เมนู</button>
     </nav>
   </header>
-
   <!-- ===== Hero ===== -->
   <section class="hero">
     <div class="hero__inner  ">
       <div><h1 class="hero__title text-animate">ฟอร์เวิร์ด วิชั่น คอนซัลแทนท์<br> </h1>
-        <p class="hero__text rv-all">บริการของเราเริ่มต้นตั้งแต่การออกแบบไปจนถึงการขอใบอนุญาตก่อสร้างในนิคมอุตสาหกรรม (กนอ.) และได้กำหนดกลยุทธ์การบริหารจัดการเพื่อลดต้นทุนและเพิ่มประสิทธิภาพ ซึ่งเป็นนโยบายสำคัญ เรามีวิศวกรผู้เชี่ยวชาญและการพัฒนาบุคลากรอย่างต่อเนื่อง เราได้รับมาตรฐาน ISO9001:2015</p>
+        <p class="hero__text "data-pop style="--delay:100ms">บริการของเราเริ่มต้นตั้งแต่การออกแบบไปจนถึงการขอใบอนุญาตก่อสร้างในนิคมอุตสาหกรรม (กนอ.) และได้กำหนดกลยุทธ์การบริหารจัดการเพื่อลดต้นทุนและเพิ่มประสิทธิภาพ ซึ่งเป็นนโยบายสำคัญ เรามีวิศวกรผู้เชี่ยวชาญและการพัฒนาบุคลากรอย่างต่อเนื่อง เราได้รับมาตรฐาน ISO9001:2015</p>
         <div class="nav__links ">
-          <a href="#projects" class="btn-primary rv-all">ดูผลงาน</a>
-          <a class="btn-primary rv-all" 
+          <a href="#projects" class="btn-primary ">ดูผลงาน</a>
+          <a class="btn-primary " 
           href="#services" >บริการของเรา</a>
         </div>
       </div>
@@ -193,24 +189,22 @@
         <div class="hero__icon">🏗️</div>
         <div>
           <h4 class="text-animate " >  ประสบการณ์กว่า 10 ปี</h4>
-          <p class="rv-all">งานก่อสร้างโยธา งานติดตั้งระบบไฟฟ้า ระบบสื่อสารโทรคมนาคม ระบบปรับอากาศ ระบบสุขาภิบาล และระบบป้องกันอัคคีภัย ตามมาตรฐานอุตสาหกรรม</p>
+          <p data-pop style="--delay:100ms">งานก่อสร้างโยธา งานติดตั้งระบบไฟฟ้า ระบบสื่อสารโทรคมนาคม ระบบปรับอากาศ ระบบสุขาภิบาล และระบบป้องกันอัคคีภัย ตามมาตรฐานอุตสาหกรรม</p>
         </div>
       </div>
     </div>
   </section>
-
   <!-- ===== About ===== -->
   <section id="about" class="wrap">
     <div class="section__head reveal">
       <div>
         <h2 class="section__title text-animate">เกี่ยวกับบริษัท</h2>
-        <p class="section__desc rv-all">ก่อตั้งโดยทีมวิศวกรผู้เชี่ยวชาญ ให้บริการงานวิศวกรรม</p>
+        <p class="section__desc "data-pop style="--delay:100ms">ก่อตั้งโดยทีมวิศวกรผู้เชี่ยวชาญ ให้บริการงานวิศวกรรม</p>
       </div>
-      <a class="chip" href="#">ดูวิสัยทัศน์และพันธกิจ</a>
+      <a class="chip" data-pop style="--delay:100ms"href="#">ดูวิสัยทัศน์และพันธกิจ</a>
     </div>
-
     <div class="about">
-      <div class="about__card">
+      <div class="about__card"data-pop style="--x:-200px; --y:0; --delay:100ms;">
         <h3 style="margin-top:0">วิสัยทัศน์</h3>
         <p>Forward Vision Consultant คือผู้ให้บริการด้านไฟฟ้า เครื่องกล และก่อสร้างที่มีประสิทธิภาพ เพื่อความพึงพอใจสูงสุดของลูกค้า</p>
         <div class="about__grid">
@@ -219,7 +213,7 @@
           <div class="kpi"><b>ISO 9001</b> ระบบคุณภาพ</div>
         </div>
       </div>
-      <div class="about__card">
+      <div class="about__card "data-pop style="--x:200px; --y:0; --delay:100ms;">
         <h3 style="margin-top:0">กลุ่มบริษัท</h3>
         <ul style="margin:0 0 10px 18px">
           <li>FORWARD VISION CONSULTANT CO.,LTD บริษัทออกแบบและที่ปรึกษา</li>
@@ -229,19 +223,18 @@
       </div>
     </div>
   </section>
-
   <!-- ===== Services ===== -->
   <section id="services"class="wrap">
       <div class="section__head">
         <div>
           <h2 class="section__title text-animate">บริการของเรา</h2>
-          <p class="section__desc rv-all">ออกแบบ จัดหา ติดตั้ง ทดสอบ เดินระบบ และบำรุงรักษา</p>
+          <p class="section__desc "data-pop style="--delay:100ms">ออกแบบ จัดหา ติดตั้ง ทดสอบ เดินระบบ และบำรุงรักษา</p>
         </div>
-        <a class="chip" href="Services.html">ดูทั้งหมด
+        <a class="chip"data-pop style="--delay:100ms" href="Services.html">ดูทั้งหมด
         </a>
       </div>
       <div class="Services_cards">
-        <a class="Services_card " href="Services/Civil.html">
+        <a class="Services_card "data-pop style="--delay:100ms; --dur:5s" href="Services/Civil.html">
           <div class="Services_card__media " aria-hidden="true" ><img alt="CSA" src="Pictures/2afe0683-553c-4413-890a-e48b988534cc.png"></div>
             <div class="Services_card__body">
             <h3 class="Services_card__title">Civil Engineering</h3>
@@ -249,7 +242,7 @@
             <span class="chip">Civil</span>
           </div>
         </a>
-        <a class="Services_card" href="Services/Electrical.html">
+        <a class="Services_card" data-pop style="--delay:200ms; --dur:5s"href="Services/Electrical.html">
           <div class="Services_card__media" style="background-image:linear-gradient(135deg,#111827,#334155)" aria-hidden="true"><img alt="EE" src="Pictures/11bb6939-87cd-4471-827c-fd140e84307a.png"></div>
           <div class="Services_card__body">
             <h3 class="Services_card__title">Electrical Engineering</h3>
@@ -257,7 +250,7 @@
             <span class="chip">EE</span>
           </div>
         </a>
-        <a class="Services_card " href="Services/Mechanical.html">
+        <a class="Services_card "data-pop style="--delay:300ms; --dur:5s" href="Services/Mechanical.html">
           <div class="Services_card__media" style="background-image:linear-gradient(135deg,#0f172a,#1f2937)" aria-hidden="true"><img alt="Cm" src="Pictures/acd4fd33-8f5e-45b8-9c47-852de875ab75.png"></div>
           <div class="Services_card__body">
             <h3 class="Services_card__title">Mechanical Engineering</h3>
@@ -272,25 +265,23 @@
     <div class="section__head">
       <div>
         <h2 class="section__title text-animate">โครงการเด่น</h2>
-        <p class="section__desc rv-all">ตัวอย่างโครงการเด่นจากโครงกการทั้งหมดของเรา</p>
+        <p class="section__desc"data-pop style="--delay:100ms">ตัวอย่างโครงการเด่นจากโครงกการทั้งหมดของเรา</p>
       </div>
-      <a class="chip" href="Project.html">ดูทั้งหมด</a>
+      <a class="chip"data-pop style="--delay:100ms" href="Project.html">ดูทั้งหมด</a>
     </div>
     <div class="projects__grid" id="projectsTrack" aria-label="โครงการ">
-    <a class="project" href="Project/01_ติดตั้งหม้อแปลง.html">
+    <a class="project" data-pop style="--delay:100ms; --dur:5s"href="Project/01_ติดตั้งหม้อแปลง.html">
       <img loading="lazy" alt="ติดตั้งหม้อแปลงและตู้ MDB"
-           src="Pictures/LINE_ALBUM_Project  Installation TR at CPF สมุทราสาคร_250820_1.jpg">
+          src="Pictures/LINE_ALBUM_Project  Installation TR at CPF สมุทราสาคร_250820_1.jpg">
       <figcaption class="project__badge">ติดตั้งหม้อแปลงและตู้ MDB</figcaption>
     </a>
-
-    <a class="project" href="#">
+    <a class="project" data-pop style="--delay:200ms; --dur:5s"href="#">
       <img loading="lazy" alt="Sonepar" src="Pictures/S__45506562.jpg">
       <figcaption class="project__badge">Design-ก่อสร้าง Office Training Sonepar</figcaption>
     </a>
-
-    <a class="project" href="#">
+    <a class="project" data-pop style="--delay:300ms; --dur:5s"href="#">
       <img loading="lazy" alt="Installation Access Point"
-           src="Pictures/LINE_ALBUM_งานเดินสายเคเบิ้ล  CP อุตสาหกรรม บรรจุภั.jpg">
+          src="Pictures/LINE_ALBUM_งานเดินสายเคเบิ้ล  CP อุตสาหกรรม บรรจุภั.jpg">
       <figcaption class="project__badge">Installation Access Point</figcaption>
     </a>
   </div>
@@ -301,7 +292,7 @@
       <h2 class="section__title text-animate">ลูกค้าที่ไว้วางใจเรา</h2>
     </div>
   <div class="logo-ticker" id="ticker" aria-label="แถบโลโก้ลูกค้าแบบเลื่อนต่อเนื่อง">
-    <div class="ticker__viewport">
+    <div class="ticker__viewport"data-pop style="--x:200px; --y:0; --delay:100ms;">
       <div class="ticker__track" id="track">
         <a class="logo" href="#" title="Client A"><img src="Pictures/CPF_Logo.svg.png" alt="Client A"></a>
         <a class="logo" href="#" title="Client B"><img src="Pictures/images.png" alt="Client B"></a>
@@ -374,7 +365,6 @@
       <a href="contact.html" class="btn-primary" style="display:inline-block; margin-top:10px" onclick="toggleMenu(false)">ติดต่อเรา</a>
     </div>
   </div>
-  
   <script>//<!-- ===== แผงเมนูเลื่อนออกมาทางขวา ===== -->
     const drawer = document.getElementById('drawer');
     const openBtn = document.getElementById('openMenu');
@@ -392,7 +382,6 @@
       if (!e.target.closest('.drawer__panel')) e.preventDefault();
       }, { passive:false });
   </script> 
-
   <script>//<!-- ===== เลื่อยโลโก้เลื่อยๆ ===== -->
     function setupLogoTicker(root){
     const track = root.querySelector('#track');
@@ -412,7 +401,6 @@
     }
     setupLogoTicker(document.getElementById('ticker'));
   </script>
-
   <script>//<!-- ===== แถบเมนูย่อยเลื่อยลงมา ===== -->
   const toggle = document.getElementById('toggle');
   const menuRoot = document.getElementById('menuRoot');
@@ -436,75 +424,81 @@
   </script>
   <script>//<!-- ===== เนื้อหาล่นลงมา ===== -->
     (function(){
-  const SELECTOR   = 'h1.text-animate, h2.text-animate, h3.text-animate, h4.text-animate, p.text-animate, .text-animate';
-  const DELAY_STEP = 0.06;   // วินาทีต่ออักขระ
-  const START_DELAY= 0.00;   // หน่วงเริ่มต้นทั้งบล็อก
-  const REPLAY     = false;  // true = ออกจากจอแล้วรีเซ็ตเพื่อเล่นซ้ำทุกครั้ง
-
-  const hasSeg = 'Intl' in window && 'Segmenter' in Intl;
-  const seg    = hasSeg ? new Intl.Segmenter('th', { granularity:'grapheme' }) : null;
-
-  function splitToSpans(el){
-    if (!el.dataset.orig) el.dataset.orig = el.textContent;
-    const text  = el.dataset.orig;
-    el.textContent = '';
-
-    const units = seg ? Array.from(seg.segment(text), s => s.segment) : Array.from(text);
-    let i = 0;
-    for (const u of units){
-      if (u === ' '){
-        const sp = document.createElement('span');
-        sp.className = 'space';
-        sp.textContent = ' ';
-        el.appendChild(sp);
-        continue;
-      }
-      const span = document.createElement('span');
-      span.className = 'char';
-      span.textContent = u;
-      // ตั้งดีเลย์ทีละตัว
-      span.style.animationDelay = (START_DELAY + i * DELAY_STEP) + 's';
-      el.appendChild(span);
-      i++;
-    }
-    el.dataset.ready = '1';
-    // ให้เบราว์เซอร์คำนวณ layout ก่อน จากนั้นเปิดเล่น
-    requestAnimationFrame(()=> el.dataset.in = '1');
-  }
-
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{
-      const el = e.target;
-      if (e.isIntersecting){
-        if (el.dataset.ready !== '1') splitToSpans(el);
-        else el.dataset.in = '1';
-        if (!REPLAY) io.unobserve(el); // เล่นครั้งเดียว
-      }else if (REPLAY){
-        // รีเซ็ตเพิ่อให้เล่นใหม่เมื่อกลับเข้าจอ
-        el.dataset.in = '0';
-        el.textContent = el.dataset.orig || el.textContent;
-        el.dataset.ready = '0';
-      }
-    });
-  }, { threshold: 0.18, rootMargin: '0px 0px -8% 0px' });
-
-  document.querySelectorAll(SELECTOR).forEach(el => io.observe(el));
-})();
-    </script>
-    <script>//<!-- ===== เนื้อหาค่อยๆโผล่ ===== -->
-    (() => {
-    const els = document.querySelectorAll('.rv-all');
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('in');   // เล่นแอนิเมชัน “ทั้งบล็อก”
-        io.unobserve(e.target);          // เล่นครั้งเดียว
+      const SELECTOR   = 'h1.text-animate, h2.text-animate, h3.text-animate, h4.text-animate, p.text-animate, .text-animate';
+      const DELAY_STEP = 0.06;
+      const START_DELAY= 0.00;
+      const REPLAY     = false;
+      const hasSeg = 'Intl' in window && 'Segmenter' in Intl;
+      const seg    = hasSeg ? new Intl.Segmenter('th', { granularity:'grapheme' }) : null;
+      function splitToSpans(el){
+        if (!el.dataset.orig) el.dataset.orig = el.textContent;
+        const text  = el.dataset.orig;
+        el.textContent = '';
+        const units = seg ? Array.from(seg.segment(text), s => s.segment) : Array.from(text);
+        let i = 0;
+        for (const u of units){
+          if (u === ' '){
+            const sp = document.createElement('span');
+            sp.className = 'space';
+            sp.textContent = ' ';
+            el.appendChild(sp);
+            continue;
+          }
+          const span = document.createElement('span');
+          span.className = 'char';
+          span.textContent = u;
+          // ตั้งดีเลย์ทีละตัว
+          span.style.animationDelay = (START_DELAY + i * DELAY_STEP) + 's';
+          el.appendChild(span);
+          i++;
         }
+        el.dataset.ready = '1';
+        // ให้เบราว์เซอร์คำนวณ layout ก่อน จากนั้นเปิดเล่น
+        requestAnimationFrame(()=> el.dataset.in = '1');
+      }
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{
+          const el = e.target;
+          if (e.isIntersecting){
+            if (el.dataset.ready !== '1') splitToSpans(el);
+            else el.dataset.in = '1';
+            if (!REPLAY) io.unobserve(el); // เล่นครั้งเดียว
+          }else if (REPLAY){
+            // รีเซ็ตเพิ่อให้เล่นใหม่เมื่อกลับเข้าจอ
+            el.dataset.in = '0';
+            el.textContent = el.dataset.orig || el.textContent;
+            el.dataset.ready = '0';
+          }
         });
       }, { threshold: 0.18, rootMargin: '0px 0px -8% 0px' });
-
-      els.forEach(el => io.observe(el));
+      document.querySelectorAll(SELECTOR).forEach(el => io.observe(el));
     })();
-    </script>
+  </script>
+  <script>//<!-- ===== เนื้อหาค่อยๆโผล่ ===== -->
+    (function(){
+      const REPLAY = false; // เล่นครั้งเดียว (false); ถ้าอยากเล่นซ้ำทุกครั้งให้เป็น true
+      function initPopReveal(){
+        const els = document.querySelectorAll('[data-pop]');
+        if(!els.length) return;
+        const io = new IntersectionObserver((entries)=>{
+          entries.forEach(e=>{
+            const el = e.target;
+            if(e.isIntersecting){
+              el.classList.add('is-in');
+              if(!REPLAY) io.unobserve(el);  // เล่นครั้งเดียวแล้วเลิกสังเกต
+            }else if(REPLAY){
+              el.classList.remove('is-in');  // รีเซ็ตเพื่อเล่นใหม่รอบหน้า
+            }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -10% 0px' });
+        els.forEach(el => io.observe(el));
+      }
+      if(document.readyState === 'loading'){
+        document.addEventListener('DOMContentLoaded', initPopReveal, { once:true });
+      }else{
+        initPopReveal();
+      }
+    })();
+  </script>
 </body>
 </html>
