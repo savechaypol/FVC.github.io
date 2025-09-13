@@ -10,11 +10,6 @@
   <link rel="icon" type="image/png" href="Pictures/FVC-Approve-Rev01.png">
   <style>
     :root{
-      body{
-      background: url('Pictures/67382df8-c035-4632-991d-d7274420f6c6.png') no-repeat center center fixed;background-size: cover;}
-      @media (max-width: 768px){
-    body{
-      background: url('Pictures/67382df8-c035-4632-991d-d7274420f6c6.png') no-repeat center center fixed;background-size: cover;}}
       --bg:#0b1b2b;
       --bg-soft:#0f253c;
       --primary:#0ea5e9;
@@ -28,6 +23,9 @@
       --radius-sm: 12px;
       --max: 1300px;
     }
+    body {margin: 0;font-family: sans-serif;min-height: 100vh;position: relative;overflow-x: hidden;}
+    body::before {content: "";position: fixed;top: 0; left: 0; right: 0; bottom: 0;background: url('Pictures/67382df8-c035-4632-991d-d7274420f6c6.png') no-repeat center center;background-size: cover;z-index: -1;}
+
     *{box-sizing:border-box}
     html,body{margin:0;padding:0}
     body{font-family:"Kanit",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif; color:var(--text); background:#f8fafc; line-height:1.6}
