@@ -8,10 +8,11 @@
   <!-- ฟอนต์ไทยอ่านง่าย -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap" >
 	<link rel="stylesheet" href="css/style.css">
-
-
   <style>
-    /* ===== CSS Variables ===== */
+    body{
+      background: url('Pictures/67382df8-c035-4632-991d-d7274420f6c6.png') no-repeat center center fixed;
+      background-size: cover;
+      }
     :root{
       --bg:#0b1220;
       --panel:#0f1b2d;
@@ -26,7 +27,6 @@
       --radius: 16px;
       --wrap: min(1200px, 92vw);
     }
-
     /* ===== Base ===== */
    *{box-sizing:border-box}
     html,body{margin:0;padding:0}
@@ -37,7 +37,6 @@
     img{max-width:100%;display:block}
     .wrap{width:var(--wrap);margin:0 auto}
     .visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
-
     /* ===== Header / Hero ===== */
     .hero_Project{
       padding: 48px 0 10px;
@@ -48,22 +47,17 @@
     .breadcrumbs{color:var(--muted);font-size:14px;margin-bottom:10px}
     .breadcrumbs a{color:var(--muted)}
     .breadcrumbs a:hover{color:#cfe2ff}
-
     .hero__head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px}
     .title{font-size:clamp(28px, 3.2vw, 44px);line-height:1.1;margin:8px 0 10px}
     .subtitle{color:var(--muted);margin:0}
-
     /* ===== Filter Bar ===== */
     .tools{position:sticky;top:0;z-index:40;background:linear-gradient(180deg, rgba(11,18,32,.92), rgba(11,18,32,.86));backdrop-filter: blur(6px);border-bottom:1px solid rgba(148,163,184,.08)}
     .tools__inner{display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding:14px 0}
-
     .chip{display:inline-flex;align-items:center;gap:8px;background:var(--chip);border:1px solid rgba(148,163,184,.22);color:#d7e1ed;padding:8px 12px;border-radius:999px;font-size:14px}
     .chip[data-active="true"], .chip:focus{outline:none;box-shadow:0 0 0 3px var(--ring);border-color:transparent}
     .chip[data-active="true"]{background:linear-gradient(180deg,#1a3a6d,#132d54);color:#e7f1ff}
     .chip__dot{display:inline-block;width:8px;height:8px;border-radius:50%}
-
     .spacer{flex:1}
-
     .search{position:relative}
     .search input{
       background:var(--panel);
@@ -76,32 +70,25 @@
     }
     .search input:focus{outline:none;box-shadow:0 0 0 3px var(--ring)}
     .search svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);opacity:.7}
-
     /* ===== Grid ===== */
     .grid{display:grid;gap:18px;padding:22px 0 34px;grid-template-columns: repeat(12, 1fr)}
     .card{grid-column: span 4; position:relative;border-radius:var(--radius);overflow:hidden;background:var(--panel-2);box-shadow: var(--shadow);transition: transform .35s ease, box-shadow .35s ease;border:3px solid rgb(255, 254, 254);}
     .card:hover{transform:translateY(-6px);box-shadow: 0 14px 40px rgba(2,8,23,.5)}
-
     /* Support auto-fit layout for narrower screens */
     @media (max-width: 1100px){ .card{grid-column: span 6} }
     @media (max-width: 720px){ .card{grid-column: span 12} }
-
     .card__media{aspect-ratio:16/10;background:#0b1526;position:relative}
     .card__media img{width:100%;height:100%;object-fit:cover}
     .grad{position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,.7) 100%)}
-
     .badge{position:absolute;top:12px;left:12px;background:rgba(2,6,23,.6);color:#eaf2ff;border:1px solid rgba(231,241,255,.25);padding:6px 10px;border-radius:999px;font-size:12px;backdrop-filter: blur(6px)}
-
     .card__body{padding:14px 14px 16px;color:#c9d7ea;}
     .card__title{font-size:18px;line-height:1.35;margin:0 0 6px;}
     .meta{display:flex;gap:10px;flex-wrap:wrap;color:#c9d7ea;font-size:13px;opacity:.9}
     .meta span{display:inline-flex;align-items:center;gap:6px}
     .meta svg{opacity:.7}
-
     .card__footer{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
     .btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(180deg,#19407d,#0e2a52);border:1px solid rgba(148,163,184,.25);color:#e8f1ff;padding:10px 12px;border-radius:12px;font-size:14px}
     .btn:hover{filter:brightness(1.06)}
-
     /* ===== Load more ===== */
     .loadbar{display:flex;justify-content:center;padding:4px 0 36px}
     .loadbar button{background:transparent;border:1px dashed rgba(148,163,184,.35);color:#d7e4f6;padding:10px 14px;border-radius:999px}
@@ -167,7 +154,7 @@
       <!-- ===== Card Template Examples ===== -->
       <!-- 1 -->
       <article class="card" data-tags="electrical cpf transformer samut sakhon" data-cat="electrical">
-        <a href="Project/01_ติดตั้งหม้อแปลง.html">
+        <a href="01_ติดตั้งหม้อแปลง.html">
           <div class="card__media">
             <img src="Pictures/LINE_ALBUM_Project  Installation TR at CPF สมุทราสาคร_250820_1.jpg" alt="ติดตั้งหม้อแปลงและตู้ MDB" />
             <span class="badge">ระบบไฟฟ้า</span>
@@ -197,7 +184,7 @@
 
       <!-- 2 -->
       <article class="card" data-tags="civil office sonepar training" data-cat="civil">
-        <a href="#">
+        <a href="02_Desing_Sonepar.html">
           <div class="card__media">
             <img src="Pictures/S__45506562.jpg" alt="ก่อสร้างอาคารสำนักงานและศูนย์ฝึกอบรม" />
             <span class="badge">โยธา</span>
@@ -224,10 +211,9 @@
           </div>
         </a>
       </article>
-
       <!-- 3 -->
       <article class="card" data-tags="ict network ethernet fiber security" data-cat="ict">
-        <a href="#">
+        <a href="03_InstallAccessport_CPPC.html">
           <div class="card__media">
             <img src="Pictures/LINE_ALBUM_งานเดินสายเคเบิ้ล  CP อุตสาหกรรม บรรจุภั.jpg" alt="ระบบเครือข่ายและความปลอดภัย" />
             <span class="badge">ICT</span>
@@ -256,7 +242,7 @@
       </article>
 
       <article class="card" data-tags="civil warehouse slab" data-cat="civil" hidden>
-        <a href="#">
+        <a href="04_ทำพื้นเครื่องจักร_BGRIM.html">
           <div class="card__media"><img src="Pictures/LINE_ALBUM_Project ทำพื้นเครื่องจักร โรฃไฟฟ้า BGRIM ราชบุ_2.jpg" alt="พื้นคอนกรีต โกดังสินค้า" /><span class="badge">โยธา</span><div class="grad" aria-hidden="true"></div></div>
           <div class="card__body">
             <h3 class="card__title">ทำพื้นเครื่องจักร โรงไฟฟ้า</h3>
