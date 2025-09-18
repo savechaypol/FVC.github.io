@@ -21,16 +21,30 @@
       </a>
 
       <div class="nav__links">
-        <a href="index.html">เกี่ยวกับเรา</a>
+        <a href="About.html">เกี่ยวกับเรา</a>
         <a href="Services.html">บริการ</a>
         <a href="Project.html">โครงการ</a>
-        <a href="index.html">ข่าวสาร</a>
+        <a href="News.html">ข่าวสาร</a>
         <a href="contact.html" class="btn-primary">ติดต่อเรา</a>
       </div>
       <button class="nav__toggle" id="openMenu" aria-label="เปิดเมนู">เมนู</button>
     </nav>
   </header>
-
+  <!-- ===== Mobile drawer ===== -->
+  <div class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="เมนูนำทาง">
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:10px">
+        <div class="brand__name">Forward Vision Consultant</div>
+        <button id="closeMenu" class="nav__toggle" style="border-color:rgba(255,255,255,.25)">ปิด</button>
+      </div>
+      <a href="index.html" onclick="toggleMenu(false)">หน้าแรก</a>
+      <a href="About.html" onclick="toggleMenu(false)">เกี่ยวกับเรา</a>
+      <a href="Services.html" onclick="toggleMenu(false)">บริการ</a>
+      <a href="Project.html" onclick="toggleMenu(false)">ผลงาน</a>
+      <a href="News.html" onclick="toggleMenu(false)">ข่าวสาร</a>
+      <a href="contact.html" class="btn-primary" style="display:inline-block; margin-top:10px" onclick="toggleMenu(false)">ติดต่อเรา</a>
+    </div>
+  </div>
   <!-- ===== Services ===== -->
   <section id="services"class="wrap">
       <div class="section__head">
@@ -68,7 +82,6 @@
         </a>
       </div>
   </section>
-
   <!-- ===== Footer ===== -->
   <section id="Footer" class="site-footer">
     <div class="wrap">
@@ -107,22 +120,6 @@
       </div>
     </div>
   </section>
-
-<!-- ===== Mobile drawer ===== -->
-  <div class="drawer" id="drawer" aria-hidden="true">
-    <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="เมนูนำทาง">
-      <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:10px">
-        <div class="brand__name">Forward Vision Consultant</div>
-        <button id="closeMenu" class="nav__toggle" style="border-color:rgba(255,255,255,.25)">ปิด</button>
-      </div>
-      <a href="index.html" onclick="toggleMenu(false)">หน้าแรก</a>
-      <a href="index.html"onclick="toggleMenu(false)">เกี่ยวกับเรา</a>
-      <a href="Services.html" onclick="toggleMenu(false)">บริการ</a>
-      <a href="Project.html" onclick="toggleMenu(false)">โครงการ</a>
-      <a href="index.html" onclick="toggleMenu(false)">ข่าวสาร</a>
-      <a href="contact.html" class="btn-primary" style="display:inline-block; margin-top:10px" onclick="toggleMenu(false)">ติดต่อเรา</a>
-    </div>
-  </div>
 
   <script>
     const drawer = document.getElementById('drawer');

@@ -3,149 +3,145 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FVC • ISO 9001:2015 Certificate</title>
+  <title>News | FVC</title>
   <meta name="description" content="ใบรับรองระบบบริหารคุณภาพ ISO 9001:2015 ของ Forward Vision Consultant" />
   <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#0b1220; --bg2:#0f182a; --card:#101828;
-      --border:#1f2a44; --text:#e6edf6; --muted:#98a2b3;
-      --primary:#22d3ee; --primary-weak:#22d3ee22; --accent:#34d399;
-      --radius:18px; --shadow:0 10px 30px rgba(0,0,0,.25);
+      --bg:#0b1220;
+      --border:#3c3c8fa4;
+      --text:#e6edf6;
+      --muted:#98a2b3;
+      --primary:#0ea5e9;
+      --accent:#34d399;
+      --radius:18px;
+      --shadow:0 10px 30px rgba(0,0,0,.25);
+      --maxw:1300px;
     }
+    body {margin: 0;font-family: sans-serif;min-height: 100vh;position: relative;overflow-x: hidden;}
+    body::before {content: "";position: fixed;top: 0; left: 0; right: 0; bottom: 0;background: url('Pictures/67382df8-c035-4632-991d-d7274420f6c6.png') no-repeat center center;background-size: cover;z-index: -1;}
     *{box-sizing:border-box}
-    html,body{margin:0}
-    body{
-      font-family:"Kanit",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
-      background: radial-gradient(60rem 60rem at 10% -10%, #22d3ee1a, transparent 60%),
-                  radial-gradient(60rem 60rem at 110% 10%, #34d3991a, transparent 60%),
-                  var(--bg);
-      color:var(--text);
-      line-height:1.6;
-    }
+    html,body{margin:0;padding:0}
+    body{font-family:"Kanit",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif; color:var(--text); background:#f8fafc; line-height:1.6}
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
-    .container{max-width:1120px;margin:0 auto;padding:0 16px}
-    .header{
-      position:sticky;top:0;z-index:50;
-      backdrop-filter: blur(8px);
-      background: #0b1220cc; border-bottom:1px solid var(--border);
-    }
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
-    .brand{display:flex;align-items:center;gap:10px}
-    .logo{width:40px;height:40px;border-radius:14px;background:var(--primary-weak);
-      border:1px solid #22d3ee55;display:grid;place-items:center;font-weight:700;color:#7ee3f1}
-    .navlinks{display:none;gap:20px}
-    .nav a:hover{color:#7ee3f1}
-    .hamburger{display:inline-flex;flex-direction:column;gap:4px;border:0;background:transparent;cursor:pointer}
-    .hamburger span{width:24px;height:2px;background:#bcd0e8}
-    @media(min-width:900px){ .navlinks{display:flex} .hamburger{display:none} }
-
+    /* ===== Header ===== */
+    .site-header{position:sticky;top:0;z-index:40;background:rgba(11,27,43,.85);backdrop-filter:saturate(150%) blur(8px);border-bottom:1px solid rgba(255,255,255,.08)}
+    .nav{max-width:var(--maxw);margin:auto;display:flex;align-items:center;gap:18px;padding:12px 20px;color:#e2e8f0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand__name{font-weight:700;letter-spacing:.3px}
+    .nav__links{margin-left:auto;display:flex;gap:14px;align-items:center}
+    .nav__links a{padding:10px 12px;border-radius:10px;color:#e5e7eb}
+    .nav__links a:hover{background:rgba(235, 230, 230, 0.08)}
+    .btn-primary{display:flex;background:var(--primary); color:white; padding:10px 10px; border-radius:12px; font-weight:600; box-shadow:0 8px 18px rgba(14,165,233,.35)}
+    .btn-primary:hover{filter:brightness(1.1);}
+    .nav__toggle{display:none;margin-left:auto;background:transparent;border:1px solid rgba(255,255,255,.15);color:#e5e7eb;padding:8px 10px;border-radius:10px;}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{max-width:1200px;margin:0 auto;padding:0 16px}
     /* hero */
     .hero{padding:56px 0 32px}
     .hero-grid{display:grid;gap:24px}
     @media(min-width:900px){ .hero-grid{grid-template-columns:1.1fr 0.9fr;align-items:center} }
-    .btn{display:inline-block;padding:12px 18px;border-radius:14px;border:1px solid #ffffff22}
-    .btn-primary{border-color:#22d3ee55;background:#22d3ee22}
-    .btn:hover{background:#ffffff10}
-
+    
     /* card + image */
-    .card{background:linear-gradient(180deg,#0e1a2f, #0b1528);
-      border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:14px}
+    .card{background:linear-gradient(180deg,#142644, #0b1528);
+      border:3px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:14px}
     .caption{font-size:.9rem;color:var(--muted);margin-top:6px}
-
     /* sections */
     section{padding:40px 0}
-    h1{font-size:clamp(28px,3.2vw,44px);margin:0 0 8px}
-    h2{font-size:clamp(22px,2.2vw,28px);margin:0 0 12px}
-    h3{font-size:20px;margin:0 0 10px}
+    h1{font-size:clamp(35px,3.2vw,42px);margin:0 0 8px;}
+    h2{font-size:clamp(22px,2.2vw,30px);margin:0 0 12px}
     p{margin:8px 0}
-    ul{margin:8px 0 0 18px}
-    li{margin:6px 0}
 
     .grid-2{display:grid;gap:16px}
     @media(min-width:900px){ .grid-2{grid-template-columns:1fr 1fr} }
-
     /* timeline */
     .timeline{display:grid;gap:12px}
     @media(min-width:900px){ .timeline{grid-template-columns:repeat(4,1fr)} }
     .tl-item{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px}
     .tl-item small{color:var(--muted);display:block}
-
-    /* download tile */
-    .tile{display:flex;gap:12px;align-items:center;background:var(--card);border:1px solid var(--border);
-      padding:14px;border-radius:14px}
-    .tile:hover{border-color:#22d3ee66}
-
-    /* footer */
-    .footer{padding:24px 0;border-top:1px solid var(--border);color:#9fb2c7;text-align:center}
-
-    /* mobile nav */
-    .drawer{position:fixed;inset:0 0 auto 0;background:#0b1220f2;
-      transform:translateY(-100%);transition:.25s ease;display:flex;flex-direction:column}
-    .drawer.open{transform:translateY(0)}
-    .drawer a{padding:14px 16px;border-bottom:1px solid #131f35}
-    .drawer-close{margin:10px auto 14px;padding:10px 18px;border-radius:12px;border:1px solid #223153;background:#17223a;color:#cfe6fb}
-
     /* lightbox */
     .lightbox{position:fixed;inset:0;background:#000c;display:none;align-items:center;justify-content:center;z-index:100}
     .lightbox.open{display:flex}
     .lightbox img{max-width:92vw;max-height:86vh;border-radius:12px;border:1px solid #2b3a5d;box-shadow:var(--shadow)}
     .lightbox .close{position:absolute;top:14px;right:14px;border:1px solid #ffffff33;background:#0b1220bb;
       color:#fff;border-radius:12px;padding:8px 12px;cursor:pointer}
+      /* ===== Footer ===== */
+    section{padding:10px 20px;}
+    .site-footer{background:#0b1220;color:#ffffff;}
+    .wrap{max-width:var(--maxw); margin:auto;}
+    .footer__grid{display:grid; grid-template-columns: 1.2fr repeat(3,1fr); gap:20px;}
+    .footer__col h4{margin:0 0 10px;}
+    .footer__col a{display:block; color:#cbd5e1;/**/ padding:6px 0; opacity:.9;}
+    .footer__col a:hover{opacity:1;filter:brightness(10);}
+    .footer__bottom{border-top:1px solid rgba(255, 255, 255, 0.08); margin-top:26px; padding-top:16px; display:flex; align-items:center; justify-content:space-between; gap:12px;}
+    .chip {display: inline-block;background: #e5e5e7;color: #030303;font-size: 12px;font-weight: 600;padding: 4px 10px;border-radius: 999px;}
+    .chip:hover {transition: transform .4s ease, box-shadow .4s ease;transform: scale(1.2); box-shadow: 0 12px 24px rgba(0,0,0,0.2);}
+      /* ===== Mobile drawer ===== */
+    .drawer{ position:fixed; z-index:40;inset:0; background:rgba(2,6,23,.55); backdrop-filter: blur(4px);visibility:hidden;opacity:0;transition: opacity .6s ease, visibility 0s linear .6s;}
+    .drawer.is-open{visibility:visible;opacity:1;transition: opacity .6s ease;}
+    .drawer__panel{position:absolute; right:0; top:0; bottom:0; width:min(86vw,360px); background:#0e2136; color:#e5e7eb;padding:18px; box-shadow:-10px 0 30px rgba(2,8,23,.4);transform:translateX(100%);transition:transform .6s ease-in-out;}
+    .drawer.is-open .drawer__panel{transform:translateX(0);}
+    .drawer__panel a{display:block; padding:12px 10px; border-radius:10px;text-decoration:none;color:inherit;}
+    .drawer__panel a:hover{background:rgba(247,246,246,0.06);}
+    @media (max-width: 1024px){
+    .hero__inner{grid-template-columns:1fr}}
+    @media (max-width: 768px){
+    .nav__links{display:none}
+    .nav__toggle{display:inline-flex}
+    .footer__grid{grid-template-columns:1fr 1fr}}
+    @media (max-width: 640px){
+    .footer__grid{grid-template-columns:1fr}
+    }
   </style>
 </head>
 <body>
-  <!-- Header -->
-  <header class="header">
-    <div class="container">
-      <nav class="nav">
-        <a href="#home" class="brand" aria-label="Forward Vision Consultant">
-          <div class="logo">FVC</div>
-          <div>
-            <div style="font-size:14px;color:#bcd0e8">Forward Vision Consultant Co., Ltd.</div>
-            <div style="font-size:12px;color:#95a8c2">Quality Management System • ISO 9001:2015</div>
-          </div>
-        </a>
-        <div class="navlinks">
-          <a href="#certificate">ใบรับรอง</a>
-          <a href="#scope">ขอบเขต</a>
-          <a href="#timeline">กำหนดอายุ</a>
-          <a href="#downloads">ดาวน์โหลด</a>
-          <a href="#contact">ติดต่อ</a>
+<!-- ===== Header ===== -->
+  <header class="site-header ">
+    <nav class="nav">
+      <a href="index.html" class="brand " aria-label="Forward Vision Consultant">
+        <div class="btn-primary">FVC&nbsp;<img src="Pictures/FVC-Approve-Rev01.png" alt="FVC Emoji" width="25" height="25">
         </div>
-        <button class="hamburger" id="openMenu" aria-label="เปิดเมนูบนมือถือ">
-          <span></span><span></span><span></span>
-        </button>
-      </nav>
-    </div>
+        <div class="brand__name ">Forward Vision Consultant </div>
+      </a>
+      <div class="nav__links ">
+        <a href="About.html">เกี่ยวกับเรา</a>
+        <a href="Services.html">บริการ</a>
+        <a href="Project.html">ผลงาน</a>
+        <a href="News.html">ข่าวสาร</a>
+        <a href="contact.html" class="btn-primary">ติดต่อเรา</a>
+      </div>
+      <button class="nav__toggle" id="openMenu" aria-label="เปิดเมนู">เมนู</button>
+    </nav>
   </header>
-
-  <!-- Mobile Drawer -->
+  <!-- ===== Mobile drawer ===== -->
   <div class="drawer" id="drawer" aria-hidden="true">
-    <a href="#certificate">ใบรับรอง</a>
-    <a href="#scope">ขอบเขต</a>
-    <a href="#timeline">กำหนดอายุ</a>
-    <a href="#downloads">ดาวน์โหลด</a>
-    <a href="#contact">ติดต่อ</a>
-    <button class="drawer-close" id="closeDrawer">ปิดเมนู</button>
+    <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="เมนูนำทาง">
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:10px">
+        <div class="brand__name">Forward Vision Consultant</div>
+        <button id="closeMenu" class="nav__toggle" style="border-color:rgba(255,255,255,.25)">ปิด</button>
+      </div>
+      <a href="index.html" onclick="toggleMenu(false)">หน้าแรก</a>
+      <a href="About.html" onclick="toggleMenu(false)">เกี่ยวกับเรา</a>
+      <a href="Services.html" onclick="toggleMenu(false)">บริการ</a>
+      <a href="Project.html" onclick="toggleMenu(false)">โครงการ</a>
+      <a href="News.html" onclick="toggleMenu(false)">ข่าวสาร</a>
+      <a href="contact.html" class="btn-primary" style="display:inline-block; margin-top:10px" onclick="toggleMenu(false)">ติดต่อเรา</a>
+    </div>
   </div>
-
   <!-- Hero -->
   <section id="home" class="hero">
     <div class="container hero-grid">
       <div>
-        <h1>ระบบบริหารคุณภาพ <span style="color:#7ee3f1">ISO 9001:2015</span></h1>
-        <p>การรับรองระบบบริหารคุณภาพสำหรับบริการที่ปรึกษาในการติดตั้งเครื่องจักรอุตสาหกรรม</p>
-        <div style="margin-top:12px">
-          <a class="btn btn-primary" href="#certificate">ดูรายละเอียดใบรับรอง</a>
-          <a class="btn" href="#downloads">ดาวน์โหลดเอกสาร</a>
+        <h1>ระบบบริหารคุณภาพ <span  style="color:#5be6f8">ISO 9001:2015 </span></h1>
+        <div class="card" >
+        <h2 style="color:#5be6f8">รายละเอียดใบรับรอง</h2>
+        <p><strong>Company:</strong> FORWARD VISION CONSULTANT CO., LTD</p>
+        <p><strong>ที่อยู่:</strong> 104/21 Liapklongsong Road, Bangchan, Klongsamwa, Bangkok 10510 Thailand</p>
+        <p><strong>มาตรฐาน:</strong> ISO 9001:2015 • <strong>หน่วยรับรอง:</strong> INTERCERT</p>
+        <p><strong>Registration No.:</strong> IC-QM-2412001</p>
         </div>
-        <ul style="color:#cbd5e1;margin-top:12px">
-          <li>ปรับปรุงกระบวนการทำงานให้เป็นมาตรฐาน</li>
-          <li>เพิ่มความพึงพอใจของลูกค้าและผู้มีส่วนได้ส่วนเสีย</li>
-          <li>สนับสนุนการตรวจติดตามและการพัฒนาอย่างต่อเนื่อง</li>
-        </ul>
       </div>
 
       <!-- Certificate Card -->
@@ -157,118 +153,65 @@
       </div>
     </div>
   </section>
-
-  <!-- Certificate Section -->
-  <section id="certificate">
-    <div class="container grid-2">
-      <div class="card">
-        <h2>รายละเอียดใบรับรอง</h2>
-        <p><strong>Company:</strong> FORWARD VISION CONSULTANT CO., LTD</p>
-        <p><strong>ที่อยู่:</strong> 104/21 Liapklongsong Road, Bangchan, Klongsamwa, Bangkok 10510 Thailand</p>
-        <p><strong>มาตรฐาน:</strong> ISO 9001:2015 • <strong>หน่วยรับรอง:</strong> INTERCERT</p>
-        <p><strong>Registration No.:</strong> IC-QM-2412001</p>
-      </div>
-      <div class="card">
-        <h3>Scope</h3>
-        <p><strong>Consulting services for industrial machine installation.</strong></p>
-        <ul>
-          <li>การบริหารโครงการติดตั้งเครื่องจักร</li>
-          <li>การทวนสอบ/ทดสอบก่อนส่งมอบ (FAT/SAT)</li>
-          <li>การจัดทำเอกสาร QMS (WI/SOP/Record) และการอบรมที่เกี่ยวข้อง</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Timeline -->
-  <section id="timeline" style="background:#0c1528;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
-    <div class="container">
-      <h2>กำหนดอายุใบรับรอง</h2>
-      <div class="timeline">
-        <div class="tl-item"><small>Initial Certification</small><strong>02 Dec 2024</strong></div>
-        <div class="tl-item"><small>Certificate Issue</small><strong>02 Dec 2024</strong></div>
-        <div class="tl-item"><small>Surveillance Validity</small><strong>01 Dec 2025</strong></div>
-        <div class="tl-item"><small>Recertification</small><strong>01 Dec 2027</strong></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Downloads -->
-  <section id="downloads">
-    <div class="container">
-      <h2>ดาวน์โหลดเอกสาร</h2>
-      <a class="tile" href="/mnt/data/E-Copy-FORWARD VISION CONSULTANT-QMS-CA.pdf" download>
-        <div style="font-size:28px">📄</div>
-        <div>
-          <div style="font-weight:600">ISO 9001:2015 Certificate (PDF)</div>
-          <div style="color:var(--muted);font-size:14px">E-Copy • กดเพื่อดาวน์โหลด</div>
+  <!-- ===== Footer ===== -->
+  <section id="Footer" class="site-footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div class="footer__col">
+          <div class="brand" style="margin-bottom:8px">
+            <div class="btn-primary">FVC&nbsp;<img src="Pictures/FVC-Approve-Rev01.png" alt="FVC Emoji" width="25" height="25"></div>
+            <div class="brand__name">Forward Vision Consultant</div></div>
+          <p style="margin:0 0 10px; color:#94a3b8">ผู้รับเหมางานโครงการ</p>
         </div>
-      </a>
+        <div class="footer__col">
+          <h4>บริษัท</h4>
+          <a href="index.html#about">ประวัติองค์กร</a>
+          <a href="index.html#about">วิสัยทัศน์และพันธกิจ</a>
+          <a href="index.html#about">โครงสร้างธุรกิจ</a>
+        </div>
+        <div class="footer__col">
+          <h4>บริการ</h4>
+          <a href="Civil.html">Civil</a>
+          <a href="Electrical.html">Electrical</a>
+          <a href="Mechanical.html">Mechanical</a>
+        </div>
+        <div class="footer__col">
+          <h4>ติดต่อ</h4>
+          <a href="contact.html">ติดต่อเรา</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <small>COPYRIGHT© 2025 FORWARD VISION CONSULTANT CO.,LTD. ALL RIGHTS RESERVED</small>
+        <div style="display:flex; gap:10px">
+          <a class="chip" href="https://www.facebook.com/">Facebook</a>
+          <a class="chip" href="https://www.youtube.com/">YouTube</a>
+        </div>
+      </div>
     </div>
   </section>
-
-  <!-- Contact -->
-  <section id="contact" style="background:#0c1528;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
-    <div class="container grid-2">
-      <div class="card">
-        <h2>ติดต่อบริษัท</h2>
-        <p>Forward Vision Consultant Co., Ltd.</p>
-        <p>104/21 Liapklongsong Road, Bangchan, Klongsamwa, Bangkok 10510 Thailand</p>
-        <p>อีเมล: info@fvc.co.th (ตัวอย่าง)</p>
-      </div>
-      <div class="card">
-        <iframe
-          title="FVC Map"
-          width="100%" height="320" loading="lazy" allowfullscreen
-          referrerpolicy="no-referrer-when-downgrade"
-          src="https://www.google.com/maps?q=13.8595327,100.702909&z=16&output=embed">
-        </iframe>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">© <span id="year"></span> Forward Vision Consultant Co., Ltd. • QMS ISO 9001:2015</footer>
-
   <!-- Lightbox -->
   <div class="lightbox" id="lightbox" aria-hidden="true">
     <button class="close" id="closeLightbox" aria-label="ปิดภาพขยาย">ปิด</button>
     <img src="Pictures/ISO 9001.png" alt="ISO 9001:2015 Certificate" alt="ISO 9001:2015 Certificate (Full)">
   </div>
-
-  <script>
-    // ปีในฟุตเตอร์
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // เมนูมือถือ (Drawer)
+  <script>//<!-- ===== แผงเมนูเลื่อนออกมาทางขวา ===== -->
     const drawer = document.getElementById('drawer');
-    const openMenu = document.getElementById('openMenu');
-    const closeDrawer = document.getElementById('closeDrawer');
-    const drawerLinks = drawer.querySelectorAll('a');
-
-    function toggleDrawer(open){
-      drawer.classList.toggle('open', open);
-      drawer.setAttribute('aria-hidden', open ? 'false' : 'true');
-      document.body.style.overflow = open ? 'hidden' : '';
+    const openBtn = document.getElementById('openMenu');
+    const closeBtn = document.getElementById('closeMenu');
+    function toggleMenu(force){
+      const open = (typeof force === 'boolean') ? force : !drawer.classList.contains('is-open');
+      drawer.classList.toggle('is-open', open);
+      drawer.setAttribute('aria-hidden', String(!open));
+      if(open) document.body.style.overflow='hidden'; else document.body.style.overflow='';
     }
-    openMenu.addEventListener('click', () => toggleDrawer(true));
-    closeDrawer.addEventListener('click', () => toggleDrawer(false));
-    drawerLinks.forEach(a => a.addEventListener('click', () => toggleDrawer(false)));
-
-    // Smooth scroll สำหรับลิงก์ภายใน (รองรับเบราว์เซอร์ใหม่ ๆ)
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', e=>{
-        const id = a.getAttribute('href');
-        if(id.length > 1){
-          const el = document.querySelector(id);
-          if(el){
-            e.preventDefault();
-            el.scrollIntoView({behavior:'smooth', block:'start'});
-          }
-        }
-      });
-    });
-
+    openBtn.addEventListener('click', () => toggleMenu(true));
+    closeBtn.addEventListener('click', () => toggleMenu(false));
+    drawer.addEventListener('click', (e)=>{ if(e.target===drawer) toggleMenu(false) });
+    drawer.addEventListener('touchmove', (e) => {
+      if (!e.target.closest('.drawer__panel')) e.preventDefault();
+      }, { passive:false });
+  </script>
+  <script>
     // Lightbox สำหรับรูปใบรับรอง
     const lightbox = document.getElementById('lightbox');
     const openLightbox = document.getElementById('openLightbox');

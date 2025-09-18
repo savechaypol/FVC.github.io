@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Forward Vision Consultant </title>
+  <title>Forward Vision Consultant</title>
   <meta name="description" content="หน้าเว็บไซต์โครง FVC" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap" >
   <link rel="icon" type="image/png" href="Pictures/FVC-Approve-Rev01.png">
@@ -152,7 +152,7 @@
         <div class="brand__name ">Forward Vision Consultant </div>
       </a>
       <div class="nav__links ">
-        <a href="#about">เกี่ยวกับเรา</a>
+        <a href="About.html">เกี่ยวกับเรา</a>
         <a href="Services.html">บริการ</a>
         <a href="Project.html">ผลงาน</a>
         <a href="News.html  ">ข่าวสาร</a>
@@ -161,6 +161,21 @@
       <button class="nav__toggle" id="openMenu" aria-label="เปิดเมนู">เมนู</button>
     </nav>
   </header>
+  <!-- ===== Mobile drawer ===== -->
+  <div class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="เมนูนำทาง">
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:10px">
+        <div class="brand__name">Forward Vision Consultant</div>
+        <button id="closeMenu" class="nav__toggle" style="border-color:rgba(255,255,255,.25)">ปิด</button>
+      </div>
+      <a href="index.html" onclick="toggleMenu(false)">หน้าแรก</a>
+      <a href="About.html" onclick="toggleMenu(false)">เกี่ยวกับเรา</a>
+      <a href="Services.html" onclick="toggleMenu(false)">บริการ</a>
+      <a href="Project.html" onclick="toggleMenu(false)">ผลงาน</a>
+      <a href="News.html" onclick="toggleMenu(false)">ข่าวสาร</a>
+      <a href="contact.html" class="btn-primary" style="display:inline-block; margin-top:10px" onclick="toggleMenu(false)">ติดต่อเรา</a>
+    </div>
+  </div>
   <!-- ===== Hero ===== -->
   <section class="hero">
     <div class="hero__inner  ">
@@ -168,7 +183,7 @@
         <p class="hero__text "data-pop style="--delay:100ms">บริการของเราเริ่มต้นตั้งแต่การออกแบบไปจนถึงการขอใบอนุญาตก่อสร้างในนิคมอุตสาหกรรม (กนอ.) และได้กำหนดกลยุทธ์การบริหารจัดการเพื่อลดต้นทุนและเพิ่มประสิทธิภาพ ซึ่งเป็นนโยบายสำคัญ เรามีวิศวกรผู้เชี่ยวชาญและการพัฒนาบุคลากรอย่างต่อเนื่อง เราได้รับมาตรฐาน ISO9001:2015</p>
         <div class="nav__links ">
           <a href="#projects" class="btn-primary ">ดูผลงาน</a>
-          <a class="btn-primary " 
+          <a class="btn-primary "
           href="#services" >บริการของเรา</a>
         </div>
       </div>
@@ -327,21 +342,6 @@
       </div>
     </div>
   </section>
-  <!-- ===== Mobile drawer ===== -->
-  <div class="drawer" id="drawer" aria-hidden="true">
-    <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="เมนูนำทาง">
-      <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:10px">
-        <div class="brand__name">Forward Vision Consultant</div>
-        <button id="closeMenu" class="nav__toggle" style="border-color:rgba(255,255,255,.25)">ปิด</button>
-      </div>
-      <a href="index.html" onclick="toggleMenu(false)">หน้าแรก</a>
-      <a href="index.html" onclick="toggleMenu(false)">เกี่ยวกับเรา</a>
-      <a href="Services.html" onclick="toggleMenu(false)">บริการ</a>
-      <a href="Project.html" onclick="toggleMenu(false)">ผลงาน</a>
-      <a href="News.html" onclick="toggleMenu(false)">ข่าวสาร</a>
-      <a href="contact.html" class="btn-primary" style="display:inline-block; margin-top:10px" onclick="toggleMenu(false)">ติดต่อเรา</a>
-    </div>
-  </div>
   <script>//<!-- ===== แผงเมนูเลื่อนออกมาทางขวา ===== -->
     const drawer = document.getElementById('drawer');
     const openBtn = document.getElementById('openMenu');
