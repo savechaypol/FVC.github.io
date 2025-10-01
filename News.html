@@ -14,32 +14,9 @@
       --border:#3c3c8fa4;
       --text:#e6edf6;
       --muted:#98a2b3;
-      --primary:#0ea5e9;
-      --accent:#34d399;
       --radius:18px;
       --shadow:0 10px 30px rgba(0,0,0,.25);
-      --maxw:1300px;
     }
-    body {margin: 0;font-family: sans-serif;min-height: 100vh;position: relative;overflow-x: hidden;}
-    body::before {content: "";position: fixed;top: 0; left: 0; right: 0; bottom: 0;background: url('Pictures/Background.png') no-repeat center center;background-size: cover;z-index: -1;}
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{font-family:"Kanit",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif; color:var(--text); background:#f8fafc; line-height:1.6}
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
-    /* ===== Header ===== */
-    .site-header{position:sticky;top:0;z-index:40;background:rgba(11,27,43,.85);backdrop-filter:saturate(150%) blur(8px);border-bottom:1px solid rgba(255,255,255,.08)}
-    .nav{max-width:var(--maxw);margin:auto;display:flex;align-items:center;gap:18px;padding:12px 20px;color:#e2e8f0}
-    .brand{display:flex;align-items:center;gap:12px}
-    .brand__name{font-weight:700;letter-spacing:.3px}
-    .nav__links{margin-left:auto;display:flex;gap:14px;align-items:center}
-    .nav__links a{padding:10px 12px;border-radius:10px;color:#e5e7eb}
-    .nav__links a:hover{background:rgba(235, 230, 230, 0.08)}
-    .btn-primary{display:flex;background:var(--primary); color:white; padding:10px 10px; border-radius:12px; font-weight:600; box-shadow:0 8px 18px rgba(14,165,233,.35)}
-    .btn-primary:hover{filter:brightness(1.1);}
-    .nav__toggle{display:none;margin-left:auto;background:transparent;border:1px solid rgba(255,255,255,.15);color:#e5e7eb;padding:8px 10px;border-radius:10px;}
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
     .container{max-width:1200px;margin:0 auto;padding:0 16px}
     /* hero */
     .hero_News{padding:56px 0px 32px}
@@ -52,7 +29,7 @@
       border:3px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:14px;}
     .caption{font-size:.9rem;color:var(--muted);margin-top:6px}
     /* sections */
-    section{padding:40px 0}
+    
     h1{font-size:clamp(35px,3.2vw,42px);margin:0 0 8px;}
     h2{font-size:clamp(22px,2.2vw,30px);margin:0 0 12px}
     p{margin:8px 0}
@@ -182,7 +159,7 @@
   <div class="counter" id="lbCounter" aria-live="polite"></div>
 </div>
 
- <!-- ===== Footer ===== -->
+<!-- ===== Footer ===== -->
   <section id="Footer" class="site-footer">
     <div class="wrap">
       <div class="footer__grid">
@@ -290,17 +267,14 @@
     const i = items.findIndex(x => x.src === clickedSrc) || 0;
     openAt(i);
   });
-
   // ปุ่มต่าง ๆ
   btnClose.addEventListener('click', close);
   btnPrev.addEventListener('click', () => go(-1));
   btnNext.addEventListener('click', () => go(1));
-
   // คลิกพื้นหลังเพื่อปิด
   modal.addEventListener('click', (e) => {
     if(e.target === modal) close();
-  });
-
+  })
   // คีย์บอร์ด
   document.addEventListener('keydown', (e) => {
     if(!modal.classList.contains('open')) return;
@@ -310,6 +284,5 @@
   });
 })();
 </script>
-
 </body>
 </html>
