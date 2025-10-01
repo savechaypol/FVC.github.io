@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Project FVC</title>
+	<meta name="description" content="หน้าแสดงผลงานเด่น–" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap" >
+  <link rel="stylesheet" href="style.css" >
+  <style>
+    :root{
+      --bg:#0b1220;
+      --panel:#0f1b2d;
+      --panel-2:#0e2136;
+      --primary:#0ea5e9;
+      --text:#e5e7eb;
+      --muted:#9fb0c3;
+      --brand:#3b82f6; /* primary */
+      --brand-2:#22d3ee; /* accent */
+      --chip:#172b45;
+      --ring: rgba(59,130,246,.55);
+      --shadow: 0 10px 30px rgba(2,8,23,.35);
+      --radius: 16px;
+      --max: 1300px;
+    }
+    /* ===== Header / Hero ===== */
+    .hero_Project{
+      padding: 48px 0 10px;
+      position:relative;
+      background:radial-gradient(1200px 600px at 70% -20%, rgba(14,165,233,.35), transparent 60%), radial-gradient(800px 400px at 20% -20%, rgba(3, 220, 248, 0.25), transparent 60%), var(--bg); 
+      color:#e5e7eb;
+    }
+    .breadcrumbs a{color:var(--muted)}
+    .breadcrumbs a:hover{color:#cfe2ff}
+    .hero__head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px}
+    .title{font-size:clamp(28px, 3.2vw, 44px);line-height:1.1;margin:8px 0 10px}
+    .subtitle{color:var(--muted);margin:0}
+    /* ===== Filter Bar ===== */
+    .tools{position:sticky;top:0;z-index:40;background:linear-gradient(180deg, rgba(11,18,32,.92), rgba(11,18,32,.86));backdrop-filter: blur(6px);border-bottom:1px solid rgba(148,163,184,.08)}
+    .tools__inner{display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding:14px 0}
+    .chip{display:inline-flex;align-items:center;gap:8px;background:var(--chip);border:1px solid rgba(148,163,184,.22);color:#d7e1ed;padding:8px 12px;border-radius:999px;font-size:14px}
+    .chip[data-active="true"], 
+    .chip:focus{outline:none;box-shadow:0 0 0 3px var(--ring);border-color:transparent}
+    .chip[data-active="true"]{background:linear-gradient(180deg,#1a3a6d,#132d54);color:#e7f1ff}
+    .chip__dot{display:inline-block;width:8px;height:8px;border-radius:50%}
+    .spacer{flex:1}
+    .search{position:relative}
+    .search input{
+      background:var(--panel);
+      color:var(--text);
+      border:1px solid rgba(148,163,184,.2);
+      border-radius:999px;
+      padding:10px 36px 10px 38px;
+      width:min(320px, 70vw);
+      font-size:14px
+    }
+    .visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
+    .search input:focus{outline:none;box-shadow:0 0 0 3px var(--ring)}
+    .search svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);opacity:.7}
+    /* ===== Grid ===== */
+    .grid{display:grid;gap:18px;padding:22px 0 34px;grid-template-columns: repeat(12, 1fr)}
+    .card{grid-column: span 4; position:relative;border-radius:var(--radius);overflow:hidden;background:var(--panel-2);box-shadow: var(--shadow);transition: transform .35s ease, box-shadow .35s ease;border:3px solid rgb(255, 254, 254);}
+    .card:hover{transform:translateY(-6px);box-shadow: 0 14px 40px rgba(2,8,23,.5)}
+    /* Support auto-fit layout for narrower screens */
+    @media (max-width: 1100px){ .card{grid-column: span 6} }
+    @media (max-width: 720px){ .card{grid-column: span 12} }
+    .card__media{aspect-ratio:16/10;background:#0b1526;position:relative}
+    .card__media img{width:100%;height:100%;object-fit:cover}
+    .grad{position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,.7) 100%)}
+    .badge{position:absolute;top:12px;left:12px;background:rgba(2,6,23,.6);color:#eaf2ff;border:1px solid rgba(231,241,255,.25);padding:6px 10px;border-radius:999px;font-size:12px;backdrop-filter: blur(6px)}
+    .card__body{padding:14px 14px 16px;color:#c9d7ea;}
+    .card__title{font-size:18px;line-height:1.35;margin:0 0 6px;}
+    .meta{display:flex;gap:10px;flex-wrap:wrap;color:#c9d7ea;font-size:13px;opacity:.9}
+    .meta span{display:inline-flex;align-items:center;gap:6px}
+    .meta svg{opacity:.7}
+    .card__footer{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+    .btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(180deg,#19407d,#0e2a52);border:1px solid rgba(148,163,184,.25);color:#e8f1ff;padding:10px 12px;border-radius:12px;font-size:14px}
+    .btn:hover{filter:brightness(1.06)}
+    /* Utility hidden */
+    .hidden{display:none!important}
+    /* ===== Section base ===== */
+    .wrap{max-width:var(--max); margin:auto;}
+    .section__Contact_desc{color:var(--muted); margin:6px 0 0;color:#000000;}
+    /* ===== Responsive ===== */
+    @media (max-width: 768px){
+    .nav__toggle{display:inline-flex}}
+  </style>
+</head>
+<body>
+	<!-- ===== Header ===== -->
+  <header class="site-header ">
+    <nav class="nav ">
+      <a href="index.html" class="brand " aria-label="Forward Vision Consultant">
+        <img src="Pictures/Lago/logo_FVC_.jpg"   height="45">
+        <div class="brand__name ">Forward Vision Consultant Co.,Ltd</div>
+      </a>
+      <div class="nav__links ">
+        <a href="About.html">เกี่ยวกับเรา</a>
+        <a href="Services.html">บริการ</a>
+        <a href="Project.html">ผลงาน</a>
+        <a href="News.html  ">ข่าวสาร</a>
+        <a href="contact.html" class="btn-primary">ติดต่อเรา</a>
+      </div>
+      <button class="nav__toggle" id="openMenu" aria-label="เปิดเมนู">เมนู</button>
+    </nav>
+  </header>
+  <!-- ===== Mobile drawer ===== -->
+  <div class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="เมนูนำทาง">
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:10px">
+        <div class="brand__name">Forward Vision Consultant</div>
+        <button id="closeMenu" class="nav__toggle" style="border-color:rgba(255,255,255,.25)">ปิด</button>
+      </div>
+      <a href="index.html" onclick="toggleMenu(false)">หน้าแรก</a>
+      <a href="About.html" onclick="toggleMenu(false)">เกี่ยวกับเรา</a>
+      <a href="Services.html" onclick="toggleMenu(false)">บริการ</a>
+      <a href="Project.html" onclick="toggleMenu(false)">ผลงาน</a>
+      <a href="News.html" onclick="toggleMenu(false)">ข่าวสาร</a>
+      <a href="contact.html" class="btn-primary" style="display:inline-block; margin-top:10px" onclick="toggleMenu(false)">ติดต่อเรา</a>
+    </div>
+  </div>
+  <!-- ===== hero_Project ===== -->
+  <section class="hero_Project">
+    <div class="wrap">
+      <div class="hero__head">
+        <div>
+          <h1 class="title">All Project Work</h1>
+          <p class="subtitle">รวมโครงการของ FVC ครอบคลุมงานโยธา ระบบไฟฟ้า ระบบสื่อสาร และงานอื่นๆ</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===== Sticky tools: filters + search ===== -->
+  <section class="tools" role="region" aria-label="ตัวกรองและค้นหา">
+    <div class="wrap tools__inner">
+      <button class="chip" data-filter="all" data-active="true"><span class="chip__dot" style="background:#8ab4ff"></span>ทั้งหมด</button>
+      <button class="chip" data-filter="civil"><span class="chip__dot" style="background:#60a5fa"></span>โยธา</button>
+      <button class="chip" data-filter="electrical"><span class="chip__dot" style="background:#34d399"></span>ระบบไฟฟ้า</button>
+      <button class="chip" data-filter="ict"><span class="chip__dot" style="background:#f59e0b"></span>ICT</button>
+      <button class="chip" data-filter="special"><span class="chip__dot" style="background:#f472b6"></span>งานอื่นๆ</button>
+      <div class="spacer"></div>
+      <label class="search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+        <span class="visually-hidden">ค้นหาโครงการ</span>
+        <input id="q" type="search" placeholder="ค้นหาโครงการ / สถานที่ / ลูกค้า" autocomplete="off" />
+      </label>
+    </div>
+  </section>
+  <section id="content" class="wrap">
+    <section aria-label="รายการโครงการ" class="grid" id="grid">
+      <!-- ===== Card Template Examples ===== -->
+      <!-- 1 -->
+      <article class="card" data-tags="electrical cpf transformer samut sakhon" data-cat="electrical">
+        <a href="01_ติดตั้งหม้อแปลง.html">
+          <div class="card__media">
+            <img src="Pictures/Performance/CPF/ติดตั้งหม้อแปลง 500 kVA มหาชัย สมุครสาคร/00_ติดตั้งหม้อแปลง.jpg" alt="ติดตั้งหม้อแปลงและตู้ MDB" />
+            <span class="badge">ระบบไฟฟ้า</span>
+            <div class="grad" aria-hidden="true"></div>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">ติดตั้งหม้อแปลง 500 kVA และติดตั้งตู้ MDB</h3>
+            <p class="meta">
+              <span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                สมุทรสาคร
+              </span>
+              <span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                CPF (Thailand) Ltd.
+              </span>
+            </p>
+            <div class="card__footer">Install / Connect
+              <button class="btn" type="button" aria-label="ดูรายละเอียด">ดูรายละเอียด
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+              </button>
+            </div>
+          </div>
+        </a>
+      </article>
+      <!-- 2 -->
+      <article class="card" data-tags="civil office sonepar training" data-cat="civil">
+        <a href="02_Desing_Sonepar.html">
+          <div class="card__media">
+            <img src="Pictures/Performance/Sonepar/Design-ก่อสร้าง Office Training Sonepar/00_Sonepar.jpg" alt="ก่อสร้างอาคารสำนักงานและศูนย์ฝึกอบรม" />
+            <span class="badge">โยธา</span>
+            <div class="grad" aria-hidden="true"></div>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Design & Build – Office & Training Center</h3>
+            <p class="meta">
+              <span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                กรุงเทพฯ
+              </span>
+              <span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                Sonepar
+              </span>
+            </p>
+            <div class="card__footer">
+              Turnkey
+              <button class="btn" type="button">ดูรายละเอียด
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+              </button>
+            </div>
+          </div>
+        </a>
+      </article>
+      <!-- 3 -->
+      <article class="card" data-tags="ict network ethernet fiber security" data-cat="ict">
+        <a href="03_InstallAccessport_CPPC.html">
+          <div class="card__media">
+            <img src="Pictures/Performance/CPPC/ติดตั้ง Accesspoint/00_ติดตั้ง AP.jpg" alt="ระบบเครือข่ายและความปลอดภัย" />
+            <span class="badge">ICT</span>
+            <div class="grad" aria-hidden="true"></div>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Installation Access Point </h3>
+            <p class="meta">
+              <span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                ฉะเชิงเทรา
+              </span>
+              <span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                CPPC Public Co., Ltd.
+              </span>
+            </p>
+            <div class="card__footer">
+              Install / Configure
+              <button class="btn" type="button">ดูรายละเอียด
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+              </button>
+            </div>
+          </div>
+        </a>
+      </article>
+      <!-- 4 -->
+      <article class="card" data-tags="civil warehouse slab" data-cat="civil" >
+        <a href="04_ทำพื้นเครื่องจักร_BGRIM.html">
+          <div class="card__media"><img src="Pictures/Performance/BGRIM/ทำพื้นเครื่องจักร/01_BGRIM.jpg" alt="พื้นคอนกรีต เครื่องจักร" /><span class="badge">โยธา</span><div class="grad" aria-hidden="true"></div></div>
+          <div class="card__body">
+            <h3 class="card__title">ทำพื้นเครื่องจักร โรงไฟฟ้า</h3>
+            <p class="meta"><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg> ราชบุรี
+            </span>
+            <span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                BGRIM
+              </span>
+            </p>
+            <div class="card__footer">QC / Core Test<button class="btn" type="button">ดูรายละเอียด<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button></div>
+          </div>
+        </a>
+      </article>
+    </section>
+  </section>
+  <!-- ===== Footer ===== -->
+  <section id="Footer" class="site-footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div>
+          <a href="#" class="brand" style="margin-bottom:8px">
+            <img src="Pictures/Lago/logo_FVC_.jpg"   height="45">
+            <div class="brand__name">Forward Vision Consultant Co.,Ltd</div></a>
+          <p style="margin:0 0 10px; color:#94a3b8">ผู้รับเหมางานโครงการก่อสร้าง
+          </p>
+        </div>
+        <div class="footer__col">
+          <h4>บริษัท</h4>
+          <a href="About.html">เกี่ยวกับบริษัท</a>
+          <a href="#about">วิสัยทัศน์และพันธกิจ</a>
+          <a href="#about">กลุ่มธุรกิจ</a>
+        </div>
+        <div class="footer__col">
+          <h4>บริการ</h4>
+          <a href="Civil.html">Civil</a>
+          <a href="Electrical.html">Electrical</a>
+          <a href="Mechanical.html">Mechanical</a>
+        </div>
+        <div class="footer__col">
+          <h4>ติดต่อ</h4>
+          <a href="contact.html">ติดต่อเรา</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <small>COPYRIGHT© <span id="y"></span> FORWARD VISION CONSULTANT CO.,LTD. ALL RIGHTS RESERVED</small>
+        <div style="display:flex; gap:10px">
+          <a class="chip" href="https://www.facebook.com/">Facebook</a>
+          <a class="chip" href="https://www.youtube.com/">YouTube</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="script.js"></script>
+  <script>
+  // ===== Simple Filter/Search (no Load More) =====
+  const chips = document.querySelectorAll('.chip');
+  const grid = document.getElementById('grid');
+  const cards = Array.from(grid.querySelectorAll('.card'));
+  const search = document.getElementById('q');
+  let current = 'all';
+  // ตรวจสอบว่า card ตรงกับ filter + คำค้นหาไหม
+  function matches(cat, term, el){
+    const okCat = (current === 'all') || (el.dataset.cat === current);
+    const okText = !term 
+      || (el.dataset.tags?.toLowerCase().includes(term.toLowerCase())) 
+      || el.querySelector('.card__title').textContent.toLowerCase().includes(term.toLowerCase());
+    return okCat && okText;
+  }
+  // วาดใหม่
+  function render(){
+    const term = search.value.trim();
+    cards.forEach((el)=>{
+      const shouldShow = matches(current, term, el);
+      el.classList.toggle('hidden', !shouldShow);
+    });
+  }
+  // เริ่มต้น render
+  render();
+  // ฟิลเตอร์ (chips)
+  chips.forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      chips.forEach(c=>c.dataset.active = 'false');
+      btn.dataset.active = 'true';
+      current = btn.dataset.filter;
+      render();
+    });
+  });
+  // ค้นหา (search box)
+  search.addEventListener('input', ()=>{ render(); });
+</script>
+</body>
+</html>

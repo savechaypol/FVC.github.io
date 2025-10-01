@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>News | FVC</title>
+  <meta name="description" content="ใบรับรองระบบบริหารคุณภาพ ISO 9001:2015 ของ Forward Vision Consultant" />
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="Pictures/FVC-Approve-Rev01.png">
+  <style>
+    :root{
+      --bg:#0b1220;
+      --border:#3c3c8fa4;
+      --text:#e6edf6;
+      --muted:#98a2b3;
+      --primary:#0ea5e9;
+      --accent:#34d399;
+      --radius:18px;
+      --shadow:0 10px 30px rgba(0,0,0,.25);
+      --maxw:1300px;
+    }
+    body {margin: 0;font-family: sans-serif;min-height: 100vh;position: relative;overflow-x: hidden;}
+    body::before {content: "";position: fixed;top: 0; left: 0; right: 0; bottom: 0;background: url('Pictures/Background.png') no-repeat center center;background-size: cover;z-index: -1;}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{font-family:"Kanit",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif; color:var(--text); background:#f8fafc; line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    /* ===== Header ===== */
+    .site-header{position:sticky;top:0;z-index:40;background:rgba(11,27,43,.85);backdrop-filter:saturate(150%) blur(8px);border-bottom:1px solid rgba(255,255,255,.08)}
+    .nav{max-width:var(--maxw);margin:auto;display:flex;align-items:center;gap:18px;padding:12px 20px;color:#e2e8f0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand__name{font-weight:700;letter-spacing:.3px}
+    .nav__links{margin-left:auto;display:flex;gap:14px;align-items:center}
+    .nav__links a{padding:10px 12px;border-radius:10px;color:#e5e7eb}
+    .nav__links a:hover{background:rgba(235, 230, 230, 0.08)}
+    .btn-primary{display:flex;background:var(--primary); color:white; padding:10px 10px; border-radius:12px; font-weight:600; box-shadow:0 8px 18px rgba(14,165,233,.35)}
+    .btn-primary:hover{filter:brightness(1.1);}
+    .nav__toggle{display:none;margin-left:auto;background:transparent;border:1px solid rgba(255,255,255,.15);color:#e5e7eb;padding:8px 10px;border-radius:10px;}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{max-width:1200px;margin:0 auto;padding:0 16px}
+    /* hero */
+    .hero_News{padding:56px 0px 32px}
+    .hero-grid{display:grid;gap:50px}
+    @media(min-width:900px){ 
+    .hero-grid{grid-template-columns:1.5fr 0.9fr;} }
+    
+    /* card + image */
+    .card{background:linear-gradient(180deg,#142644, #0b1528);
+      border:3px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:14px;}
+    .caption{font-size:.9rem;color:var(--muted);margin-top:6px}
+    /* sections */
+    section{padding:40px 0}
+    h1{font-size:clamp(35px,3.2vw,42px);margin:0 0 8px;}
+    h2{font-size:clamp(22px,2.2vw,30px);margin:0 0 12px}
+    p{margin:8px 0}
+
+    .grid-2{display:grid;gap:16px}
+    @media(min-width:900px){ .grid-2{grid-template-columns:1fr 1fr} }
+    /* timeline */
+    .timeline{display:grid;gap:12px}
+    @media(min-width:900px){ .timeline{grid-template-columns:repeat(4,1fr)} }
+    .tl-item{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px}
+    .tl-item small{color:var(--muted);display:block}
+    /* lightbox */
+    .lightbox { position:fixed; inset:0; background:#000c; display:none; align-items:center; justify-content:center; z-index:100 }
+.lightbox.open{ display:flex }
+.lightbox img{ max-width:92vw; max-height:86vh; border-radius:12px; border:1px solid #2b3a5d; box-shadow:0 10px 30px rgba(0,0,0,.25) }
+.lightbox .close{
+  position:absolute; top:14px; right:14px; border:1px solid #ffffff33; background:#0b1220bb;
+  color:#fff; border-radius:12px; padding:8px 12px; cursor:pointer;
+}
+.lightbox .nav{
+  position:absolute; top:50%; transform:translateY(-50%);
+  width:44px; height:44px; display:grid; place-items:center;
+  border:1px solid #ffffff33; background:#0b1220bb; color:#fff; border-radius:999px; cursor:pointer;
+}
+.lightbox .prev{ left:16px } .lightbox .next{ right:16px }
+.lightbox .counter{
+  position:absolute; bottom:14px; left:50%; transform:translateX(-50%);
+  background:#0b1220bb; color:#fff; border:1px solid #ffffff33; border-radius:999px; padding:6px 10px; font-size:12px;
+}
+
+      /* เส้น Title */
+  .title{content:"";flex:1;height:4px;background:linear-gradient(90deg,var(--brand),transparent);border-radius:999px}
+    
+  </style>
+</head>
+<body>
+<!-- ===== Header ===== -->
+  <header class="site-header ">
+    <nav class="nav ">
+      <a href="index.html" class="brand " aria-label="Forward Vision Consultant">
+        <img src="Pictures/Lago/logo_FVC_.jpg"   height="45">
+        <div class="brand__name ">Forward Vision Consultant Co.,Ltd</div>
+      </a>
+      <div class="nav__links ">
+        <a href="About.html">เกี่ยวกับเรา</a>
+        <a href="Services.html">บริการ</a>
+        <a href="Project.html">ผลงาน</a>
+        <a href="News.html  ">ข่าวสาร</a>
+        <a href="contact.html" class="btn-primary">ติดต่อเรา</a>
+      </div>
+      <button class="nav__toggle" id="openMenu" aria-label="เปิดเมนู">เมนู</button>
+    </nav>
+  </header>
+  <!-- ===== Mobile drawer ===== -->
+  <div class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="เมนูนำทาง">
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:10px">
+        <div class="brand__name">Forward Vision Consultant</div>
+        <button id="closeMenu" class="nav__toggle" style="border-color:rgba(255,255,255,.25)">ปิด</button>
+      </div>
+      <a href="index.html" onclick="toggleMenu(false)">หน้าแรก</a>
+      <a href="About.html" onclick="toggleMenu(false)">เกี่ยวกับเรา</a>
+      <a href="Services.html" onclick="toggleMenu(false)">บริการ</a>
+      <a href="Project.html" onclick="toggleMenu(false)">ผลงาน</a>
+      <a href="News.html" onclick="toggleMenu(false)">ข่าวสาร</a>
+      <a href="contact.html" class="btn-primary" style="display:inline-block; margin-top:10px" onclick="toggleMenu(false)">ติดต่อเรา</a>
+    </div>
+  </div>
+  <!-- Hero -->
+  <section id="home" class="hero_News">
+    <div class="container hero-grid">
+      <div>
+        <h1>ระบบบริหารคุณภาพ <span  style="color:#5be6f8">ISO 9001:2015 </span></h1>
+        <div class="card" >
+        <h2 style="color:#5be6f8">รายละเอียดใบรับรอง</h2>
+        <p><strong>Company:</strong> FORWARD VISION CONSULTANT CO., LTD</p>
+        <p><strong>ที่อยู่:</strong> 104/21 Liapklongsong Road, Bangchan, Klongsamwa, Bangkok 10510 Thailand</p>
+        <p><strong>มาตรฐาน:</strong> ISO 9001:2015 • <strong>หน่วยรับรอง:</strong> INTERCERT</p>
+        <p><strong>Registration No.:</strong> IC-QM-2412001</p>
+        </div>
+      </div>
+      <!-- Certificate Card -->
+      <div class="card">
+        <a href="Pictures/News/ISO 9001.png"
+          data-lightbox
+          data-lb-group="news"
+          data-lb-alt="ISO 9001:2015 Certificate">
+          <img src="Pictures/News/ISO 9001.png" alt="ISO 9001:2015 Certificate">
+        </a>
+        <div class="caption">คลิกที่รูปเพื่อขยายดูรายละเอียด</div>
+      </div>
+    </div>
+  </section>
+    <!-- Lightbox -->
+  
+  
+  <div class="sep--line"></div>
+
+  <section id="home" class="hero_News">
+    <div class="container hero-grid">
+      <div>
+        <h1>โครงการ <span  style="color:#5be6f8">โรงงานสีขาว ระดับที่ 3  </span></h1>
+        <div class="card" >
+        <h2 style="color:#5be6f8">รายละเอียดใบรับรอง</h2>
+        <p>กรมสวัสดิการและคุ้มครองแรงงาน (กระทรวงแรงงาน) มอบเกียรติบัตรรับรองว่า FVC มีระบบการจัดการด้านยาเสพติดในสถานประกอบกิจการที่มีประสิทธิภาพ ครอบคลุมการป้องกัน–เฝ้าระวัง–แก้ไข และการดูแลพนักงานตามระเบียบกฎหมาย โดยได้รับมอบเมื่อวันที่ 30 กันยายน 2567 สะท้อนความมุ่งมั่นในการสร้างสถานประกอบการปลอดยาเสพติดและสภาพแวดล้อมการทำงานที่ปลอดภัยอย่างยั่งยืน</p>
+        </div>
+      </div>
+      <!-- Certificate Card -->
+      <div class="card">
+          <a href="Pictures/News/FVC โครงการโรงงานสีขาวระดับที่ 3-1.png"
+          data-lightbox
+          data-lb-group="news"
+          data-lb-alt="โครงการโรงงานสีขาวระดับที่ 3-1">
+          <img src="Pictures/News/FVC โครงการโรงงานสีขาวระดับที่ 3-1.png" alt="โครงการโรงงานสีขาวระดับที่ 3-1">
+          </a>
+        <div      class="caption">คลิกที่รูปเพื่อขยายดูรายละเอียด</div>
+      </div>
+    </div>
+  </section>
+    <!-- Lightbox -->
+  <!-- Lightbox (รีใช้กล่องเดียวกับทุกรูป) -->
+<div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="ภาพขยาย">
+  <button class="close" id="lbClose" aria-label="ปิดภาพขยาย">ปิด</button>
+  <button class="nav prev" id="lbPrev" aria-label="ก่อนหน้า">‹</button>
+  <img id="lbImg" src="" alt="">
+  <button class="nav next" id="lbNext" aria-label="ถัดไป">›</button>
+  <div class="counter" id="lbCounter" aria-live="polite"></div>
+</div>
+
+ <!-- ===== Footer ===== -->
+  <section id="Footer" class="site-footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div>
+          <a href="#" class="brand" style="margin-bottom:8px">
+            <img src="Pictures/Lago/logo_FVC_.jpg"   height="45">
+            <div class="brand__name">Forward Vision Consultant Co.,Ltd</div></a>
+          <p style="margin:0 0 10px; color:#94a3b8">ผู้รับเหมางานโครงการก่อสร้าง
+          </p>
+        </div>
+        <div class="footer__col">
+          <h4>บริษัท</h4>
+          <a href="About.html">เกี่ยวกับบริษัท</a>
+          <a href="#about">วิสัยทัศน์และพันธกิจ</a>
+          <a href="#about">กลุ่มธุรกิจ</a>
+        </div>
+        <div class="footer__col">
+          <h4>บริการ</h4>
+          <a href="Civil.html">Civil</a>
+          <a href="Electrical.html">Electrical</a>
+          <a href="Mechanical.html">Mechanical</a>
+        </div>
+        <div class="footer__col">
+          <h4>ติดต่อ</h4>
+          <a href="contact.html">ติดต่อเรา</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <small>COPYRIGHT© <span id="y"></span> FORWARD VISION CONSULTANT CO.,LTD. ALL RIGHTS RESERVED</small>
+        <div style="display:flex; gap:10px">
+          <a class="chip" href="https://www.facebook.com/">Facebook</a>
+          <a class="chip" href="https://www.youtube.com/">YouTube</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="script.js"></script>
+  <script>
+(() => {
+  const modal     = document.getElementById('lightbox');
+  const imgEl     = document.getElementById('lbImg');
+  const btnClose  = document.getElementById('lbClose');
+  const btnPrev   = document.getElementById('lbPrev');
+  const btnNext   = document.getElementById('lbNext');
+  const counterEl = document.getElementById('lbCounter');
+
+  // เก็บรายการตาม "กลุ่ม" (data-lb-group)
+  let currentGroup = 'default';
+  let items = [];       // [{el, src, alt}]
+  let index = 0;
+
+  // สร้างดัชนีทริกเกอร์ตามกลุ่มแบบไดนามิก
+  function collectGroup(group){
+    const sel = group ? `[data-lightbox][data-lb-group="${group}"]` : '[data-lightbox]:not([data-lb-group])';
+    const nodes = document.querySelectorAll(sel);
+    return [...nodes].map(el => ({
+      el,
+      src: el.getAttribute('data-lb-src') || el.getAttribute('href') || el.querySelector('img')?.src || '',
+      alt: el.getAttribute('data-lb-alt') || el.querySelector('img')?.getAttribute('alt') || ''
+    })).filter(x => x.src);
+  }
+
+  // เปิดโมดัลรูปตาม index
+  function openAt(i){
+    index = Math.max(0, Math.min(i, items.length - 1));
+    const it = items[index];
+    imgEl.src = it.src;
+    imgEl.alt = it.alt || '';
+    counterEl.textContent = items.length > 1 ? `${index+1} / ${items.length}` : '';
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+    // ถ้ารูปเดียว ซ่อนปุ่มนำทาง
+    const showNav = items.length > 1;
+    btnPrev.style.display = btnNext.style.display = showNav ? 'grid' : 'none';
+  }
+
+  // ปิดโมดัล
+  function close(){
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+    imgEl.src = '';
+    imgEl.alt = '';
+  }
+
+  // เปลี่ยนรูป
+  function go(step){
+    if(items.length < 2) return;
+    index = (index + step + items.length) % items.length;
+    openAt(index);
+  }
+
+  // คลิกทริกเกอร์ทั้งหมด (หลายรูป/หลายกลุ่ม)
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('[data-lightbox]');
+    if(!a) return;
+
+    e.preventDefault();
+
+    currentGroup = a.getAttribute('data-lb-group') || 'default';
+    items = collectGroup(a.hasAttribute('data-lb-group') ? currentGroup : '');
+    // หา index ของชิ้นที่คลิก
+    const clickedSrc = a.getAttribute('data-lb-src') || a.getAttribute('href') || a.querySelector('img')?.src || '';
+    const i = items.findIndex(x => x.src === clickedSrc) || 0;
+    openAt(i);
+  });
+
+  // ปุ่มต่าง ๆ
+  btnClose.addEventListener('click', close);
+  btnPrev.addEventListener('click', () => go(-1));
+  btnNext.addEventListener('click', () => go(1));
+
+  // คลิกพื้นหลังเพื่อปิด
+  modal.addEventListener('click', (e) => {
+    if(e.target === modal) close();
+  });
+
+  // คีย์บอร์ด
+  document.addEventListener('keydown', (e) => {
+    if(!modal.classList.contains('open')) return;
+    if(e.key === 'Escape') close();
+    if(e.key === 'ArrowRight') go(1);
+    if(e.key === 'ArrowLeft')  go(-1);
+  });
+})();
+</script>
+
+</body>
+</html>

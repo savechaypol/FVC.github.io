@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Design & Build – Office & Training Center | FVC</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --bg:#0b1427;         /* พื้นหลังเข้ม */
+      --panel:#0f1f3a;      /* แผงเนื้อหา/การ์ด */
+      --brand:#19a1ff;      /* เส้นคาด */
+      --text:#eaf2ff;       /* สีตัวอักษรหลัก */
+      --muted:#9fb6d6;      /* ตัวอักษรรอง */
+      --accent:#18305a;     /* เส้นแบ่ง/เงาอ่อน */
+      --radius:14px;
+      --gap:22px;
+      --maxw:1180px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg) url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1600&auto=format&fit=crop') center/cover fixed; font-family:'Kanit',system-ui,sans-serif;color:var(--text);}
+    .overlay{position:fixed;inset:0;background:linear-gradient(180deg,rgba(4,10,20,.85),rgba(4,10,20,.92));pointer-events:none;z-index:-1}
+    .wrap{max-width:var(--maxw);margin:32px auto;padding:0 16px}
+    /* Header Title */
+    .title{font-size:clamp(20px,2.3vw,28px);font-weight:800;letter-spacing:.5px;margin:0 0 18px;display:flex;align-items:flex-end;gap:12px;}
+    .title::after{content:"";flex:1;height:4px;background:linear-gradient(90deg,var(--brand),transparent);border-radius:999px}
+    .title::before{content:"";flex:1;height:4px;background:linear-gradient(270deg,var(--brand),transparent);border-radius:999px;}
+    /* Grid Layout */
+    .grid{display:grid;gap:var(--gap);grid-template-columns:1.2fr .8fr}
+    @media(max-width:980px){.grid{grid-template-columns:1fr}}
+    /* Gallery */
+    .gallery{background:var(--panel);padding:12px;border-radius:var(--radius);box-shadow:0 6px 24px rgba(0,0,0,.25)}
+    .main-img{position:relative;padding-top:60%;border-radius:10px;overflow:hidden;background:#000}
+    .main-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .dots{display:flex;gap:8px;justify-content:center;padding:10px 0}
+    .dot{width:9px;height:9px;border-radius:50%;background:#6aa7ff;border:1px solid rgba(255,255,255,.4);opacity:.9}
+    .dot.active{background:#fff}
+    .thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px}
+    .thumb{aspect-ratio:4/3;border-radius:10px;overflow:hidden;border:2px solid transparent;cursor:pointer}
+    .thumb img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(96%)}
+    .thumb.active{border-color:#fff}
+    /* Sidebar */
+    .side{background:var(--panel);border-radius:var(--radius);padding:20px 18px;box-shadow:0 8px 26px rgba(0,0,0,.25)}
+    .side h3{margin:0 0 12px;font-size:20px;font-weight:700}
+    .kv{display:grid;grid-template-columns:140px 1fr;gap:10px 16px;margin:10px 0 18px;font-size:15px}
+    .kv b{color:#d7e7ff;font-weight:600}
+    .kv span{color:var(--muted)}
+    .desc h4{margin:10px 0 6px;font-size:18px;font-weight:700}
+    .desc p{margin:0;color:#d9e7ff;opacity:.95;line-height:1.7}
+    /* ===== ตัวอักษรล่นลงมา ===== */
+    .text-animate {display: inline-block;white-space:pre-wrap;}
+    .text-animate .char {display: inline-block;opacity: 0;transform: translateY(-80px);animation: dropIn .65s forwards;will-change: transform, opacity;}
+    .text-animate .space {display: inline-block;width: .33em;}
+    @keyframes dropIn {60% { transform: translateY(8px); }to{ opacity: 1; transform: translateY(0); }}
+    @media (prefers-reduced-motion: reduce){
+    .text-animate .char {opacity: 1 !important;transform: none !important;animation:  none !important;}}
+    /* === เนื้อหาค่อยๆโผล่ === */
+    [data-pop]{opacity: 0;transform: translate3d(var(--x,0), var(--y,12px), 0) scale(.94);will-change: transform, opacity;}
+    [data-pop].is-in{animation: pop-reveal var(--dur, 5s) var(--ease, cubic-bezier(.16,1,.3,1)) both;animation-delay: var(--delay, 0ms);}
+    @keyframes pop-reveal{
+    0%   { opacity:0; transform: translate3d(var(--x,0), var(--y,12px), 0) scale(.94); }
+    60%  { opacity:1; transform: translate3d(0,0,0) scale(1.02); }
+    100% { opacity:1; transform: translate3d(0,0,0) scale(1); }}
+    @media (prefers-reduced-motion: reduce){
+    [data-pop]{ opacity:1 !important; transform:none !important; animation:none !important; }}
+  </style>
+  </style>
+</head>
+<body>
+<!-- ===== Back Button ===== -->
+<div style="position:fixed; bottom:20px;top:20px; left:20px; z-index:1000;">
+  <button onclick="window.history.back()" 
+          style="padding:5px 18px; border:none; border-radius:12px;
+                 background:#0ea5e9; color:white; font-weight:600;
+                 box-shadow:0 6px 14px rgba(14,165,233,.35); cursor:pointer;">
+    ⬅ กลับไปก่อนหน้า
+  </button>
+</div>
+  <div class="overlay" aria-hidden="true"></div>
+  <div class="wrap">
+    <h1 class="title">Design & Build – Office & Training Center </h1>
+    <div class="grid">
+      <!-- Left: Gallery -->
+      <section class="gallery" aria-label="รูปภาพโครงการ">
+        <div class="main-img" data-pop style="--delay:100ms" aria-live="polite">
+          <img id="main" src="" alt="ภาพรวมอาคารโรงงานมุมกว้าง" />
+        </div>
+        <div class="dots" id="dots"></div>
+        <div class="thumbs" id="thumbs">
+          <button class="thumb active"data-pop style="--delay:300ms" data-src="Pictures/Performance/Sonepar/Design-ก่อสร้าง Office Training Sonepar/00_Sonepar.jpg" aria-label="ภาพที่ 1"><img src="Pictures/Performance/Sonepar/Design-ก่อสร้าง Office Training Sonepar/00_Sonepar.jpg" alt="ภาพที่ 1"></button>
+          <button class="thumb" data-pop style="--delay:700ms" data-src="Pictures/Performance/Sonepar/Design-ก่อสร้าง Office Training Sonepar/01_Sonepar.jpg" aria-label="ภาพที่ 2"><img src="Pictures/Performance/Sonepar/Design-ก่อสร้าง Office Training Sonepar/01_Sonepar.jpg" alt="ภาพที่ 2"></button>
+          <button class="thumb" data-pop style="--delay:700ms" data-src="Pictures/Performance/Sonepar/Design-ก่อสร้าง Office Training Sonepar/02_Sonepar.jpg" aria-label="ภาพที่ 3"><img src="Pictures/Performance/Sonepar/Design-ก่อสร้าง Office Training Sonepar/02_Sonepar.jpg" alt="ภาพที่ 3"></button>
+          <button class="thumb" data-pop style="--delay:900ms" data-src="Pictures/Performance/Sonepar/Design-ก่อสร้าง Office Training Sonepar/03_Sonepar.jpg" aria-label="ภาพที่ 4"><img src="Pictures/Performance/Sonepar/Design-ก่อสร้าง Office Training Sonepar/03_Sonepar.jpg" alt="ภาพที่ 4"></button>
+        </div>
+      </section>
+      <!-- Right: Details -->
+      <aside class="side" aria-label="รายละเอียดโครงการ">
+        <h3 class="text-animate">Project Details</h3>
+        <div class="kv"data-pop style="--delay:100ms">
+          <b>Scope of Work :</b> <span>ระบบไฟฟ้า</span>
+          <b>Owner :</b> <span>CPF (Thailand) Ltd.</span>
+          <b>Location :</b> <span>มหาชัย สมุครสาคร</span>
+        </div>
+        <div class="desc">
+          <h4 class="text-animate">Descriptions</h4>
+          <p data-pop style="--delay:100ms">ติดตั้งหม้อแปลง 500 kVA และติดตั้งตู้ MDB</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+<script>
+  const main = document.getElementById('main');
+  const thumbs = Array.from(document.querySelectorAll('.thumb'));
+  const dotsWrap = document.getElementById('dots');
+  let idx = 0, timer;
+  const INTERVAL = 4000;
+  function buildDots(){
+    dotsWrap.innerHTML='';
+    thumbs.forEach((_,i)=>{
+      const d=document.createElement('div');
+      d.className='dot'+(i===idx?' active':'');
+      d.addEventListener('click',()=>go(i,true));
+      dotsWrap.appendChild(d);
+    });
+  }
+  function setActive(i){
+    thumbs.forEach((b,j)=>b.classList.toggle('active', j===i));
+    [...dotsWrap.children].forEach((d,j)=>d.classList.toggle('active', j===i));
+  }
+  function show(i){
+    idx=(i+thumbs.length)%thumbs.length;
+    const url=thumbs[idx].dataset.src;
+    main.style.opacity=0;
+    const img=new Image();
+    img.onload=()=>{main.src=url;main.style.opacity=1;setActive(idx);};
+    img.src=url;
+  }
+  function go(i,manual=false){show(i);if(manual) restart();}
+  function next(){go(idx+1);}
+  function start(){if(!timer) timer=setInterval(next,INTERVAL);}
+  function stop(){clearInterval(timer);timer=null;}
+  function restart(){stop();start();}
+  thumbs.forEach((btn,i)=>btn.addEventListener('click',()=>go(i,true)));
+  buildDots();
+  show(0);
+  start();
+</script>
+<script>//<!-- ===== เนื้อหาล่นลงมา ===== -->
+    (function(){
+      const SELECTOR   = 'h1.text-animate, h2.text-animate, h3.text-animate, h4.text-animate, p.text-animate, .text-animate';
+      const DELAY_STEP = 0.06;
+      const START_DELAY= 0.00;
+      const REPLAY     = false;
+      const hasSeg = 'Intl' in window && 'Segmenter' in Intl;
+      const seg    = hasSeg ? new Intl.Segmenter('th', { granularity:'grapheme' }) : null;
+      function splitToSpans(el){
+        if (!el.dataset.orig) el.dataset.orig = el.textContent;
+        const text  = el.dataset.orig;
+        el.textContent = '';
+        const units = seg ? Array.from(seg.segment(text), s => s.segment) : Array.from(text);
+        let i = 0;
+        for (const u of units){
+          if (u === ' '){
+            const sp = document.createElement('span');
+            sp.className = 'space';
+            sp.textContent = ' ';
+            el.appendChild(sp);
+            continue;
+          }
+          const span = document.createElement('span');
+          span.className = 'char';
+          span.textContent = u;
+          // ตั้งดีเลย์ทีละตัว
+          span.style.animationDelay = (START_DELAY + i * DELAY_STEP) + 's';
+          el.appendChild(span);
+          i++;
+        }
+        el.dataset.ready = '1';
+        // ให้เบราว์เซอร์คำนวณ layout ก่อน จากนั้นเปิดเล่น
+        requestAnimationFrame(()=> el.dataset.in = '1');
+      }
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{
+          const el = e.target;
+          if (e.isIntersecting){
+            if (el.dataset.ready !== '1') splitToSpans(el);
+            else el.dataset.in = '1';
+            if (!REPLAY) io.unobserve(el); // เล่นครั้งเดียว
+          }else if (REPLAY){
+            // รีเซ็ตเพิ่อให้เล่นใหม่เมื่อกลับเข้าจอ
+            el.dataset.in = '0';
+            el.textContent = el.dataset.orig || el.textContent;
+            el.dataset.ready = '0';
+          }
+        });
+      }, { threshold: 0.18, rootMargin: '0px 0px -8% 0px' });
+      document.querySelectorAll(SELECTOR).forEach(el => io.observe(el));
+    })();
+  </script>
+  <script>//<!-- ===== เนื้อหาค่อยๆโผล่ ===== -->
+    (function(){
+      const REPLAY = false; // เล่นครั้งเดียว (false); ถ้าอยากเล่นซ้ำทุกครั้งให้เป็น true
+      function initPopReveal(){
+        const els = document.querySelectorAll('[data-pop]');
+        if(!els.length) return;
+        const io = new IntersectionObserver((entries)=>{
+          entries.forEach(e=>{
+            const el = e.target;
+            if(e.isIntersecting){
+              el.classList.add('is-in');
+              if(!REPLAY) io.unobserve(el);  // เล่นครั้งเดียวแล้วเลิกสังเกต
+            }else if(REPLAY){
+              el.classList.remove('is-in');  // รีเซ็ตเพื่อเล่นใหม่รอบหน้า
+            }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -10% 0px' });
+        els.forEach(el => io.observe(el));
+      }
+      if(document.readyState === 'loading'){
+        document.addEventListener('DOMContentLoaded', initPopReveal, { once:true });
+      }else{
+        initPopReveal();
+      }
+    })();
+  </script>
+</body>
+</html>
