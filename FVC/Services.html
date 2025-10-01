@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Services</title>
+  <meta name="description" content="หน้าเว็บไซต์โครง FVC" />
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <!-- ===== Header ===== -->
+  <header class="site-header ">
+    <nav class="nav ">
+      <a href="index.html" class="brand " aria-label="Forward Vision Consultant">
+        <img src="Pictures/Lago/logo_FVC_.jpg"   height="45">
+        <div class="brand__name ">Forward Vision Consultant Co.,Ltd</div>
+      </a>
+      <div class="nav__links ">
+        <a href="About.html">เกี่ยวกับเรา</a>
+        <a href="Services.html">บริการ</a>
+        <a href="Project.html">ผลงาน</a>
+        <a href="News.html  ">ข่าวสาร</a>
+        <a href="contact.html" class="btn-primary">ติดต่อเรา</a>
+      </div>
+      <button class="nav__toggle" id="openMenu" aria-label="เปิดเมนู">เมนู</button>
+    </nav>
+  </header>
+  <!-- ===== Mobile drawer ===== -->
+  <div class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="เมนูนำทาง">
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:10px">
+        <div class="brand__name">Forward Vision Consultant</div>
+        <button id="closeMenu" class="nav__toggle" style="border-color:rgba(255,255,255,.25)">ปิด</button>
+      </div>
+      <a href="index.html" onclick="toggleMenu(false)">หน้าแรก</a>
+      <a href="About.html" onclick="toggleMenu(false)">เกี่ยวกับเรา</a>
+      <a href="Services.html" onclick="toggleMenu(false)">บริการ</a>
+      <a href="Project.html" onclick="toggleMenu(false)">ผลงาน</a>
+      <a href="News.html" onclick="toggleMenu(false)">ข่าวสาร</a>
+      <a href="contact.html" class="btn-primary" style="display:inline-block; margin-top:10px" onclick="toggleMenu(false)">ติดต่อเรา</a>
+    </div>
+  </div>
+  <!-- ===== Services ===== -->
+  <section id="services"class="wrap">
+      <div class="section__head">
+        <div>
+          <h2 class="section__title text-animate">บริการของเรา</h2>
+          <p class="section__desc">ออกแบบ จัดหา ติดตั้ง ทดสอบ เดินระบบ และบำรุงรักษา</p>
+        </div>
+      </div>
+      <div class="Services_cards">
+        <a class="Services_card " href="Civil.html">
+          <div class="Services_card__media" style="background-image:linear-gradient(135deg,#111827,#334155)" aria-hidden="true" ><img alt="CSA" src="Pictures/Services/Services_Civeil.png"></div>
+            <div class="Services_card__body">
+            <h3 class="Services_card__title">Civil Engineering</h3>
+            <p class="Services_card__text">ให้บริการงานก่อสร้างโยธาอย่างมีคุณภาพสูง มีความปลอดภัยและตรงตามความคาดหวังทุกประการ </p>
+            <span class="chip">Civil</span>
+          </div>
+        </a>
+        <a class="Services_card" href="Electrical.html">
+          <div class="Services_card__media" style="background-image:linear-gradient(135deg,#111827,#334155)" aria-hidden="true"><img alt="EE" src="Pictures/Services/Services_Electrical.png"></div>
+          <div class="Services_card__body">
+            <h3 class="Services_card__title">Electrical Engineering</h3>
+            <p class="Services_card__text">ให้บริการด้านระบบไฟฟ้า HV/LV รวมถึงระบบควบคุม ระบบไฟฟฟ้าและระบบสื่อสาร ฯลฯ</p>
+            <span class="chip">EE</span>
+          </div>
+        </a>
+        <a class="Services_card " href="Mechanical.html">
+          <div class="Services_card__media" style="background-image:linear-gradient(135deg,#0f172a,#1f2937)" aria-hidden="true"><img alt="Cm" src="Pictures/Services/Services_Mechanical.png"></div>
+          <div class="Services_card__body">
+            <h3 class="Services_card__title">Mechanical Engineering</h3>
+            <p class="Services_card__text">ให้บริการงานเครื่องกลครอบคลุมการติดตั้งระบบท่อ การติดตั้งเครื่องจักรและปรับฐานรากให้มั่นคง และระบบ Air Compressed ฯลฯ</p>
+            <span class="chip">Me</span>
+          </div>
+        </a>
+      </div>
+  </section>
+  <!-- ===== Footer ===== -->
+  <section id="Footer" class="site-footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div>
+          <a href="#" class="brand" style="margin-bottom:8px">
+            <img src="Pictures/Lago/logo_FVC_.jpg"   height="45">
+            <div class="brand__name">Forward Vision Consultant Co.,Ltd</div></a>
+          <p style="margin:0 0 10px; color:#94a3b8">ผู้รับเหมางานโครงการก่อสร้าง
+          </p>
+        </div>
+        <div class="footer__col">
+          <h4>บริษัท</h4>
+          <a href="About.html">เกี่ยวกับบริษัท</a>
+          <a href="#about">วิสัยทัศน์และพันธกิจ</a>
+          <a href="#about">กลุ่มธุรกิจ</a>
+        </div>
+        <div class="footer__col">
+          <h4>บริการ</h4>
+          <a href="Civil.html">Civil</a>
+          <a href="Electrical.html">Electrical</a>
+          <a href="Mechanical.html">Mechanical</a>
+        </div>
+        <div class="footer__col">
+          <h4>ติดต่อ</h4>
+          <a href="contact.html">ติดต่อเรา</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <small>COPYRIGHT© <span id="y"></span> FORWARD VISION CONSULTANT CO.,LTD. ALL RIGHTS RESERVED</small>
+        <div style="display:flex; gap:10px">
+          <a class="chip" href="https://www.facebook.com/">Facebook</a>
+          <a class="chip" href="https://www.youtube.com/">YouTube</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="script.js"></script>
+</body>
+</html>

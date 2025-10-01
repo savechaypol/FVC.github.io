@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>เกี่ยวกับเรา</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap" >
+  <link rel="stylesheet" href="style.css" >
+  <link rel="icon" type="image/png" href="Pictures/FVC-Approve-Rev01.png">
+<style>
+  :root{
+    --bg:#0b1d4a;
+    --bg-2:#0e2b70;
+    --panel:#122b6d;
+    --panel-soft:#15377f;
+    --primary:#0ea5e9;
+    --brand:#19a1ff;
+    --text:#eaf2ff;
+    --muted:#b8c5e6;
+    --accent:#35c2ff;
+    --border:#2b4ba8;
+    --card:#007ab396;
+    --radius:18px;
+    --gap:40px;
+  }
+    /*container*/
+    .container{max-width:1300px;margin:auto;padding:24px}
+  /* เส้น Title */
+  .title{font-size:clamp(40px,2.3vw,20px);font-weight:800;letter-spacing:.5px;margin:0 0 18px;display:flex;align-items:flex-end;gap:12px;}
+    .title::after{content:"";flex:1;height:4px;background:linear-gradient(90deg,var(--brand),transparent);border-radius:999px}
+    .title::before{content:"";flex:1;height:4px;background:linear-gradient(270deg,var(--brand),transparent);border-radius:999px;}
+  /* hero */
+  .hero_About{display:grid;grid-template-columns:1fr 1.6fr;gap:var(--gap);margin-top:10px;margin-bottom: 50px;}
+  .hero__media img{background:linear-gradient(180deg, rgba(4, 232, 240, 0.404), rgba(255, 255, 255, 0.5)); border:1px solid rgb(0, 204, 255); border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden}
+  
+  .eyebrow{display:inline-block;background:var(--accent);color:#052d4b;font-weight:800;padding:6px 12px;border-radius:10px;margin-bottom:10px}
+  .hero_About h1{margin:.2rem 0 10px;font-size:clamp(20px,3.8vw,35px)}
+  .hero_About p{color:var(--muted);margin:10px}
+  /* section boxes */
+  .section{margin-top:30px}
+  .card{
+    background:linear-gradient(180deg,var(--panel),var(--panel-soft));
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:22px;
+    position:relative;
+    overflow:hidden;
+  }
+  .card::after{ /* ลายโค้งบาง ๆ ด้านหลัง */
+    content:"";position:absolute;inset:-40% -20% auto auto;width:120%;height:120%;
+    background:radial-gradient(600px 160px at 80% 0%, rgba(255,255,255,.06), transparent 60%);
+    pointer-events:none;
+  }
+  /* section heading bar */
+  .bar{
+    display:inline-block;
+    background:var(--accent);
+    color:#052d4b;
+    font-weight:800;
+    padding:6px 12px;
+    border-radius:8px;
+    margin-bottom:12px;
+  }
+  /* definition list (2 คอลัมน์) */
+  .info-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:16px 24px;
+  }
+  .info-item{display:flex;gap:10px;align-items:flex-start}
+  .info-item dt{
+    min-width:130px;white-space:nowrap;
+    color:#cfe3ff;opacity:.9;font-weight:700
+  }
+  .info-item dd{margin:0;color:var(--text)}
+  @media (max-width:1000px){
+    .hero_About{grid-template-columns:1fr}
+    .info-grid{grid-template-columns:1fr}
+  }
+  /* เส้นคั่นบาง */
+  .divider{height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.08),transparent);margin:16px 0}
+</style>
+</head>
+<body>
+     <!-- ===== Header ===== -->
+  <header class="site-header ">
+    <nav class="nav ">
+      <a href="index.html" class="brand " aria-label="Forward Vision Consultant">
+        <img src="Pictures/Lago/logo_FVC_.jpg"   height="45">
+        <div class="brand__name ">Forward Vision Consultant CO.,Ltd</div>
+      </a>
+      <div class="nav__links ">
+        <a href="#">เกี่ยวกับเรา</a>
+        <a href="Services.html">บริการ</a>
+        <a href="Project.html">ผลงาน</a>
+        <a href="News.html">ข่าวสาร</a>
+        <a href="contact.html" class="btn-primary">ติดต่อเรา</a>
+      </div>
+      <button class="nav__toggle" id="openMenu" aria-label="เปิดเมนู">เมนู</button>
+    </nav>
+  </header>
+  <!-- ===== Mobile drawer ===== -->
+  <div class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="เมนูนำทาง">
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:10px">
+        <div class="brand__name">Forward Vision Consultant</div>
+        <button id="closeMenu" class="nav__toggle" style="border-color:rgba(255,255,255,.25)">ปิด</button>
+      </div>
+      <a href="index.html" onclick="toggleMenu(false)">หน้าแรก</a>
+      <a href="#" onclick="toggleMenu(false)">เกี่ยวกับเรา</a>
+      <a href="Services.html" onclick="toggleMenu(false)">บริการ</a>
+      <a href="Project.html" onclick="toggleMenu(false)">โครงการ</a>
+      <a href="News.html" onclick="toggleMenu(false)">ข่าวสาร</a>
+      <a href="contact.html" class="btn-primary" style="display:inline-block; margin-top:10px" onclick="toggleMenu(false)">ติดต่อเรา</a>
+    </div>
+  </div>
+  <section class="container">
+    <!-- hero_About -->
+     <h1 class="title">เกี่ยวกับเรา</h1>
+    <section class="hero_About">
+      <div class="hero__media">
+        <img src="Pictures/Lago/FVC Group.png" 
+             alt="ภาพงานระบบไฟฟ้า โครงสร้างพื้นฐาน">
+      </div>
+      <div class="hero__text">
+        <h1> FVC GROUP</h1>
+        <p>
+           FVC GROUP ดำเนินธุรกิจหลัก 3 ด้าน: วิศวกรรมไฟฟ้า วิศวกรรมเครื่องกล และวิศวกรรมก่อสร้าง ด้วยประสบการณ์มากกว่า 10 ปี ทั้งภาครัฐและเอกชน พร้อมมาตรฐาน ISO 9001:2015
+        </p>
+        <div class="card">
+          <span class="bar" style="margin:0 0 6px">จุดเด่น</span>
+          <ul style="margin:0 0 6px ">
+          <li>ให้บริการครบวงจร ตั้งแต่ออกแบบ ขออนุญาต (IEAT) ถึงก่อสร้างและส่งมอบ</li>
+          <li>บริหารโครงการเพื่อ <b>ลดต้นทุน</b> และ <b>เพิ่มประสิทธิภาพ</b></li>
+          <li>ทีมวิศวกรผู้เชี่ยวชาญ พัฒนาทักษะอย่างต่อเนื่อง</li>
+          </ul>
+          <div class="about__grid">
+            <div class="kpi"><b>10+ ปี</b>ประสบการณ์</div>
+            <div class="kpi"><b>100+</b>โครงการ</div>
+            <div class="kpi"><b>ISO 9001</b>รับรองระบบคุณภาพ</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Vision & Mission -->
+    <div class="info-grid">
+      <div class="card">
+        <span class="bar">วิสัยทัศน์</span>
+        <p style="margin:0">บริษัท ฟอร์เวิร์ด วิชั่น คอนซัลแทนท์ มุ่งมั่นเป็นผู้ให้บริการด้านวิศวกรรมไฟฟ้า เครื่องกล และก่อสร้างที่มีประสิทธิภาพสูงสุด เพื่อสร้างความพึงพอใจสูงสุดแก่ลูกค้า</p>
+      </div>
+    <div class="card" id="mission">
+      <span class="bar">พันธกิจ (Mission)</span>
+      <p style="margin:0">บริษัท ฟอร์เวิร์ด วิชั่น คอนซัลแทนท์ ให้บริการด้านวิศวกรรมด้วยเทคโนโลยีที่ทันสมัยและคุณภาพที่ได้มาตรฐานสากล</p>
+      </div>
+    </div>
+    <!-- Subsidiaries -->
+    <section class="wrap">
+      <div class="grid cols-2">
+        <div class="card">
+          <h3 style="margin-top:0">FORWARD VISION CONSULTANT CO., LTD.</h3>
+          <p style="margin:0 0 10px">ผู้เชี่ยวชาญด้าน <b>การออกแบบและที่ปรึกษา</b></p>
+          <div class="pills">
+            <span class="pill">ออกแบบระบบไฟฟ้า/เครื่องกล/โยธา</span>
+            <span class="pill">ที่ปรึกษาโครงการ</span>
+            <span class="pill">ขออนุญาต IEAT</span>
+          </div>
+        </div>
+        <div class="card">
+        <h3 style="margin-top:0">THAI THARIT CO., LTD.</h3>
+        <p style="margin:0 0 10px">ผู้เชี่ยวชาญด้าน <b>วิศวกรรมและงานรับเหมาก่อสร้าง</b></p>
+          <div class="pills">
+            <span class="pill">ก่อสร้างครบวงจร</span>
+            <span class="pill">ติดตั้งระบบไฟฟ้า/เครื่องกล</span>
+          <span class="pill">บริหารงานก่อสร้าง</span>
+          </div>
+        </div>
+      </div>
+    </section>  
+    <!-- COMPANY INFO -->
+    <section class="section card">
+      <span class="bar">ข้อมูลบริษัท</span>
+      <div class="info-grid">
+        <div class="info-item">
+          <dt>ชื่อบริษัท</dt><dd>บริษัท ฟอร์เวิร์ด วิชั่น คอนซัลแทนท์ จำกัด</dd>
+        </div>
+        <div class="info-item">
+          <dt>เลขทะเบียนนิติบุคคล</dt><dd>	0105554075826</dd>
+        </div>
+        <div class="info-item">
+          <dt>ที่อยู่สำนักงาน</dt><dd>ที่อยู่: 104 หมู่บ้านไอดี-ไซน์ 21 ถนน เลียบคลองสอง แขวงบางชัน เขตคลองสามวา กรุงเทพมหานคร 10510</dd>
+        </div>
+        <div class="info-item">
+          <dt>ทุนจดทะเบียน</dt><dd>10,000,000 บาท </dd>
+        </div>
+        <div class="info-item">
+          <dt>โทรศัพท์</dt><dd>02-5485986 -87</dd>
+        </div>
+        <div class="info-item">
+          <dt>อีเมล</dt><dd><a href="mailto:sorasak@fvc.co.th">sorasak@fvc.co.th</a></dd>
+        </div>
+        <div class="info-item">
+          <dt>วันก่อตั้ง</dt><dd> 2554</dd>
+        </div>
+        <div class="info-item">
+          <dt>เว็บไซต์</dt><dd><a href="https://www.fvc.co.th/">www.fvc.co.th</a></dd>
+        </div>
+      </div>
+    </section>
+
+    <!-- REGISTRATION / SHARE / LICENSE -->
+    <section class="section card">
+      <span class="bar">ใบอนุญาต / มาตรฐาน</span>
+      <div class="info-grid">
+        <div class="info-item">
+          <dt>มาตรฐาน</dt><dd>ระบบบริหารคุณภาพ ISO 9001:2015</dd>
+        </div>
+        <div class="info-item">
+          <dt>ความปลอดภัย</dt><dd>อบรม safety, Work Permit/JSR ตามระเบียบโรงงาน</dd>
+        </div>
+      </div>
+    </section>
+  </section>
+  <!-- = By Save Chayapol = -->
+  <!-- ===== Footer ===== -->
+  <section id="Footer" class="site-footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div>
+          <a href="#" class="brand" style="margin-bottom:8px">
+            <img src="Pictures/Lago/logo_FVC_.jpg"   height="45">
+            <div class="brand__name">Forward Vision Consultant Co.,Ltd</div></a>
+          <p style="margin:0 0 10px; color:#94a3b8">ผู้รับเหมางานโครงการก่อสร้าง
+          </p>
+        </div>
+        <div class="footer__col">
+          <h4>บริษัท</h4>
+          <a href="About.html">เกี่ยวกับบริษัท</a>
+          <a href="#about">วิสัยทัศน์และพันธกิจ</a>
+          <a href="#about">กลุ่มธุรกิจ</a>
+        </div>
+        <div class="footer__col">
+          <h4>บริการ</h4>
+          <a href="Civil.html">Civil</a>
+          <a href="Electrical.html">Electrical</a>
+          <a href="Mechanical.html">Mechanical</a>
+        </div>
+        <div class="footer__col">
+          <h4>ติดต่อ</h4>
+          <a href="contact.html">ติดต่อเรา</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <small>COPYRIGHT© <span id="y"></span> FORWARD VISION CONSULTANT CO.,LTD. ALL RIGHTS RESERVED</small>
+        <div style="display:flex; gap:10px">
+          <a class="chip" href="https://www.facebook.com/">Facebook</a>
+          <a class="chip" href="https://www.youtube.com/">YouTube</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="script.js"></script>
+</body>
+</html>
