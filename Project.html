@@ -10,7 +10,6 @@
   <style>
     :root{
       --bg:#0b1220;
-      --panel:#0f1b2d;
       --panel-2:#0e2136;
       --primary:#0ea5e9;
       --text:#e5e7eb;
@@ -35,7 +34,10 @@
       align-items:flex-end;
       gap:20px}
     .title{font-size:clamp(28px, 3.2vw, 44px);line-height:1.1;margin:8px 0 10px}
-    .subtitle{color:var(--muted);margin:0}
+    .subtitle{
+      text-align: center;
+      color:var(--muted);
+      margin:0}
     /* ===== Filter Bar ===== */
     .tools{top:0;z-index:40;background:linear-gradient(180deg, rgba(11,18,32,.92), rgba(11,18,32,.86));backdrop-filter: blur(6px);border-bottom:1px solid rgba(148,163,184,.08)}
     .tools__inner{display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding:1px 0}
@@ -121,13 +123,9 @@
   </div>
   <!-- ===== hero_Project ===== -->
   <section class="hero_Project">
-    <div class="wrap">
-      <div class="hero__head">
-        <div>
-          <h1 class="title">All Project Work</h1>
-          <p class="subtitle">รวมโครงการของ FVC ครอบคลุมงานโยธา ระบบไฟฟ้า ระบบสื่อสาร และงานอื่นๆ</p>
-        </div>
-      </div>
+    <div class="wrap"> 
+      <h1 class="title">All Project Work</h1>
+      <p class="subtitle">รวมโครงการของ FVC ครอบคลุมงานโยธา ระบบไฟฟ้า ระบบสื่อสาร และงานอื่นๆ</p>
     </div>
   </section>
   <!-- ===== Sticky tools: filters + search ===== -->
@@ -284,10 +282,6 @@
       </div>
       <div class="footer__bottom">
         <small>COPYRIGHT© <span id="y"></span> FORWARD VISION CONSULTANT CO.,LTD. ALL RIGHTS RESERVED</small>
-        <div style="display:flex; gap:10px">
-          <a class="chip" href="https://www.facebook.com/">Facebook</a>
-          <a class="chip" href="https://www.youtube.com/">YouTube</a>
-        </div>
       </div>
     </div>
   </section>

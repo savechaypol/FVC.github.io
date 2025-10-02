@@ -6,36 +6,49 @@
     const openBtn = document.getElementById('openMenu');
     const closeBtn = document.getElementById('closeMenu');
     function toggleMenu(force){
-    const open = (typeof force === 'boolean') ? force : !drawer.classList.contains('is-open');
-    drawer.classList.toggle('is-open', open);
-    drawer.setAttribute('aria-hidden', String(!open));
-    if(open) document.body.style.overflow='hidden'; else document.body.style.overflow='';
-    }
-    openBtn.addEventListener('click', () => toggleMenu(true));
-    closeBtn.addEventListener('click', () => toggleMenu(false));
-    drawer.addEventListener('click', (e)=>{ if(e.target===drawer) toggleMenu(false) });
-    drawer.addEventListener('touchmove', (e) => {
+      if (!drawer) return;
+      const open = (typeof force === 'boolean') ? force : !drawer.classList.contains('is-open');
+      drawer.classList.toggle('is-open', open);
+      drawer.setAttribute('aria-hidden', String(!open));
+      document.body.style.overflow = open ? 'hidden' : '';
+      }
+      if (openBtn) openBtn.addEventListener('click', () => toggleMenu(true));
+      if (closeBtn) closeBtn.addEventListener('click', () => toggleMenu(false));
+      if (drawer) {
+      drawer.addEventListener('click', (e)=>{ if(e.target===drawer) toggleMenu(false) });
+      drawer.addEventListener('touchmove', (e) => {
       if (!e.target.closest('.drawer__panel')) e.preventDefault();
       }, { passive:false });
+    }
 
     //<!-- ===== เลื่อยโลโก้เลื่อยๆ ===== -->
-    function setupLogoTicker(root){
+    function setupLogoTicker(root) {
+    if (!root) return;
     const track = root.querySelector('#track');
     const viewport = root.querySelector('.ticker__viewport');
-    const speed = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--speed')) || 100;
-    const minWidth = viewport.clientWidth * 2;
+    if (!track || !viewport) return;
+    const speed = parseFloat(
+      getComputedStyle(document.documentElement)
+      .getPropertyValue('--speed')
+    ) || 100;
+    const minWidth = (viewport.clientWidth || 300) * 2;
     let totalWidth = track.scrollWidth;
     while (totalWidth < minWidth) {
-      [...track.children].forEach(node => track.appendChild(node.cloneNode(true)));
+      const children = [...track.children];
+      children.forEach(node => {
+        track.appendChild(node.cloneNode(true));
+      });
       totalWidth = track.scrollWidth;
     }
     const shift = -Math.floor(totalWidth / 2);
     const duration = Math.abs(shift) / speed;
     track.style.setProperty('--to', shift + 'px');
     track.style.setProperty('--duration', duration + 's');
-    track.classList.add('anim');
-    }
+    void track.offsetWidth;
+    track.classList.add('anim');}
+    window.addEventListener('DOMContentLoaded', () => {
     setupLogoTicker(document.getElementById('ticker'));
+    });
     
     //<!-- ===== เนื้อหาล่นลงมา ===== -->
     (function(){

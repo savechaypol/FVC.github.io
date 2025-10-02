@@ -3,10 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Services</title>
+  <title>Forward Vision Consultant</title>
   <meta name="description" content="หน้าเว็บไซต์โครง FVC" />
-  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link href="style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap" >
+  <link rel="stylesheet" href="style.css" >
+  <link rel="icon" type="image/png" href="Pictures/FVC-Approve-Rev01.png">
 </head>
 <body>
   <!-- ===== Header ===== -->
@@ -20,7 +21,7 @@
         <a href="About.html">เกี่ยวกับเรา</a>
         <a href="Services.html">บริการ</a>
         <a href="Project.html">ผลงาน</a>
-        <a href="News.html  ">ข่าวสาร</a>
+        <a href="News.html">ข่าวสาร</a>
         <a href="contact.html" class="btn-primary">ติดต่อเรา</a>
       </div>
       <button class="nav__toggle" id="openMenu" aria-label="เปิดเมนู">เมนู</button>
@@ -43,34 +44,32 @@
   </div>
   <!-- ===== Services ===== -->
   <section id="services"class="wrap">
-      <div class="section__head">
-        <div>
-          <h2 class="section__title text-animate">บริการของเรา</h2>
-          <p class="section__desc">ออกแบบ จัดหา ติดตั้ง ทดสอบ เดินระบบ และบำรุงรักษา</p>
+      <div class="text_center">
+          <h1 class="section__title text-animate  ">บริการของเรา</h1>
+          <p class="section__desc "data-pop style="--delay:100ms">ออกแบบ จัดหา ติดตั้ง ทดสอบ เดินระบบ และบำรุงรักษา</p>
         </div>
-      </div>
       <div class="Services_cards">
-        <a class="Services_card " href="Civil.html">
-          <div class="Services_card__media" style="background-image:linear-gradient(135deg,#111827,#334155)" aria-hidden="true" ><img alt="CSA" src="Pictures/Services/Services_Civeil.png"></div>
+        <a class="Services_card "data-pop style="--delay:100ms; --dur:5s" href="Civil.html">
+          <div class="Services_card__media " aria-hidden="true" ><img alt="CSA" src="Pictures/Services/Services_Civeil.png"></div>
             <div class="Services_card__body">
             <h3 class="Services_card__title">Civil Engineering</h3>
-            <p class="Services_card__text">ให้บริการงานก่อสร้างโยธาอย่างมีคุณภาพสูง มีความปลอดภัยและตรงตามความคาดหวังทุกประการ </p>
+            <p>ให้บริการงานก่อสร้างโยธาอย่างมีคุณภาพสูง มีความปลอดภัยและตรงตามความคาดหวังทุกประการ</p>
             <span class="chip">Civil</span>
           </div>
         </a>
-        <a class="Services_card" href="Electrical.html">
+        <a class="Services_card" data-pop style="--delay:200ms; --dur:5s" href="Electrical.html">
           <div class="Services_card__media" style="background-image:linear-gradient(135deg,#111827,#334155)" aria-hidden="true"><img alt="EE" src="Pictures/Services/Services_Electrical.png"></div>
           <div class="Services_card__body">
             <h3 class="Services_card__title">Electrical Engineering</h3>
-            <p class="Services_card__text">ให้บริการด้านระบบไฟฟ้า HV/LV รวมถึงระบบควบคุม ระบบไฟฟฟ้าและระบบสื่อสาร ฯลฯ</p>
+            <p>ให้บริการด้านระบบไฟฟ้า HV/LV รวมถึงระบบควบคุม ระบบไฟฟ้าและระบบสื่อสาร ฯลฯ</p>
             <span class="chip">EE</span>
           </div>
         </a>
-        <a class="Services_card " href="Mechanical.html">
+        <a class="Services_card "data-pop style="--delay:300ms; --dur:5s" href="Mechanical.html">
           <div class="Services_card__media" style="background-image:linear-gradient(135deg,#0f172a,#1f2937)" aria-hidden="true"><img alt="Cm" src="Pictures/Services/Services_Mechanical.png"></div>
           <div class="Services_card__body">
             <h3 class="Services_card__title">Mechanical Engineering</h3>
-            <p class="Services_card__text">ให้บริการงานเครื่องกลครอบคลุมการติดตั้งระบบท่อ การติดตั้งเครื่องจักรและปรับฐานรากให้มั่นคง และระบบ Air Compressed ฯลฯ</p>
+            <p>ให้บริการงานเครื่องกลครอบคลุมการติดตั้งระบบท่อ การติดตั้งเครื่องจักรและปรับฐานรากให้มั่นคง และระบบ Air Compressed ฯลฯ</p>
             <span class="chip">Me</span>
           </div>
         </a>
@@ -106,10 +105,6 @@
       </div>
       <div class="footer__bottom">
         <small>COPYRIGHT© <span id="y"></span> FORWARD VISION CONSULTANT CO.,LTD. ALL RIGHTS RESERVED</small>
-        <div style="display:flex; gap:10px">
-          <a class="chip" href="https://www.facebook.com/">Facebook</a>
-          <a class="chip" href="https://www.youtube.com/">YouTube</a>
-        </div>
       </div>
     </div>
   </section>
