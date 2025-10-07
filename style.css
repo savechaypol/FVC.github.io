@@ -87,7 +87,7 @@
       margin:auto; 
       padding:80px 20px 56px; 
       display:grid; 
-      grid-template-columns: 1.2fr 1fr; 
+      grid-template-columns: 1.3fr 1fr; 
       gap:30px; 
       align-items:center;}
     .hero__title{
@@ -294,7 +294,7 @@
     @media (max-width: 1024px){
     .hero__inner{grid-template-columns:1fr}
     .about{grid-template-columns:1fr}}
-    @media (max-width: 852px){
+    @media (max-width: 894px){
     .nav__links{display:none}
     .nav__toggle{display:inline-flex}
     .footer__grid{grid-template-columns:1fr 1fr}}
@@ -443,3 +443,70 @@
       height:4px;
       background:linear-gradient(270deg, var(--primary), transparent);
       border-radius:999px;}
+    /* === language === */
+    .lang-container {
+      position:fixed;
+      z-index:40;
+      right: 0; 
+      max-width: var(--max);
+      padding: 10px 20px;}
+    .lang {
+      position: relative;
+      display: inline-block;}
+    .lang__btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #0ea4e900;
+      color: #e0e0e0;
+      font-family: "Kanit", sans-serif;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 14px;
+      cursor: pointer;
+      transition: background-color 0.3s;}
+    .lang__btn:hover {
+      background-color: #585858a1;}
+    .lang__caret {
+      transition: transform 0.3s;}
+    .lang:hover .lang__caret {
+      transform: rotate(180deg);}
+    .lang__menu {
+      position: absolute;
+      right: 0;
+      top: 100%;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-top: 8px;
+      min-width: 160px;
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: all 0.25s ease;
+      overflow: hidden;
+      z-index: 1000;}
+    .lang:hover .lang__menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);}
+    .lang__menu a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      color: #333;
+      text-decoration: none;
+      font-family: "Kanit", sans-serif;
+      font-size: 15px;
+      transition: background 0.2s;}
+    .lang__menu a:hover {
+      background: #b7b7b7;}
+    .flag {
+      width: 20px;
+      height: 14px;
+      border-radius: 2px;
+      object-fit: cover;}

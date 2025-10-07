@@ -18,13 +18,13 @@
         <div class="brand__name ">Forward Vision Consultant Co.,Ltd</div>
       </a>
       <div class="nav__links ">
-        <a href="About.html">เกี่ยวกับเรา</a>
-        <a href="Services.html">บริการ</a>
-        <a href="Project.html">ผลงาน</a>
-        <a href="News.html">ข่าวสาร</a>
-        <a href="contact.html" class="btn-primary">ติดต่อเรา</a>
+        <a href="About.html" data-i18n="about">เกี่ยวกับเรา</a>
+        <a href="Services.html" data-i18n="services">บริการ</a>
+        <a href="Project.html" data-i18n="project">ผลงาน</a>
+        <a href="News.html" data-i18n="news">ข่าวสาร</a>
+        <a href="contact.html" class="btn-primary" data-i18n="contact">ติดต่อเรา</a>
       </div>
-      <button class="nav__toggle" id="openMenu" aria-label="เปิดเมนู">เมนู</button>
+      <button class="nav__toggle" id="openMenu" aria-label="เปิดเมนู" data-i18n="menu">เมนู</button>
     </nav>
   </header>
   <!-- ===== Mobile drawer ===== -->
@@ -32,14 +32,37 @@
     <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="เมนูนำทาง">
       <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:10px">
         <div class="brand__name">Forward Vision Consultant</div>
-        <button id="closeMenu" class="nav__toggle" style="border-color:rgba(255,255,255,.25)">ปิด</button>
+        <button id="closeMenu" class="nav__toggle" style="border-color:rgba(255,255,255,.25)"  data-i18n="Close" >ปิด</button>
       </div>
-      <a href="index.html" onclick="toggleMenu(false)">หน้าแรก</a>
-      <a href="About.html" onclick="toggleMenu(false)">เกี่ยวกับเรา</a>
-      <a href="Services.html" onclick="toggleMenu(false)">บริการ</a>
-      <a href="Project.html" onclick="toggleMenu(false)">ผลงาน</a>
-      <a href="News.html" onclick="toggleMenu(false)">ข่าวสาร</a>
-      <a href="contact.html" class="btn-primary" style="display:inline-block; margin-top:10px" onclick="toggleMenu(false)">ติดต่อเรา</a>
+      <a href="index.html" onclick="toggleMenu(false)" data-i18n="home_page" >หน้าแรก</a>
+      <a href="About.html" onclick="toggleMenu(false)" data-i18n="about">เกี่ยวกับเรา</a>
+      <a href="Services.html" onclick="toggleMenu(false)" data-i18n="services">บริการ</a>
+      <a href="Project.html" onclick="toggleMenu(false)" data-i18n="project">ผลงาน</a>
+      <a href="News.html" onclick="toggleMenu(false)" data-i18n="news">ข่าวสาร</a>
+      <a href="contact.html" class="btn-primary" style="display:inline-block; margin-top:10px" onclick="toggleMenu(false)" data-i18n="contact">ติดต่อเรา</a>
+    </div>
+  </div>
+  <!-- ===== language ===== -->
+  <div class="lang-container">
+    <div class="lang" id="langBox">
+      <button class="lang__btn" id="langBtn" aria-expanded="false" aria-controls="langMenu" data-i18n="lang_btn">
+        <img id="currentFlag" class="flag" src="https://flagcdn.com/w20/th.png" alt="">
+        <span id="currentLang">ไทย (TH)</span>
+        <svg class="lang__caret" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="lang__menu" id="langMenu" role="menu" aria-label="Select language">
+        <a href="#" data-lang="th" data-flag="https://flagcdn.com/w20/th.png" role="menuitem">
+          <img class="flag" src="https://flagcdn.com/w20/th.png" alt=""> ไทย (TH)
+        </a>
+        <a href="#" data-lang="en" data-flag="https://flagcdn.com/w20/gb.png" role="menuitem">
+          <img class="flag" src="https://flagcdn.com/w20/gb.png" alt=""> English (EN)
+        </a>
+        <a href="#" data-lang="zh" data-flag="https://flagcdn.com/w20/cn.png" role="menuitem">
+          <img class="flag" src="https://flagcdn.com/w20/cn.png" alt=""> 中文 (ZH)
+        </a>
+      </div>
     </div>
   </div>
   <!-- ===== Services ===== -->
@@ -83,24 +106,24 @@
           <a href="#" class="brand" style="margin-bottom:8px">
             <img src="Pictures/Lago/logo_FVC_.jpg"   height="45">
             <div class="brand__name">Forward Vision Consultant Co.,Ltd</div></a>
-          <p style="margin:0 0 10px; color:#94a3b8">ผู้รับเหมางานโครงการก่อสร้าง
+          <p style="margin:0 0 10px; color:#94a3b8" data-i18n="FVC_title">ผู้รับเหมางานโครงการก่อสร้าง
           </p>
         </div>
         <div class="footer__col">
-          <h4>บริษัท</h4>
-          <a href="About.html">เกี่ยวกับบริษัท</a>
-          <a href="#about">วิสัยทัศน์และพันธกิจ</a>
-          <a href="#about">กลุ่มธุรกิจ</a>
+          <h4 data-i18n="about">บริษัท</h4>
+          <a href="About.html" data-i18n="Contact_us">เกี่ยวกับบริษัท</a>
+          <a href="#about" data-i18n="vision_and_mission">วิสัยทัศน์และพันธกิจ</a>
+          <a href="#about" data-i18n="Group_companies">กลุ่มบริษัท</a>
         </div>
         <div class="footer__col">
-          <h4>บริการ</h4>
+          <h4 data-i18n="services">บริการ</h4>
           <a href="Civil.html">Civil</a>
           <a href="Electrical.html">Electrical</a>
           <a href="Mechanical.html">Mechanical</a>
         </div>
         <div class="footer__col">
-          <h4>ติดต่อ</h4>
-          <a href="contact.html">ติดต่อเรา</a>
+          <h4 data-i18n="contact">ติดต่อ</h4>
+          <a href="contact.html" data-i18n="Contact_us">ติดต่อเรา</a>
         </div>
       </div>
       <div class="footer__bottom">

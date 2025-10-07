@@ -18,13 +18,13 @@
         <div class="brand__name ">Forward Vision Consultant Co.,Ltd</div>
       </a>
       <div class="nav__links ">
-        <a href="About.html">เกี่ยวกับเรา</a>
-        <a href="Services.html">บริการ</a>
-        <a href="Project.html">ผลงาน</a>
-        <a href="News.html">ข่าวสาร</a>
-        <a href="contact.html" class="btn-primary">ติดต่อเรา</a>
+        <a href="About.html" data-i18n="about">เกี่ยวกับเรา</a>
+        <a href="Services.html" data-i18n="services">บริการ</a>
+        <a href="Project.html" data-i18n="project">ผลงาน</a>
+        <a href="News.html" data-i18n="news">ข่าวสาร</a>
+        <a href="contact.html" class="btn-primary" data-i18n="contact">ติดต่อเรา</a>
       </div>
-      <button class="nav__toggle" id="openMenu" aria-label="เปิดเมนู">เมนู</button>
+      <button class="nav__toggle" id="openMenu" aria-label="เปิดเมนู" data-i18n="menu">เมนู</button>
     </nav>
   </header>
   <!-- ===== Mobile drawer ===== -->
@@ -32,32 +32,56 @@
     <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="เมนูนำทาง">
       <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:10px">
         <div class="brand__name">Forward Vision Consultant</div>
-        <button id="closeMenu" class="nav__toggle" style="border-color:rgba(255,255,255,.25)">ปิด</button>
+        <button id="closeMenu" class="nav__toggle" style="border-color:rgba(255,255,255,.25)"  data-i18n="Close" >ปิด</button>
       </div>
-      <a href="index.html" onclick="toggleMenu(false)">หน้าแรก</a>
-      <a href="About.html" onclick="toggleMenu(false)">เกี่ยวกับเรา</a>
-      <a href="Services.html" onclick="toggleMenu(false)">บริการ</a>
-      <a href="Project.html" onclick="toggleMenu(false)">ผลงาน</a>
-      <a href="News.html" onclick="toggleMenu(false)">ข่าวสาร</a>
-      <a href="contact.html" class="btn-primary" style="display:inline-block; margin-top:10px" onclick="toggleMenu(false)">ติดต่อเรา</a>
+      <a href="index.html" onclick="toggleMenu(false)" data-i18n="home_page" >หน้าแรก</a>
+      <a href="About.html" onclick="toggleMenu(false)" data-i18n="about">เกี่ยวกับเรา</a>
+      <a href="Services.html" onclick="toggleMenu(false)" data-i18n="services">บริการ</a>
+      <a href="Project.html" onclick="toggleMenu(false)" data-i18n="project">ผลงาน</a>
+      <a href="News.html" onclick="toggleMenu(false)" data-i18n="news">ข่าวสาร</a>
+      <a href="contact.html" class="btn-primary" style="display:inline-block; margin-top:10px" onclick="toggleMenu(false)" data-i18n="contact">ติดต่อเรา</a>
+    </div>
+  </div>
+  <!-- ===== language ===== -->
+  <div class="lang-container">
+    <div class="lang" id="langBox">
+      <button class="lang__btn" id="langBtn" aria-expanded="false" aria-controls="langMenu" data-i18n="lang_btn">
+        <img id="currentFlag" class="flag" src="https://flagcdn.com/w20/th.png" alt="">
+        <span id="currentLang">ไทย (TH)</span>
+        <svg class="lang__caret" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="lang__menu" id="langMenu" role="menu" aria-label="Select language">
+        <a href="#" data-lang="th" data-flag="https://flagcdn.com/w20/th.png" role="menuitem">
+          <img class="flag" src="https://flagcdn.com/w20/th.png" alt=""> ไทย (TH)
+        </a>
+        <a href="#" data-lang="en" data-flag="https://flagcdn.com/w20/gb.png" role="menuitem">
+          <img class="flag" src="https://flagcdn.com/w20/gb.png" alt=""> English (EN)
+        </a>
+        <a href="#" data-lang="zh" data-flag="https://flagcdn.com/w20/cn.png" role="menuitem">
+          <img class="flag" src="https://flagcdn.com/w20/cn.png" alt=""> 中文 (ZH)
+        </a>
+      </div>
     </div>
   </div>
   <!-- ===== Hero ===== -->
   <section class="hero">
+    <!-- ===== inner ===== -->
     <div class="hero__inner">
-      <div><h1 class="hero__title text-animate">บริษัท ฟอร์เวิร์ด วิชั่น คอนซัลแทนท์ จำกัด<br> </h1>
-        <p class="hero__text "data-pop style="--delay:100ms">บริการของเราเริ่มต้นตั้งแต่การออกแบบไปจนถึงการขอใบอนุญาตก่อสร้างในนิคมอุตสาหกรรม (กนอ.) และได้กำหนดกลยุทธ์การบริหารจัดการเพื่อลดต้นทุนและเพิ่มประสิทธิภาพ ซึ่งเป็นนโยบายสำคัญ เรามีวิศวกรผู้เชี่ยวชาญและการพัฒนาบุคลากรอย่างต่อเนื่อง เราได้รับมาตรฐาน ISO9001:2015</p>
+      <div><h1 class="hero__title text-animate" data-i18n="Name_Company">บริษัท ฟอร์เวิร์ด วิชั่น คอนซัลแทนท์ จำกัด<br></h1>
+        <p class="hero__text "data-pop style="--delay:100ms" data-i18n="hero_Our_services" >บริการของเราเริ่มต้นตั้งแต่การออกแบบไปจนถึงการขอใบอนุญาตก่อสร้างในนิคมอุตสาหกรรม (กนอ.) และได้กำหนดกลยุทธ์การบริหารจัดการเพื่อลดต้นทุนและเพิ่มประสิทธิภาพ ซึ่งเป็นนโยบายสำคัญ เรามีวิศวกรผู้เชี่ยวชาญและการพัฒนาบุคลากรอย่างต่อเนื่อง เราได้รับมาตรฐาน ISO9001:2015</p>
         <div class="nav__links ">
-          <a href="#projects" class="btn-primary ">ดูผลงาน</a>
+          <a href="#projects" class="btn-primary " data-i18n="See_the_work">ดูผลงาน</a>
           <a class="btn-primary "
-          href="#services" >บริการของเรา</a>
+          href="#services" data-i18n="services">บริการของเรา</a>
         </div>
       </div>
       <div class="hero__card " role="group" aria-label="จุดเด่นองค์กร">
         <div class="hero__icon">🏗️</div>
         <div>
-          <h4 class="text-animate" >  ประสบการณ์กว่า 10 ปี</h4>
-          <p data-pop style="--delay:100ms">งานก่อสร้างโยธา งานติดตั้งระบบไฟฟ้า ระบบสื่อสารโทรคมนาคม ระบบปรับอากาศ ระบบสุขาภิบาล และระบบป้องกันอัคคีภัย ตามมาตรฐานอุตสาหกรรม</p>
+          <h4 class="text-animate" data-i18n="experience">  ประสบการณ์กว่า 10 ปี</h4>
+          <p data-pop style="--delay:100ms" data-i18n="experience_services">งานก่อสร้างโยธา งานติดตั้งระบบไฟฟ้า ระบบสื่อสารโทรคมนาคม ระบบปรับอากาศ ระบบสุขาภิบาล และระบบป้องกันอัคคีภัย ตามมาตรฐานอุตสาหกรรม</p>
         </div>
       </div>
     </div>
@@ -66,28 +90,28 @@
   <section id="about" class="wrap">
     <div class="section__head reveal">
       <div>
-        <h2 class="section__title text-animate">เกี่ยวกับบริษัท</h2>
-        <p class="section__desc "data-pop style="--delay:100ms">ก่อตั้งโดยทีมวิศวกรผู้เชี่ยวชาญ ให้บริการงานวิศวกรรม</p>
+        <h2 class="section__title text-animate"  data-i18n="about">เกี่ยวกับบริษัท</h2>
+        <p class="section__desc "data-pop style="--delay:100ms" data-i18n="about_build">ก่อตั้งโดยทีมวิศวกรผู้เชี่ยวชาญ ให้บริการงานวิศวกรรม</p>
       </div>
-      <a class="chip" data-pop style="--delay:100ms"href="#">ดูวิสัยทัศน์และพันธกิจ</a>
+      <a class="chip" data-pop style="--delay:100ms"href="#" data-i18n="vision_and_mission">ดูวิสัยทัศน์และพันธกิจ</a>
     </div>
     <div class="about">
       <div class="about__card"data-pop style="--x:-200px; --y:0; --delay:100ms;">
-        <h3 style="margin-top:0">วิสัยทัศน์</h3>
-        <p>Forward Vision Consultant คือผู้ให้บริการด้านไฟฟ้า เครื่องกล และก่อสร้างที่มีประสิทธิภาพ เพื่อความพึงพอใจสูงสุดของลูกค้า</p>
+        <h3 style="margin-top:0" data-i18n="vision">วิสัยทัศน์</h3>
+        <p data-i18n="vision_text">Forward Vision Consultant คือผู้ให้บริการด้านไฟฟ้า เครื่องกล และก่อสร้างที่มีประสิทธิภาพ เพื่อความพึงพอใจสูงสุดของลูกค้า</p>
         <div class="about__grid">
-          <div class="kpi"><b>100+</b> โครงการ</div>
-          <div class="kpi"><b>10+ ปี</b> ประสบการณ์</div>
-          <div class="kpi"><b>ISO 9001</b> ระบบคุณภาพ</div>
+          <div class="kpi"><b>100+</b data-i18n="project"> โครงการ</div>
+          <div class="kpi" data-i18n="year"><b>10+ ปี</b data-i18n="experience">ประสบการณ์</div>
+          <div class="kpi"><b>ISO 9001</b data-i18n="Quality_system"> ระบบคุณภาพ</div>
         </div>
       </div>
       <div class="about__card "data-pop style="--x:200px; --y:0; --delay:100ms;">
-        <h3 style="margin-top:0">กลุ่มบริษัท</h3>
+        <h3 style="margin-top:0" data-i18n="Group_companies">กลุ่มบริษัท</h3>
         <ul style="margin:0 0 10px 18px">
-          <li>FORWARD VISION CONSULTANT CO.,LTD บริษัทออกแบบและที่ปรึกษา</li>
-          <li>THAI THARIT CO.,LTD บริษัท วิศวกรรมและรับเหมาก่อสร้าง</li>
+          <li data-i18n="FVC">FORWARD VISION CONSULTANT CO.,LTD บริษัทออกแบบและที่ปรึกษา</li>
+          <li data-i18n="TTR">THAI THARIT CO.,LTD บริษัท วิศวกรรมและรับเหมาก่อสร้าง</li>
         </ul>
-        <a class="chip" href="Services.html">สำรวจบริการทั้งหมด</a>
+        <a class="chip" href="Services.html" data-i18n="Explore_all">สำรวจบริการทั้งหมด</a>
       </div>
     </div>
   </section>
@@ -95,10 +119,10 @@
   <section id="services"class="wrap">
       <div class="section__head">
         <div>
-          <h2 class="section__title text-animate">บริการของเรา</h2>
-          <p class="section__desc "data-pop style="--delay:100ms">ออกแบบ จัดหา ติดตั้ง ทดสอบ เดินระบบ และบำรุงรักษา</p>
+          <h2 class="section__title text-animate"  data-i18n="services">บริการของเรา</h2>
+          <p class="section__desc "data-pop style="--delay:100ms" data-i18n="services_text">ออกแบบ จัดหา ติดตั้ง ทดสอบ เดินระบบ และบำรุงรักษา</p>
         </div>
-        <a class="chip"data-pop style="--delay:100ms" href="Services.html">ดูทั้งหมด
+        <a class="chip"data-pop style="--delay:100ms" href="Services.html" data-i18n="all">ดูทั้งหมด
         </a>
       </div>
       <div class="Services_cards">
@@ -106,7 +130,7 @@
           <div class="Services_card__media " aria-hidden="true" ><img alt="CSA" src="Pictures/Services/Services_Civeil.png"></div>
             <div class="Services_card__body">
             <h3 class="Services_card__title">Civil Engineering</h3>
-            <p>ให้บริการงานก่อสร้างโยธาอย่างมีคุณภาพสูง มีความปลอดภัยและตรงตามความคาดหวังทุกประการ</p>
+            <p data-i18n="civil_details">ให้บริการงานก่อสร้างโยธาอย่างมีคุณภาพสูง มีความปลอดภัยและตรงตามความคาดหวังทุกประการ</p>
             <span class="chip">Civil</span>
           </div>
         </a>
@@ -114,7 +138,7 @@
           <div class="Services_card__media" style="background-image:linear-gradient(135deg,#111827,#334155)" aria-hidden="true"><img alt="EE" src="Pictures/Services/Services_Electrical.png"></div>
           <div class="Services_card__body">
             <h3 class="Services_card__title">Electrical Engineering</h3>
-            <p>ให้บริการด้านระบบไฟฟ้า HV/LV รวมถึงระบบควบคุม ระบบไฟฟ้าและระบบสื่อสาร ฯลฯ</p>
+            <p data-i18n="EE_details">ให้บริการด้านระบบไฟฟ้า HV/LV รวมถึงระบบควบคุม ระบบไฟฟ้าและระบบสื่อสาร ฯลฯ</p>
             <span class="chip">EE</span>
           </div>
         </a>
@@ -122,7 +146,7 @@
           <div class="Services_card__media" style="background-image:linear-gradient(135deg,#0f172a,#1f2937)" aria-hidden="true"><img alt="Cm" src="Pictures/Services/Services_Mechanical.png"></div>
           <div class="Services_card__body">
             <h3 class="Services_card__title">Mechanical Engineering</h3>
-            <p>ให้บริการงานเครื่องกลครอบคลุมการติดตั้งระบบท่อ การติดตั้งเครื่องจักรและปรับฐานรากให้มั่นคง และระบบ Air Compressed ฯลฯ</p>
+            <p data-i18n="Me_details">ให้บริการงานเครื่องกลครอบคลุมการติดตั้งระบบท่อ การติดตั้งเครื่องจักรและปรับฐานรากให้มั่นคง และระบบ Air Compressed ฯลฯ</p>
             <span class="chip">Me</span>
           </div>
         </a>
@@ -132,16 +156,16 @@
   <section id="projects" class="wrap">
     <div class="section__head">
       <div>
-        <h2 class="section__title text-animate">ผลงานเด่น</h2>
-        <p class="section__desc"data-pop style="--delay:100ms">ตัวอย่างผลงานโครงการเด่นจากโครงกการทั้งหมดของเรา</p>
+        <h2 class="section__title text-animate" data-i18n="project">ผลงานเด่น</h2>
+        <p class="section__desc"data-pop style="--delay:100ms" data-i18n="project_title">ตัวอย่างผลงานโครงการเด่นจากโครงกการทั้งหมดของเรา</p>
       </div>
-      <a class="chip"data-pop style="--delay:100ms" href="Project.html">ดูทั้งหมด</a>
+      <a class="chip"data-pop style="--delay:100ms" href="Project.html" data-i18n="all">ดูทั้งหมด</a>
     </div>
     <div class="projects__grid" id="projectsTrack" aria-label="โครงการ">
     <a class="project" data-pop style="--delay:100ms; --dur:5s"href="01_ติดตั้งหม้อแปลง.html">
       <img loading="lazy" alt="ติดตั้งหม้อแปลงและตู้ MDB"
           src="Pictures/Performance/CPF/ติดตั้งหม้อแปลง 500 kVA มหาชัย สมุครสาคร/00_ติดตั้งหม้อแปลง.jpg">
-      <figcaption class="project__badge">ติดตั้งหม้อแปลงและตู้ MDB</figcaption>
+      <figcaption class="project__badge" data-i18n="install_Tr_MDB">ติดตั้งหม้อแปลงและตู้ MDB</figcaption>
     </a>
     <a class="project" data-pop style="--delay:200ms; --dur:5s"href="02_Desing_Sonepar.html">
       <img loading="lazy" alt="Sonepar" src="Pictures/Performance/Sonepar/Design-ก่อสร้าง Office Training Sonepar/00_Sonepar.jpg">
@@ -157,7 +181,7 @@
   <!-- ===== Logo Ticker ===== -->
   <section id="container" class="wrap">
   <div class="section__head">
-      <h2 class="section__title text-animate">ลูกค้าที่ไว้วางใจเรา</h2>
+      <h2 class="section__title text-animate" data-i18n="customer">ลูกค้าที่ไว้วางใจเรา</h2>
     </div>
   <div class="logo-ticker" id="ticker" aria-label="แถบโลโก้ลูกค้าแบบเลื่อนต่อเนื่อง">
     <div class="ticker__viewport"data-pop style="--x:200px; --y:0; --delay:100ms;">
@@ -196,24 +220,24 @@
           <a href="#" class="brand" style="margin-bottom:8px">
             <img src="Pictures/Lago/logo_FVC_.jpg"   height="45">
             <div class="brand__name">Forward Vision Consultant Co.,Ltd</div></a>
-          <p style="margin:0 0 10px; color:#94a3b8">ผู้รับเหมางานโครงการก่อสร้าง
+          <p style="margin:0 0 10px; color:#94a3b8" data-i18n="FVC_title">ผู้รับเหมางานโครงการก่อสร้าง
           </p>
         </div>
         <div class="footer__col">
-          <h4>บริษัท</h4>
-          <a href="About.html">เกี่ยวกับบริษัท</a>
-          <a href="#about">วิสัยทัศน์และพันธกิจ</a>
-          <a href="#about">กลุ่มธุรกิจ</a>
+          <h4 data-i18n="about">บริษัท</h4>
+          <a href="About.html" data-i18n="Contact_us">เกี่ยวกับบริษัท</a>
+          <a href="#about" data-i18n="vision_and_mission">วิสัยทัศน์และพันธกิจ</a>
+          <a href="#about" data-i18n="Group_companies">กลุ่มบริษัท</a>
         </div>
         <div class="footer__col">
-          <h4>บริการ</h4>
+          <h4 data-i18n="services">บริการ</h4>
           <a href="Civil.html">Civil</a>
           <a href="Electrical.html">Electrical</a>
           <a href="Mechanical.html">Mechanical</a>
         </div>
         <div class="footer__col">
-          <h4>ติดต่อ</h4>
-          <a href="contact.html">ติดต่อเรา</a>
+          <h4 data-i18n="contact">ติดต่อ</h4>
+          <a href="contact.html" data-i18n="Contact_us">ติดต่อเรา</a>
         </div>
       </div>
       <div class="footer__bottom">

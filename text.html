@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-i18n="meta.title">เว็บหลายภาษา (TH/EN/ZH)</title>
+  <meta name="description" data-i18n="meta.description" data-i18n-attr="content" content="ตัวอย่างเว็บที่เปลี่ยนภาษาได้ด้วยเมนูธงชาติด้านบน ใช้ data-i18n และ Dictionary">
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#0f172a;--muted:#64748b;--brand:#0f3184;--bg:#f6f8fc;--card:#ffffff;--radius:14px}
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--ink);font-family:"Kanit",system-ui,-apple-system,Segoe UI,Roboto,Arial}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1100px,92%);margin-inline:auto}
+    header{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid #e6ecf5}
+    .nav{display:flex;align-items:center;gap:12px;justify-content:space-between;padding:10px 0}
+    .brand{display:flex;align-items:center;gap:10px}
+    .logo{background:#16a34a;color:#fff;border-radius:10px;padding:8px 12px;font-weight:800}
+    .menu{display:flex;gap:10px;align-items:center}
+    .menu a{padding:8px 10px;border-radius:10px}
+    .menu a:hover{background:#f0f4ff}
+
+    /* ===== language switcher (ใช้โครงจากคุณ) ===== */
+    .lang-container{display:flex;align-items:center}
+    .lang{position:relative}
+    .lang__btn{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid #d6e6ff;border-radius:999px;padding:6px 10px;cursor:pointer}
+    .lang__btn:focus{outline:2px solid #93c5fd}
+    .flag{width:20px;height:14px;border-radius:2px;object-fit:cover}
+    .lang__caret{transition:transform .18s ease}
+    .lang[aria-expanded="true"] .lang__caret{transform:rotate(180deg)}
+    .lang__menu{position:absolute;right:0;top:calc(100% + 8px);min-width:200px;background:#0f172a;color:#e6eeff;border-radius:12px;box-shadow:0 12px 30px rgba(0,0,0,.25);padding:8px;display:none}
+    .lang[aria-expanded="true"] .lang__menu{display:block}
+    .lang__menu a{display:flex;align-items:center;gap:8px;color:inherit;padding:8px 10px;border-radius:8px}
+    .lang__menu a:hover{background:#111f39}
+
+    /* Hero/sections */
+    .hero{padding:34px 0 24px}
+    .hero h1{margin:6px 0 8px;font-size:clamp(22px,3.2vw,34px)}
+    .hero p{color:var(--muted)}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;background:#0f3184;color:#fff;padding:10px 14px;border-radius:12px}
+
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .card{background:var(--card);border:1px solid #e6ecf5;border-radius:var(--radius);padding:14px}
+
+    form{display:grid;gap:10px;margin-top:10px}
+    input,textarea{width:100%;padding:10px;border:1px solid #e6ecf5;border-radius:10px;font:inherit}
+
+    footer{margin-top:30px;background:#0f3184;color:#e6eeff}
+    .foot{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:12px;padding:20px 0}
+    @media(max-width:920px){.grid{grid-template-columns:1fr}.foot{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#">
+        <span class="logo">FVC</span>
+        <strong data-i18n="brand">บริษัทตัวอย่าง</strong>
+      </a>
+      <nav class="menu">
+        <a href="#about" data-i18n="nav.about">เกี่ยวกับเรา</a>
+        <a href="#services" data-i18n="nav.services">บริการ</a>
+        <a href="#projects" data-i18n="nav.projects">โครงการ</a>
+        <a href="#contact" class="btn" data-i18n="nav.contact">ติดต่อเรา</a>
+      </nav>
+
+      <!-- ===== language ===== -->
+      <div class="lang-container">
+        <div class="lang" id="langBox" aria-expanded="false">
+          <button class="lang__btn" id="langBtn" aria-expanded="false" aria-controls="langMenu" data-i18n="lang_btn">
+            <img id="currentFlag" class="flag" src="https://flagcdn.com/w20/th.png" alt="">
+            <span id="currentLang">ไทย (TH)</span>
+            <svg class="lang__caret" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <div class="lang__menu" id="langMenu" role="menu" aria-label="Select language">
+            <a href="#" data-lang="th" data-flag="https://flagcdn.com/w20/th.png" role="menuitem">
+              <img class="flag" src="https://flagcdn.com/w20/th.png" alt=""> ไทย (TH)
+            </a>
+            <a href="#" data-lang="en" data-flag="https://flagcdn.com/w20/gb.png" role="menuitem">
+              <img class="flag" src="https://flagcdn.com/w20/gb.png" alt=""> English (EN)
+            </a>
+            <a href="#" data-lang="zh" data-flag="https://flagcdn.com/w20/cn.png" role="menuitem">
+              <img class="flag" src="https://flagcdn.com/w20/cn.png" alt=""> 中文 (ZH)
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- ===== /language ===== -->
+
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <span style="background:#eaf1ff;color:#0f3184;padding:.3rem .6rem;border-radius:999px" data-i18n="hero.badge">พร้อมให้บริการทั่วประเทศ</span>
+      <h1 data-i18n="hero.title">ผู้รับเหมางานวิศวกรรมครบวงจร</h1>
+      <p data-i18n="hero.desc">ตั้งแต่สำรวจ ออกแบบ ก่อสร้าง ติดตั้งระบบ ทดสอบ และส่งมอบ โดยทีมวิศวกรเฉพาะทาง</p>
+      <a class="btn" href="#services" data-i18n="hero.cta">ดูบริการของเรา</a>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <h2 data-i18n="services.title">บริการของเรา</h2>
+      <div class="grid">
+        <div class="card">
+          <h3 data-i18n="services.csa.title">งานก่อสร้างโยธา (CSA)</h3>
+          <p data-i18n="services.csa.desc">ฐานราก/พื้น โครงสร้างเหล็ก‑คอนกรีต รีโนเวตอาคาร ถนน‑ระบายน้ำ</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="services.ee.title">ระบบไฟฟ้า (EE)</h3>
+          <p data-i18n="services.ee.desc">ตู้ MDB/หม้อแปลง ระบบแสงสว่าง ตรวจสอบ/บำรุงรักษา</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="services.ict.title">สื่อสารและความปลอดภัย (ICT)</h3>
+          <p data-i18n="services.ict.desc">LAN/Wi‑Fi กล้องวงจรปิด Access Control Fire Alarm</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <h2 data-i18n="about.title">เกี่ยวกับเรา</h2>
+      <p data-i18n="about.text">เรามุ่งมั่นสร้างคุณค่าให้กับลูกค้าด้วยมาตรฐานความปลอดภัย คุณภาพงาน และการส่งมอบตรงเวลา</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2 data-i18n="contact.title">ติดต่อเรา</h2>
+      <form onsubmit="event.preventDefault(); alert(currentLang==='th' ? 'ส่งข้อมูลเรียบร้อย' : currentLang==='en' ? 'Submitted' : '已送出');">
+        <input type="text" data-i18n-placeholder="contact.form.name" placeholder="ชื่อ-สกุล">
+        <input type="email" data-i18n-placeholder="contact.form.email" placeholder="อีเมล">
+        <textarea rows="4" data-i18n-placeholder="contact.form.msg" placeholder="ข้อความ"></textarea>
+        <button class="btn" data-i18n="contact.form.send">ส่งข้อความ</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container foot">
+      <div>
+        <strong data-i18n="foot.company">บริษัทตัวอย่าง จำกัด</strong>
+        <p data-i18n="foot.addr">104 ถนนตัวอย่าง เขตบางกะปิ กรุงเทพมหานคร 10240</p>
+      </div>
+      <div>
+        <h4 data-i18n="foot.menu">เมนู</h4>
+        <p><a href="#about" data-i18n="nav.about">เกี่ยวกับเรา</a><br><a href="#services" data-i18n="nav.services">บริการ</a><br><a href="#projects" data-i18n="nav.projects">โครงการ</a></p>
+      </div>
+      <div>
+        <h4 data-i18n="foot.contact">ติดต่อ</h4>
+        <p data-i18n="foot.tel">โทร 02-000-0000 • อีเมล hello@example.com</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ===== Dictionaries =====
+    const dict = {
+      th:{
+        native:"ไทย (TH)", flag:"https://flagcdn.com/w20/th.png",
+        meta:{title:"เว็บหลายภาษา (TH/EN/ZH)", description:"ตัวอย่างเว็บที่เปลี่ยนภาษาได้ด้วยเมนูธงชาติด้านบน ใช้ data-i18n และ Dictionary"},
+        brand:"บริษัทตัวอย่าง",
+        nav:{about:"เกี่ยวกับเรา", services:"บริการ", projects:"โครงการ", contact:"ติดต่อเรา"},
+        hero:{badge:"พร้อมให้บริการทั่วประเทศ", title:"ผู้รับเหมางานวิศวกรรมครบวงจร", desc:"ตั้งแต่สำรวจ ออกแบบ ก่อสร้าง ติดตั้งระบบ ทดสอบ และส่งมอบ โดยทีมวิศวกรเฉพาะทาง", cta:"ดูบริการของเรา"},
+        services:{ title:"บริการของเรา", csa:{title:"งานก่อสร้างโยธา (CSA)", desc:"ฐานราก/พื้น โครงสร้างเหล็ก‑คอนกรีต รีโนเวตอาคาร ถนน‑ระบายน้ำ"}, ee:{title:"ระบบไฟฟ้า (EE)", desc:"ตู้ MDB/หม้อแปลง ระบบแสงสว่าง ตรวจสอบ/บำรุงรักษา"}, ict:{title:"สื่อสารและความปลอดภัย (ICT)", desc:"LAN/Wi‑Fi กล้องวงจรปิด Access Control Fire Alarm"}},
+        about:{title:"เกี่ยวกับเรา", text:"เรามุ่งมั่นสร้างคุณค่าให้กับลูกค้าด้วยมาตรฐานความปลอดภัย คุณภาพงาน และการส่งมอบตรงเวลา"},
+        contact:{title:"ติดต่อเรา", form:{name:"ชื่อ-สกุล", email:"อีเมล", msg:"ข้อความ", send:"ส่งข้อความ"}},
+        foot:{company:"บริษัทตัวอย่าง จำกัด", addr:"104 ถนนตัวอย่าง เขตบางกะปิ กรุงเทพมหานคร 10240", menu:"เมนู", contact:"ติดต่อ", tel:"โทร 02-000-0000 • อีเมล hello@example.com"}
+      },
+      en:{
+        native:"English (EN)", flag:"https://flagcdn.com/w20/gb.png",
+        meta:{title:"Multilingual Site (TH/EN/ZH)", description:"Demo site with a flag language menu powered by data‑i18n and dictionaries."},
+        brand:"Sample Company",
+        nav:{about:"About", services:"Services", projects:"Projects", contact:"Contact"},
+        hero:{badge:"Nationwide Service", title:"Full‑service Engineering Contractor", desc:"From survey and design to construction, systems installation, testing and handover.", cta:"View Services"},
+        services:{ title:"Our Services", csa:{title:"Civil/Structural/Architectural (CSA)", desc:"Foundation/floor, steel & concrete structure, renovation, road & drainage"}, ee:{title:"Electrical (EE)", desc:"MDB/transformer, lighting systems, inspection & maintenance"}, ict:{title:"ICT & Safety", desc:"LAN/Wi‑Fi, CCTV, Access Control, Fire Alarm"}},
+        about:{title:"About Us", text:"We deliver value through safety standards, build quality, and on‑time delivery."},
+        contact:{title:"Contact", form:{name:"Full name", email:"Email", msg:"Message", send:"Send Message"}},
+        foot:{company:"Sample Co., Ltd.", addr:"104 Example Rd., Bang Kapi, Bangkok 10240", menu:"Menu", contact:"Contact", tel:"Tel +66-2-000-0000 • Email hello@example.com"}
+      },
+      zh:{
+        native:"中文 (ZH)", flag:"https://flagcdn.com/w20/cn.png",
+        meta:{title:"多语言网站 (泰/英/中)", description:"带国旗语言菜单的多语言示例，使用 data‑i18n 与字典"},
+        brand:"示例公司",
+        nav:{about:"关于我们", services:"服务", projects:"项目", contact:"联系"},
+        hero:{badge:"全国范围服务", title:"一站式工程承包", desc:"从勘测、设计到施工、系统安装、测试与交付。", cta:"查看服务"},
+        services:{ title:"我们的服务", csa:{title:"土建/结构/建筑 (CSA)", desc:"地基/楼板、钢筋混凝土结构、建筑翻新、道路与排水"}, ee:{title:"电气 (EE)", desc:"配电柜/变压器、照明系统、检测与维护"}, ict:{title:"通信与安防 (ICT)", desc:"LAN/Wi‑Fi、视频监控、门禁、火灾报警"}},
+        about:{title:"关于我们", text:"我们通过安全标准、工程质量与准时交付为客户创造价值。"},
+        contact:{title:"联系", form:{name:"姓名", email:"邮箱", msg:"留言", send:"发送"}},
+        foot:{company:"示例有限公司", addr:"曼谷挽甲必区示例路104号", menu:"菜单", contact:"联系", tel:"电话 +66-2-000-0000 • 邮箱 hello@example.com"}
+      }
+    };
+
+    // ===== i18n helpers =====
+    let currentLang = localStorage.getItem('lang') || (navigator.language||'th').slice(0,2);
+    if(!dict[currentLang]) currentLang = 'th';
+
+    function get(obj, path){ return path.split('.').reduce((o,k)=> (o||{})[k], obj); }
+
+    function translate(lang){
+      const d = dict[lang];
+      document.documentElement.lang = lang;
+      document.title = get(d,'meta.title') || document.title;
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if(metaDesc && get(d,'meta.description')) metaDesc.setAttribute('content', get(d,'meta.description'));
+
+      document.querySelectorAll('[data-i18n]').forEach(el=>{
+        const key = el.getAttribute('data-i18n');
+        const val = get(d, key);
+        if(typeof val === 'string') el.textContent = val;
+      });
+      document.querySelectorAll('[data-i18n-attr]').forEach(el=>{
+        const attr = el.getAttribute('data-i18n-attr');
+        const key = el.getAttribute('data-i18n');
+        const val = get(d, key); if(val) el.setAttribute(attr, val);
+      });
+
+      // update flag button
+      const flag = document.getElementById('currentFlag');
+      const label = document.getElementById('currentLang');
+      if(flag) flag.src = d.flag; if(label) label.textContent = d.native;
+
+      currentLang = lang; localStorage.setItem('lang', lang);
+    }
+
+    // ===== language menu behavior =====
+    const langBox = document.getElementById('langBox');
+    const langBtn = document.getElementById('langBtn');
+    const langMenu = document.getElementById('langMenu');
+
+    function openLang(open){
+      langBox?.setAttribute('aria-expanded', open);
+      langBtn?.setAttribute('aria-expanded', open);
+    }
+
+    langBtn?.addEventListener('click', ()=>{
+      const isOpen = langBox.getAttribute('aria-expanded') === 'true';
+      openLang(!isOpen);
+    });
+
+    langMenu?.addEventListener('click', (e)=>{
+      const a = e.target.closest('a[data-lang]');
+      if(!a) return;
+      e.preventDefault();
+      const code = a.getAttribute('data-lang');
+      const flagUrl = a.getAttribute('data-flag');
+      if(dict[code]){
+        // immediate UI feedback on the button
+        document.getElementById('currentFlag').src = flagUrl;
+        document.getElementById('currentLang').textContent = dict[code].native;
+        translate(code);
+      }
+      openLang(false);
+    });
+
+    // click outside to close
+    document.addEventListener('click', (e)=>{
+      if(!langBox.contains(e.target)) openLang(false);
+    });
+    // esc to close
+    document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') openLang(false); });
+
+    // init
+    translate(currentLang);
+  </script>
+</body>
+</html>
