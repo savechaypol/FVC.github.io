@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ติดต่อเรา – FVC </title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap" >
+  <link rel="stylesheet" href="style.css" >
   <style>
     :root{
       --bg:#0b1220; --panel:#0f172a; --text:#e5e7eb; --muted:#9fb0c5; --primary:#2563eb; --accent:#06b6d4;
@@ -17,7 +18,6 @@
     body{font-family:"Kanit",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif; color:var(--text); background:#f8fafc; line-height:1.6}
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
-
     a{color:inherit;text-decoration:none;}
     .wrap{width:var(--wrap); margin:40px auto;}
     .card{background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.1); border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden}
@@ -36,14 +36,36 @@
 </head>
 <body>
   <!-- ===== Back Button ===== -->
-<div style="position:fixed; bottom:20px;top:20px; left:20px; z-index:1000;">
-  <button onclick="window.history.back()" 
-          style="padding:10px 18px; border:none; border-radius:12px;
-                 background:#0ea5e9; color:white; font-weight:600;
-                 box-shadow:0 6px 14px rgba(14,165,233,.35); cursor:pointer;">
-    ⬅ กลับไปก่อนหน้า
-  </button>
-</div>
+  <div style="position:fixed; bottom:20px;top:20px; left:20px; z-index:1000;">
+    <button onclick="window.history.back()" 
+            style="padding:10px 20px; border:none; border-radius:12px;background:#0ea5e9; color:white; font-weight:600;box-shadow:0 6px 14px rgba(14,165,233,.35); cursor:pointer;">
+            <il data-i18n="back">⬅ กลับ</il>
+    </button>
+  </div>
+    <!-- ===== language ===== -->
+  <div class="lang-container">
+    <div class="lang" id="langBox">
+      <button class="lang__btn" id="langBtn" aria-expanded="false" aria-controls="langMenu" data-i18n="lang_btn">
+        <img id="currentFlag" class="flag" src="https://flagcdn.com/w20/th.png" alt="">
+        <span id="currentLang">ไทย (TH)</span>
+        <svg class="lang__caret" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="lang__menu" id="langMenu" role="menu" aria-label="Select language">
+        <a href="#" data-lang="th" data-flag="https://flagcdn.com/w20/th.png" role="menuitem">
+          <img class="flag" src="https://flagcdn.com/w20/th.png" alt=""> ไทย (TH)
+        </a>
+        <a href="#" data-lang="en" data-flag="https://flagcdn.com/w20/gb.png" role="menuitem">
+          <img class="flag" src="https://flagcdn.com/w20/gb.png" alt=""> English (EN)
+        </a>
+        <a href="#" data-lang="zh" data-flag="https://flagcdn.com/w20/cn.png" role="menuitem">
+          <img class="flag" src="https://flagcdn.com/w20/cn.png" alt=""> 中文 (ZH)
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- ===== Contact ===== -->
   <main class="wrap">
     <section class="card">
       <div class="card__body">
@@ -72,6 +94,7 @@
     </section>
     <iframe class="map" title="แผนที่สำนักงาน" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.123456789!2d100.7018898!3d13.859241!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311d63538a9f7aaf%3A0x173cefe855d02b8d!2sFORWARD%20VISION%20CONSULTANT%20CO.%2CLTD!5e0!3m2!1sth!2sth!4v1700000000000!5m2!1sth!2sth" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </main>
+  <script src="script.js"></script>
 </body>
 </html>
 

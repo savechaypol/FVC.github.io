@@ -20,7 +20,7 @@
       <div class="nav__links ">
         <a href="About.html" data-i18n="about">เกี่ยวกับเรา</a>
         <a href="Services.html" data-i18n="services">บริการ</a>
-        <a href="Project.html" data-i18n="project">ผลงาน</a>
+        <a href="Project.html" data-i18n="performance">ผลงาน</a>
         <a href="News.html" data-i18n="news">ข่าวสาร</a>
         <a href="contact.html" class="btn-primary" data-i18n="contact">ติดต่อเรา</a>
       </div>
@@ -37,7 +37,7 @@
       <a href="index.html" onclick="toggleMenu(false)" data-i18n="home_page" >หน้าแรก</a>
       <a href="About.html" onclick="toggleMenu(false)" data-i18n="about">เกี่ยวกับเรา</a>
       <a href="Services.html" onclick="toggleMenu(false)" data-i18n="services">บริการ</a>
-      <a href="Project.html" onclick="toggleMenu(false)" data-i18n="project">ผลงาน</a>
+      <a href="Project.html" onclick="toggleMenu(false)" data-i18n="performance">ผลงาน</a>
       <a href="News.html" onclick="toggleMenu(false)" data-i18n="news">ข่าวสาร</a>
       <a href="contact.html" class="btn-primary" style="display:inline-block; margin-top:10px" onclick="toggleMenu(false)" data-i18n="contact">ติดต่อเรา</a>
     </div>
@@ -68,23 +68,23 @@
   <!-- ===== Services ===== -->
   <section id="services"class="wrap">
       <div class="text_center">
-          <h1 class="section__title text-animate  ">บริการของเรา</h1>
-          <p class="section__desc "data-pop style="--delay:100ms">ออกแบบ จัดหา ติดตั้ง ทดสอบ เดินระบบ และบำรุงรักษา</p>
+          <h1 class="section__title text-animate  "  data-i18n="Our_services">บริการของเรา</h1>
+          <p class="section__desc "data-pop style="--delay:100ms" data-i18n="services_text">ออกแบบ จัดหา ติดตั้ง ทดสอบ เดินระบบ และบำรุงรักษา</p>
         </div>
       <div class="Services_cards">
         <a class="Services_card "data-pop style="--delay:100ms; --dur:5s" href="Civil.html">
           <div class="Services_card__media " aria-hidden="true" ><img alt="CSA" src="Pictures/Services/Services_Civeil.png"></div>
             <div class="Services_card__body">
             <h3 class="Services_card__title">Civil Engineering</h3>
-            <p>ให้บริการงานก่อสร้างโยธาอย่างมีคุณภาพสูง มีความปลอดภัยและตรงตามความคาดหวังทุกประการ</p>
+            <p data-i18n="civil_details">ให้บริการงานก่อสร้างโยธาอย่างมีคุณภาพสูง มีความปลอดภัยและตรงตามความคาดหวังทุกประการ</p>
             <span class="chip">Civil</span>
           </div>
         </a>
-        <a class="Services_card" data-pop style="--delay:200ms; --dur:5s" href="Electrical.html">
+        <a class="Services_card" data-pop style="--delay:200ms; --dur:5s"href="Electrical.html">
           <div class="Services_card__media" style="background-image:linear-gradient(135deg,#111827,#334155)" aria-hidden="true"><img alt="EE" src="Pictures/Services/Services_Electrical.png"></div>
           <div class="Services_card__body">
             <h3 class="Services_card__title">Electrical Engineering</h3>
-            <p>ให้บริการด้านระบบไฟฟ้า HV/LV รวมถึงระบบควบคุม ระบบไฟฟ้าและระบบสื่อสาร ฯลฯ</p>
+            <p data-i18n="EE_details">ให้บริการด้านระบบไฟฟ้า HV/LV รวมถึงระบบควบคุม ระบบไฟฟ้าและระบบสื่อสาร ฯลฯ</p>
             <span class="chip">EE</span>
           </div>
         </a>
@@ -92,7 +92,7 @@
           <div class="Services_card__media" style="background-image:linear-gradient(135deg,#0f172a,#1f2937)" aria-hidden="true"><img alt="Cm" src="Pictures/Services/Services_Mechanical.png"></div>
           <div class="Services_card__body">
             <h3 class="Services_card__title">Mechanical Engineering</h3>
-            <p>ให้บริการงานเครื่องกลครอบคลุมการติดตั้งระบบท่อ การติดตั้งเครื่องจักรและปรับฐานรากให้มั่นคง และระบบ Air Compressed ฯลฯ</p>
+            <p data-i18n="Me_details">ให้บริการงานเครื่องกลครอบคลุมการติดตั้งระบบท่อ การติดตั้งเครื่องจักรและปรับฐานรากให้มั่นคง และระบบ Air Compressed ฯลฯ</p>
             <span class="chip">Me</span>
           </div>
         </a>

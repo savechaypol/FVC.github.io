@@ -99,7 +99,7 @@
       <div class="nav__links ">
         <a href="About.html" data-i18n="about">เกี่ยวกับเรา</a>
         <a href="Services.html" data-i18n="services">บริการ</a>
-        <a href="Project.html" data-i18n="project">ผลงาน</a>
+        <a href="Project.html" data-i18n="performance">ผลงาน</a>
         <a href="News.html" data-i18n="news">ข่าวสาร</a>
         <a href="contact.html" class="btn-primary" data-i18n="contact">ติดต่อเรา</a>
       </div>
@@ -116,7 +116,7 @@
       <a href="index.html" onclick="toggleMenu(false)" data-i18n="home_page" >หน้าแรก</a>
       <a href="About.html" onclick="toggleMenu(false)" data-i18n="about">เกี่ยวกับเรา</a>
       <a href="Services.html" onclick="toggleMenu(false)" data-i18n="services">บริการ</a>
-      <a href="Project.html" onclick="toggleMenu(false)" data-i18n="project">ผลงาน</a>
+      <a href="Project.html" onclick="toggleMenu(false)" data-i18n="performance">ผลงาน</a>
       <a href="News.html" onclick="toggleMenu(false)" data-i18n="news">ข่าวสาร</a>
       <a href="contact.html" class="btn-primary" style="display:inline-block; margin-top:10px" onclick="toggleMenu(false)" data-i18n="contact">ติดต่อเรา</a>
     </div>
@@ -144,29 +144,30 @@
       </div>
     </div>
   </div>
-  <!-- ===== hero_Project ===== -->
+  <!-- ===== hero ===== -->
   <section class="hero_Project">
     <div class="wrap"> 
       <h1 class="title">All Project Work</h1>
-      <p class="subtitle">รวมโครงการของ FVC ครอบคลุมงานโยธา ระบบไฟฟ้า ระบบสื่อสาร และงานอื่นๆ</p>
+      <p class="subtitle" data-i18n="subtitle_title">รวมโครงการของ FVC ครอบคลุมงานโยธา ระบบไฟฟ้า เครื่องกล และงานอื่นๆ</p>
     </div>
   </section>
-  <!-- ===== Sticky tools: filters + search ===== -->
+  <!-- ===== filters + search ===== -->
   <section class="tools" role="region" aria-label="ตัวกรองและค้นหา">
     <div class="wrap tools__inner">
-      <button class="chip" data-filter="all" data-active="true"><span class="chip__dot" style="background:#8ab4ff"></span>ทั้งหมด</button>
-      <button class="chip" data-filter="civil"><span class="chip__dot" style="background:#60a5fa"></span>โยธา</button>
-      <button class="chip" data-filter="electrical"><span class="chip__dot" style="background:#34d399"></span>ระบบไฟฟ้า</button>
+      <button class="chip" data-filter="all" data-active="true"><span class="chip__dot" style="background:#8ab4ff"></span><il data-i18n="all">ทั้งหมด</il></button>
+      <button class="chip" data-filter="civil"><span class="chip__dot" style="background:#60a5fa"></span>Civil</button>
+      <button class="chip" data-filter="electrical"><span class="chip__dot" style="background:#34d399"></span>EE</button>
       <button class="chip" data-filter="ict"><span class="chip__dot" style="background:#f59e0b"></span>ICT</button>
-      <button class="chip" data-filter="special"><span class="chip__dot" style="background:#f472b6"></span>งานอื่นๆ</button>
+      <button class="chip" data-filter="special"><span class="chip__dot" style="background:#f472b6"></span><il data-i18n="Other_work">งานอื่นๆ</il></button>
       <div class="spacer"></div>
       <label class="search">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
         <span class="visually-hidden">ค้นหาโครงการ</span>
-        <input id="q" type="search" placeholder="ค้นหาโครงการ / สถานที่ / ลูกค้า" autocomplete="off" />
+        <input id="q" type="search" placeholder="ค้นหาโครงการ / สถานที่ / ลูกค้า" autocomplete="off"/>
       </label>
     </div>
   </section>
+  <!-- ===== Project ===== -->
   <section id="content" class="wrap">
     <section aria-label="รายการโครงการ" class="grid" id="grid">
       <!-- ===== Card Template Examples ===== -->
@@ -175,15 +176,14 @@
         <a href="01_ติดตั้งหม้อแปลง.html">
           <div class="card__media">
             <img src="Pictures/Performance/CPF/ติดตั้งหม้อแปลง 500 kVA มหาชัย สมุครสาคร/00_ติดตั้งหม้อแปลง.jpg" alt="ติดตั้งหม้อแปลงและตู้ MDB" />
-            <span class="badge">ระบบไฟฟ้า</span>
+            <span class="badge">EE</span>
             <div class="grad" aria-hidden="true"></div>
           </div>
           <div class="card__body">
-            <h3 class="card__title">ติดตั้งหม้อแปลง 500 kVA และติดตั้งตู้ MDB</h3>
+            <h3 class="card__title" data-i18n="install_Tr_MDB">ติดตั้งหม้อแปลง 500 kVA และติดตั้งตู้ MDB</h3>
             <p class="meta">
               <span>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                สมุทรสาคร
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg><il data-i18n="Samut_Sakhon">สมุทรสาคร</il>
               </span>
               <span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
@@ -203,15 +203,14 @@
         <a href="02_Desing_Sonepar.html">
           <div class="card__media">
             <img src="Pictures/Performance/Sonepar/Design-ก่อสร้าง Office Training Sonepar/00_Sonepar.jpg" alt="ก่อสร้างอาคารสำนักงานและศูนย์ฝึกอบรม" />
-            <span class="badge">โยธา</span>
+            <span class="badge">Civil</span>
             <div class="grad" aria-hidden="true"></div>
           </div>
           <div class="card__body">
             <h3 class="card__title">Design & Build – Office & Training Center</h3>
             <p class="meta">
               <span>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                กรุงเทพฯ
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg><il data-i18n="Bangkok">กรุงเทพฯ</il>
               </span>
               <span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
@@ -239,8 +238,7 @@
             <h3 class="card__title">Installation Access Point </h3>
             <p class="meta">
               <span>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                ฉะเชิงเทรา
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg><il data-i18n="Chachoengsao">ฉะเชิงเทรา</il>
               </span>
               <span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
@@ -259,10 +257,10 @@
       <!-- 4 -->
       <article class="card" data-tags="civil warehouse slab" data-cat="civil" >
         <a href="04_ทำพื้นเครื่องจักร_BGRIM.html">
-          <div class="card__media"><img src="Pictures/Performance/BGRIM/ทำพื้นเครื่องจักร/01_BGRIM.jpg" alt="พื้นคอนกรีต เครื่องจักร" /><span class="badge">โยธา</span><div class="grad" aria-hidden="true"></div></div>
+          <div class="card__media"><img src="Pictures/Performance/BGRIM/ทำพื้นเครื่องจักร/01_BGRIM.jpg" alt="พื้นคอนกรีต เครื่องจักร" /><span class="badge">Civil</span><div class="grad" aria-hidden="true"></div></div>
           <div class="card__body">
-            <h3 class="card__title">ทำพื้นเครื่องจักร โรงไฟฟ้า</h3>
-            <p class="meta"><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg> ราชบุรี
+            <h3 class="card__title" data-i18n="making_machine_floors">ทำพื้นเครื่องจักร โรงไฟฟ้า</h3>
+            <p class="meta"><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg> <il data-i18n="Ratchaburi">ราชบุรี</il>
             </span>
             <span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
@@ -309,8 +307,7 @@
     </div>
   </section>
   <script src="script.js"></script>
-  <script>
-  // ===== Simple Filter/Search (no Load More) =====
+  <script>// ===== Simple Filter/Search (no Load More) =====
   const chips = document.querySelectorAll('.chip');
   const grid = document.getElementById('grid');
   const cards = Array.from(grid.querySelectorAll('.card'));
