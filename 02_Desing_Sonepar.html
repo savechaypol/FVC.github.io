@@ -67,18 +67,16 @@
   </style>
 </head>
 <body>
-<!-- ===== Back Button ===== -->
-<div style="position:fixed; bottom:20px;top:20px; left:20px; z-index:1000;">
-  <button onclick="window.history.back()" 
-          style="padding:5px 18px; border:none; border-radius:12px;
-                 background:#0ea5e9; color:white; font-weight:600;
-                 box-shadow:0 6px 14px rgba(14,165,233,.35); cursor:pointer;">
-    ⬅ กลับไปก่อนหน้า
-  </button>
-</div>
+  <!-- ===== Back Button ===== -->
+  <div style="position:fixed; bottom:20px;top:20px; left:20px; z-index:1000;">
+    <button onclick="window.history.back()" 
+            style="padding:10px 20px; border:none; border-radius:12px;background:#0ea5e9; color:white; font-weight:600;box-shadow:0 6px 14px rgba(14,165,233,.35); cursor:pointer;">
+            <il data-i18n="back">⬅ กลับ</il>
+    </button>
+  </div>
   <div class="overlay" aria-hidden="true"></div>
   <div class="wrap">
-    <h1 class="title">Design & Build – Office & Training Center </h1>
+    <h1 class="title" data-pop style="--delay:100ms;">Design & Build – Office & Training Center </h1>
     <div class="grid">
       <!-- Left: Gallery -->
       <section class="gallery" aria-label="รูปภาพโครงการ">
@@ -97,13 +95,13 @@
       <aside class="side" aria-label="รายละเอียดโครงการ">
         <h3 class="text-animate">Project Details</h3>
         <div class="kv"data-pop style="--delay:100ms">
-          <b>Scope of Work :</b> <span>ระบบไฟฟ้า</span>
-          <b>Owner :</b> <span>CPF (Thailand) Ltd.</span>
-          <b>Location :</b> <span>มหาชัย สมุครสาคร</span>
+          <b>Scope of Work :</b> <span>โยธา</span>
+          <b>Owner :</b> <span>Sonepar</span>
+          <b>Location :</b> <span>ประเวศ กรุงเทพฯ</span>
         </div>
         <div class="desc">
           <h4 class="text-animate">Descriptions</h4>
-          <p data-pop style="--delay:100ms">ติดตั้งหม้อแปลง 500 kVA และติดตั้งตู้ MDB</p>
+          <p data-pop style="--delay:100ms">งานออกแบบ</p>
         </div>
       </aside>
     </div>

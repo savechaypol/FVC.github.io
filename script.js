@@ -127,11 +127,11 @@
         initPopReveal();
       }
     })();
+
     //<!-- ===== เปลี่ยนภาษา ===== -->
     (function(){
       const STORAGE_KEY = "fvc_lang";
       const DEFAULT_LANG = "th";
-
       const langNames = {
         th: "ไทย (TH)",
         en: "English (EN)",
@@ -185,6 +185,7 @@
         });
       });
     })();
+
     // ======= ภาษา =======
     const i18n = {
         th: {//index
@@ -205,7 +206,10 @@
           vision_and_mission:"ดูวิสัยทัศน์และพันธกิจ",
           vision:"วิสัยทัศน์",
           vision_text:"Forward Vision Consultant คือผู้ให้บริการด้านไฟฟ้า เครื่องกล และก่อสร้างที่มีประสิทธิภาพ เพื่อความพึงพอใจสูงสุดของลูกค้า",
+          mission:"พันธกิจ",
+          mission_text:"บริษัท ฟอร์เวิร์ด วิชั่น คอนซัลแทนท์ ให้บริการด้านวิศวกรรมด้วยเทคโนโลยีที่ทันสมัยและคุณภาพที่ได้มาตรฐานสากล",
           experience:"ประสบการณ์",
+          year:"10+ ปี",
           Group_companies:"กลุ่มบริษัท",
           FVC:"FORWARD VISION CONSULTANT CO.,LTD บริษัทออกแบบและที่ปรึกษา",
           TTR:"THAI THARIT CO.,LTD บริษัท วิศวกรรมและรับเหมาก่อสร้าง",
@@ -233,21 +237,105 @@
           white_plant:" โรงงานสีขาว ระดับที่ 3",
           Quality:"ระบบคุณภาพ",
           Certificate_details:"รายละเอียดใบรับรอง",
-          address:"ที่อยู่",
-          standard:"มาตรฐาน",
+          address:"ที่อยู่ : ",
+          standard:"มาตรฐาน : ",
           Certification_body:"หน่วยรับรอง :",
           details_white_plant:"กรมสวัสดิการและคุ้มครองแรงงาน (กระทรวงแรงงาน) มอบเกียรติบัตรรับรองว่า FVC มีระบบการจัดการด้านยาเสพติดในสถานประกอบกิจการที่มีประสิทธิภาพ ครอบคลุมการป้องกัน–เฝ้าระวัง–แก้ไข และการดูแลพนักงานตามระเบียบกฎหมาย โดยได้รับมอบเมื่อวันที่ 30 กันยายน 2567 สะท้อนความมุ่งมั่นในการสร้างสถานประกอบการปลอดยาเสพติดและสภาพแวดล้อมการทำงานที่ปลอดภัยอย่างยั่งยืน",
           Click_Details:"คลิกที่รูปเพื่อขยายดูรายละเอียด",
-          back:"กลับ",
+          back:"⬅ กลับ",
+          //contact
+          contact_title:"ขอใบเสนอราคา นัดสำรวจหน้างาน หรือสอบถามข้อมูล",
+          phone:"โทร : ",
+          email:"อีเมล : ",
+          time:"เวลาทำการ : ",
+          address_real:" 104 หมู่บ้านไอดี-ไซน์ 21 ถนน เลียบคลองสอง แขวงบางชัน เขตคลองสามวา กรุงเทพมหานคร 10510",
+          //About
+          FVC_grup_title:"FVC GROUP ดำเนินธุรกิจหลัก 3 ด้าน: วิศวกรรมไฟฟ้า วิศวกรรมเครื่องกล และวิศวกรรมก่อสร้าง ด้วยประสบการณ์มากกว่า 10 ปี ทั้งภาครัฐและเอกชน พร้อมมาตรฐาน ISO 9001:2015",
+          highlights:"จุดเด่น",
+          highlights_1:"ให้บริการครบวงจร ตั้งแต่ออกแบบ ขออนุญาต (IEAT) ถึงก่อสร้างและส่งมอบ",
+          highlights_2:"บริหารโครงการเพื่อ ลดต้นทุนและพิ่มประสิทธิภาพ",
+          highlights_3:"ทีมวิศวกรผู้เชี่ยวชาญ พัฒนาทักษะอย่างต่อเนื่อง",
+          FVC_text:"ผู้เชี่ยวชาญด้าน การออกแบบและที่ปรึกษา",
+          TTR_text:"ผู้เชี่ยวชาญด้านวิศวกรรมและงานรับเหมาก่อสร้าง",
+          company_information:"ข้อมูลบริษัท",
+          company_name:"ชื่อบริษัท : ",
+          legal_entity_number:"เลขทะเบียนนิติบุคคล : ",
+          registered_capital:"ทุนจดทะเบียน : ",
+          founding_day:"วันที่ก่อนตั้ง : ",
+          website:"เว็บไซต์ : ",
+          license_standard:"ใบอนุญาต / มาตรฐาน",
+          standard_text:"ระบบบริหารคุณภาพ ISO 9001:2015",
+          safety:"ความปลอดภัย : ",
+          safety_text:"อบรม safety, Work Permit/JSR ตามระเบียบโรงงาน",
+          //service_civil
+          civil_work:"งานก่อสร้างโยธา",
+          civil_work_text:"บริษัทให้บริการงานก่อสร้างโยธา สามารถทำให้ลูกค้าของบริษัทมั่นใจได้ว่างานที่บริษัททำเป็นงานที่มีคุณภาพสูง มีความปลอดภัยและตรงตามความคาดหวังของลูกค้าทุกประการ",
+          civil_1:"ก่อสร้างโครงสร้างพื้นฐาน",
+          civil_2:"ก่อสร้างถนน",
+          civil_3:"งานรั้วและโครงเหล็ก",
+          civil_4:"งานฐานเครื่องจักร ฐานหม้อแปลง",
+          civil_5:"ต่อเติม ปรับปรุงอาคารและคลังสินค้า",
+          civil_6:"งานพื้นคอนกรีต พื้นอีพ็อกซี่",
+          civil_7:"งานภูมิทัศน์และงานทางเดิน",
+          civil_8:"งานระบบระบายน้ำและงานท่อ",
+          //service_electrical
+          electrical_work:"งานระบบไฟฟ้า",
+          electrical_work_text:"บริษัทให้บริการด้านระบบไฟฟ้าอย่างครบวงจร ซึ่งรวมถึงการ ก่อสร้างและติดตั้งอุปกรณ์ต่าง ๆ ระบบควบคุม ระบบไฟฟ้าและระบบสื่อสาร โดยบริการของบริษัทครอบคลุมงานระบบ ต่างๆ ดังนี้",
+          electrical_1:"",
+          electrical_2:"",
+          electrical_3:"",
+          electrical_4:"",
+          electrical_5:"",
+          electrical_6:"",
+          electrical_7:"",
+          electrical_8:"",
         },
         en: {
-          back:"Back",
+          //service_electrical
+          electrical_work:"Electrical system work",
+          electrical_work_text:"บริษัทให้บริการด้านระบบไฟฟ้าอย่างครบวงจร ซึ่งรวมถึงการ ก่อสร้างและติดตั้งอุปกรณ์ต่าง ๆ ระบบควบคุม ระบบไฟฟ้าและระบบสื่อสาร โดยบริการของบริษัทครอบคลุมงานระบบ ต่างๆ ดังนี้",
+          //service_civil
+          civil_1:"Infrastructure construction",
+          civil_2:"Road construction",
+          civil_3:"Fence and steel frame work",
+          civil_4:"Machine base work, transformer base",
+          civil_5:"Additions and improvements to buildings and warehouses",
+          civil_6:"Concrete floor work, epoxy floor",
+          civil_7:"Landscaping and walkway work",
+          civil_8:"Drainage and pipe work",
+          civil_work:"Civil construction work",
+          civil_work_text:"Civil construction services companies can assure their clients that the work they undertake is of high quality, safe, and meets all customer expectations.",
+          //About
+          safety_text:"Safety training, Work Permit/JSR according to factory regulations",
+          standard_text:"Quality management system ISO 9001:2015",
+          safety:"Safety : ",
+          founding_day:"Founding Day : ",
+          website:"Website : ",
+          registered_capital:"Registered capital : ",
+          legal_entity_number:"Legal entity registration number  : ",
+          company_name:"Company Name : ",
+          company_information:"Company Information",
+          FVC_text:"Design and consulting experts",
+          TTR_text:"Engineering and construction contracting experts",
+          highlights:"Highlights",
+          highlights_1:"Providing a full range of services, from design, permit application (IEAT) to construction and delivery.",
+          highlights_2:"Manage projects to reduce costs and increase efficiency.",
+          highlights_3:"A team of expert engineers continuously develop their skills.",
+          FVC_grup_title:"FVC GROUP operates in three main areas: electrical engineering, mechanical engineering, and construction engineering. With over 10 years of experience in both the public and private sectors, FVC Group is certified with ISO 9001:2015 standards.",
+          
+          //contact
+          address_real:" 104/21 Liapklongsong Road, Bangchan, Klongsamwa, Bangkok 10510 Thailand",
+          time:"Business hours : ",
+          email:"Email : ",
+          phone:"Phone : ",
+          contact_title:"Request a quote, schedule a site survey, or inquire about information.",
+          back:"⬅ Back",
           //News
           white_plant:" White Factory Level 3",
           Quality:"Quality system ",
           Certificate_details:"Certificate details",
-          address:"Address",
-          standard:"Standard",
+          address:"Address : ",
+          standard:"Standard : ",
           Certification_body:"Certification_body :",
           details_white_plant:"The Department of Labor Protection and Welfare (Ministry of Labor) awarded a certificate of recognition to FVC for its effective workplace drug management system, covering prevention, surveillance, correction, and employee care in accordance with legal regulations. The award, received on September 30, 2024, reflects the company's commitment to creating a drug-free workplace and a sustainable safe working environment.",
           Click_Details:"Click on the image to enlarge and view details.",
@@ -278,7 +366,10 @@
           vision_and_mission:"See vision and mission",
           vision:"Vision",
           vision_text:"Forward Vision Consultant are an efficient electrical, mechanical and construction service provider for the ultimate customer satisfaction.",
+          mission:"Mission",
+          mission_text:"Forward Vision Consultants Co., Ltd. provides engineering services with modern technology and quality that meets international standards.",
           experience:"Experience",
+          year:"10+ Year",
           Group_companies:"Group Companies",
           FVC:"FORWARD VISION CONSULTANT CO.,LTD are be Design & Consultant.",
           TTR:"THAI THARIT CO.,LTD are be Engineering & Contractor.",
@@ -302,6 +393,7 @@
           contact: "联系我们"
         }
       };
+
     //<!-- ===== สไลด์รูปภาพ ===== -->
     {const slides = document.getElementById('slides');
     const total = slides.children.length;
@@ -330,8 +422,8 @@
     function start(){ timer=setInterval(next,5000); }
     function stop(){ clearInterval(timer); }
     function restart(){ stop(); start(); }
-    document.querySelector('.hero').addEventListener('mouseenter',stop);
-    document.querySelector('.hero').addEventListener('mouseleave',start);
+    document.querySelector('.hero_').addEventListener('mouseenter',stop);
+    document.querySelector('.hero_').addEventListener('mouseleave',start);
     render();
     start();
     }

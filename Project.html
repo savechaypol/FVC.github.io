@@ -147,20 +147,20 @@
   <!-- ===== hero ===== -->
   <section class="hero_Project">
     <div class="wrap"> 
-      <h1 class="title">All Project Work</h1>
-      <p class="subtitle" data-i18n="subtitle_title">รวมโครงการของ FVC ครอบคลุมงานโยธา ระบบไฟฟ้า เครื่องกล และงานอื่นๆ</p>
+      <h1 class="title"data-pop style="--delay:100ms">All Project Work</h1>
+      <p class="subtitle" data-i18n="subtitle_title" data-pop style="--x:0px; --y:100px; --delay:100ms;">รวมโครงการของ FVC ครอบคลุมงานโยธา ระบบไฟฟ้า เครื่องกล และงานอื่นๆ</p>
     </div>
   </section>
   <!-- ===== filters + search ===== -->
   <section class="tools" role="region" aria-label="ตัวกรองและค้นหา">
     <div class="wrap tools__inner">
-      <button class="chip" data-filter="all" data-active="true"><span class="chip__dot" style="background:#8ab4ff"></span><il data-i18n="all">ทั้งหมด</il></button>
-      <button class="chip" data-filter="civil"><span class="chip__dot" style="background:#60a5fa"></span>Civil</button>
-      <button class="chip" data-filter="electrical"><span class="chip__dot" style="background:#34d399"></span>EE</button>
-      <button class="chip" data-filter="ict"><span class="chip__dot" style="background:#f59e0b"></span>ICT</button>
-      <button class="chip" data-filter="special"><span class="chip__dot" style="background:#f472b6"></span><il data-i18n="Other_work">งานอื่นๆ</il></button>
+      <button class="chip" data-filter="all" data-active="true" data-pop style="--delay:100ms"><span class="chip__dot" style="background:#8ab4ff"></span><il data-i18n="all">ทั้งหมด</il></button>
+      <button data-pop style="--delay:300ms" class="chip" data-filter="civil"><span class="chip__dot" style="background:#60a5fa"></span>Civil</button>
+      <button data-pop style="--delay:500ms" class="chip" data-filter="electrical"><span class="chip__dot" style="background:#34d399"></span>EE</button>
+      <button data-pop style="--delay:700ms" class="chip" data-filter="ict"><span class="chip__dot" style="background:#f59e0b"></span>ICT</button>
+      <button data-pop style="--delay:900ms" class="chip" data-filter="special"><span class="chip__dot" style="background:#f472b6"></span><il data-i18n="Other_work">งานอื่นๆ</il></button>
       <div class="spacer"></div>
-      <label class="search">
+      <label class="search" data-pop style="--x:200px; --y:0; --delay:100ms;">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
         <span class="visually-hidden">ค้นหาโครงการ</span>
         <input id="q" type="search" placeholder="ค้นหาโครงการ / สถานที่ / ลูกค้า" autocomplete="off"/>
@@ -172,7 +172,7 @@
     <section aria-label="รายการโครงการ" class="grid" id="grid">
       <!-- ===== Card Template Examples ===== -->
       <!-- 1 -->
-      <article class="card" data-tags="electrical cpf transformer samut sakhon" data-cat="electrical">
+      <article class="card" data-pop style="--delay:100ms;" data-tags="electrical cpf transformer samut sakhon" data-cat="electrical">
         <a href="01_ติดตั้งหม้อแปลง.html">
           <div class="card__media">
             <img src="Pictures/Performance/CPF/ติดตั้งหม้อแปลง 500 kVA มหาชัย สมุครสาคร/00_ติดตั้งหม้อแปลง.jpg" alt="ติดตั้งหม้อแปลงและตู้ MDB" />
@@ -199,7 +199,7 @@
         </a>
       </article>
       <!-- 2 -->
-      <article class="card" data-tags="civil office sonepar training" data-cat="civil">
+      <article class="card" data-pop style="--delay:300ms;" data-tags="civil office sonepar training" data-cat="civil">
         <a href="02_Desing_Sonepar.html">
           <div class="card__media">
             <img src="Pictures/Performance/Sonepar/Design-ก่อสร้าง Office Training Sonepar/00_Sonepar.jpg" alt="ก่อสร้างอาคารสำนักงานและศูนย์ฝึกอบรม" />
@@ -227,7 +227,7 @@
         </a>
       </article>
       <!-- 3 -->
-      <article class="card" data-tags="ict network ethernet fiber security" data-cat="ict">
+      <article class="card" data-pop style="--delay:500ms;" data-tags="ict network ethernet fiber security" data-cat="ict">
         <a href="03_InstallAccessport_CPPC.html">
           <div class="card__media">
             <img src="Pictures/Performance/CPPC/ติดตั้ง Accesspoint/00_ติดตั้ง AP.jpg" alt="ระบบเครือข่ายและความปลอดภัย" />
@@ -255,7 +255,7 @@
         </a>
       </article>
       <!-- 4 -->
-      <article class="card" data-tags="civil warehouse slab" data-cat="civil" >
+      <article class="card" data-pop style="--delay:100ms;" data-tags="civil warehouse slab" data-cat="civil" >
         <a href="04_ทำพื้นเครื่องจักร_BGRIM.html">
           <div class="card__media"><img src="Pictures/Performance/BGRIM/ทำพื้นเครื่องจักร/01_BGRIM.jpg" alt="พื้นคอนกรีต เครื่องจักร" /><span class="badge">Civil</span><div class="grad" aria-hidden="true"></div></div>
           <div class="card__body">

@@ -67,18 +67,16 @@
   </style>
 </head>
 <body>
-<!-- ===== Back Button ===== -->
-<div style="position:fixed; bottom:20px;top:20px; left:20px; z-index:1000;">
-  <button onclick="window.history.back()" 
-          style="padding:5px 18px; border:none; border-radius:12px;
-                 background:#0ea5e9; color:white; font-weight:600;
-                 box-shadow:0 6px 14px rgba(14,165,233,.35); cursor:pointer;">
-    ⬅ กลับไปก่อนหน้า
-  </button>
-</div>
+  <!-- ===== Back Button ===== -->
+  <div style="position:fixed; bottom:20px;top:20px; left:20px; z-index:1000;">
+    <button onclick="window.history.back()" 
+            style="padding:10px 20px; border:none; border-radius:12px;background:#0ea5e9; color:white; font-weight:600;box-shadow:0 6px 14px rgba(14,165,233,.35); cursor:pointer;">
+            <il data-i18n="back">⬅ กลับ</il>
+    </button>
+  </div>
   <div class="overlay" aria-hidden="true"></div>
   <div class="wrap">
-    <h1 class="title">โครงการ งานติดตั้งหม้อแปลง 500 kVA </h1>
+    <h1 class="title" data-pop style="--delay:100ms;">โครงการ งานติดตั้งหม้อแปลง 500 kVA </h1>
     <div class="grid">
       <!-- Left: Gallery -->
       <section class="gallery" aria-label="รูปภาพโครงการ">
@@ -103,7 +101,8 @@
         </div>
         <div class="desc">
           <h4 class="text-animate">Descriptions</h4>
-          <p data-pop style="--delay:100ms">ติดตั้งหม้อแปลง 500 kVA และติดตั้งตู้ MDB</p>
+          <p data-pop style="--delay:100ms">ติดตั้งนั่งร้านหม้อแปลง เสา12 เมตร ระยะเป็นไปตามมาตรฐานการติดตั้งนั่งร้านหม้อแปลงของการไฟฟ้าภูมิภาค ติดตั้งท่อRSC ด้าน HV จากเสาต้นทางจากการไฟฟ้ามานั่งร้านหม้อแปลง ความยาว180 เมตร  ใช้สายXLPE ขนาด 50 sq.mm.3 เฟส 3เส้น ติดตั้ง ราง Cable ladder 400*100 จาก หม้อแปลงไปตู้ MDB ความยาว 35 เมตร ใช้สาย CV ขนาด 240 sq.mm. 3 เฟส 4 สาย 2 วงจร ติดตั้งตู้ MDB from 2B IP31 กว้างxสูงxยาว   1600x 1800 x 800 mm.
+</p>
         </div>
       </aside>
     </div>

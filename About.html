@@ -109,138 +109,125 @@
       <a href="contact.html" class="btn-primary" style="display:inline-block; margin-top:10px" onclick="toggleMenu(false)" data-i18n="contact">ติดต่อเรา</a>
     </div>
   </div>
-    <!-- ===== language ===== -->
-    <div class="lang-container">
-      <div class="lang" id="langBox">
-        <button class="lang__btn" id="langBtn" aria-expanded="false" aria-controls="langMenu" data-i18n="lang_btn">
-          <img id="currentFlag" class="flag" src="https://flagcdn.com/w20/th.png" alt="">
-          <span id="currentLang">ไทย (TH)</span>
-          <svg class="lang__caret" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </button>
-        <div class="lang__menu" id="langMenu" role="menu" aria-label="Select language">
-          <a href="#" data-lang="th" data-flag="https://flagcdn.com/w20/th.png" role="menuitem">
-            <img class="flag" src="https://flagcdn.com/w20/th.png" alt=""> ไทย (TH)
-          </a>
-          <a href="#" data-lang="en" data-flag="https://flagcdn.com/w20/gb.png" role="menuitem">
-            <img class="flag" src="https://flagcdn.com/w20/gb.png" alt=""> English (EN)
-          </a>
-          <a href="#" data-lang="zh" data-flag="https://flagcdn.com/w20/cn.png" role="menuitem">
-            <img class="flag" src="https://flagcdn.com/w20/cn.png" alt=""> 中文 (ZH)
-          </a>
-        </div>
+  <!-- ===== language ===== -->
+  <div class="lang-container" >
+    <div class="lang" id="langBox">
+      <button class="lang__btn" id="langBtn" aria-expanded="false" aria-controls="langMenu" data-i18n="lang_btn">
+        <img id="currentFlag" class="flag" src="https://flagcdn.com/w20/th.png" alt="">
+        <span id="currentLang">ไทย (TH)</span>
+        <svg class="lang__caret" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="lang__menu" id="langMenu" role="menu" aria-label="Select language">
+        <a href="#" data-lang="th" data-flag="https://flagcdn.com/w20/th.png" role="menuitem">
+          <img class="flag" src="https://flagcdn.com/w20/th.png" alt=""> ไทย (TH)
+        </a>
+        <a href="#" data-lang="en" data-flag="https://flagcdn.com/w20/gb.png" role="menuitem">
+          <img class="flag" src="https://flagcdn.com/w20/gb.png" alt=""> English (EN)
+        </a>
+        <a href="#" data-lang="zh" data-flag="https://flagcdn.com/w20/cn.png" role="menuitem">
+          <img class="flag" src="https://flagcdn.com/w20/cn.png" alt=""> 中文 (ZH)
+        </a>
       </div>
     </div>
+  </div>
   <section class="container">
     <!-- hero_About -->
-     <h1 class="title">เกี่ยวกับเรา</h1>
     <section class="hero_About">
-      <div class="hero__media">
+      <div class="hero__media" data-pop style="--delay:100ms">
         <img src="Pictures/Lago/FVC Group.png" 
-             alt="ภาพงานระบบไฟฟ้า โครงสร้างพื้นฐาน">
+             alt="ภาพ FVC">
       </div>
-      <div class="hero__text">
-        <h1> FVC GROUP</h1>
-        <p>
+      <div class="hero__text" >
+        <h1 class="text-animate"> FVC GROUP</h1>
+        <p  data-i18n="FVC_grup_title" data-pop style="--delay:100ms">
            FVC GROUP ดำเนินธุรกิจหลัก 3 ด้าน: วิศวกรรมไฟฟ้า วิศวกรรมเครื่องกล และวิศวกรรมก่อสร้าง ด้วยประสบการณ์มากกว่า 10 ปี ทั้งภาครัฐและเอกชน พร้อมมาตรฐาน ISO 9001:2015
         </p>
-        <div class="card">
-          <span class="bar" style="margin:0 0 6px">จุดเด่น</span>
+        <div class="card" data-pop style="--x:200px; --y:0px; --delay:100ms;">
+          <span class="bar" style="margin:0 0 6px" data-i18n="highlights">จุดเด่น</span>
           <ul style="margin:0 0 6px ">
-          <li>ให้บริการครบวงจร ตั้งแต่ออกแบบ ขออนุญาต (IEAT) ถึงก่อสร้างและส่งมอบ</li>
-          <li>บริหารโครงการเพื่อ <b>ลดต้นทุน</b> และ <b>เพิ่มประสิทธิภาพ</b></li>
-          <li>ทีมวิศวกรผู้เชี่ยวชาญ พัฒนาทักษะอย่างต่อเนื่อง</li>
+          <li data-i18n="highlights_1" data-pop style="--delay:100ms">ให้บริการครบวงจร ตั้งแต่ออกแบบ ขออนุญาต (IEAT) ถึงก่อสร้างและส่งมอบ</li>
+          <li data-i18n="highlights_2" data-pop style="--delay:300ms">บริหารโครงการเพื่อ ลดต้นทุนและพิ่มประสิทธิภาพ</b></li>
+          <li data-i18n="highlights_3" data-pop style="--delay:500ms">ทีมวิศวกรผู้เชี่ยวชาญ พัฒนาทักษะอย่างต่อเนื่อง</li>
           </ul>
           <div class="about__grid">
-            <div class="kpi"><b>10+ ปี</b>ประสบการณ์</div>
-            <div class="kpi"><b>100+</b>โครงการ</div>
-            <div class="kpi"><b>ISO 9001</b>รับรองระบบคุณภาพ</div>
-          </div>
+          <div class="kpi" data-pop style="--delay:100ms"><b>100+</b data-i18n="project"><il data-i18n="project">โครงการ</il></div>
+          <div class="kpi" data-pop style="--delay:100ms"><b data-i18n="year">10+ ปี</b><il data-i18n="experience">ประสบการณ์</il></div>
+          <div class="kpi" data-pop style="--delay:100ms"><b>ISO 9001</b><il data-i18n="Quality">ระบบคุณภาพ</il></div>
+        </div>
         </div>
       </div>
     </section>
     <!-- Vision & Mission -->
     <div class="info-grid">
-      <div class="card">
-        <span class="bar">วิสัยทัศน์</span>
-        <p style="margin:0">บริษัท ฟอร์เวิร์ด วิชั่น คอนซัลแทนท์ มุ่งมั่นเป็นผู้ให้บริการด้านวิศวกรรมไฟฟ้า เครื่องกล และก่อสร้างที่มีประสิทธิภาพสูงสุด เพื่อสร้างความพึงพอใจสูงสุดแก่ลูกค้า</p>
+      <div class="card" data-pop style="--x:-200px; --y:0; --delay:100ms;">
+        <span class="bar" data-i18n="vision">วิสัยทัศน์</span>
+        <p style="margin:0" data-i18n="vision_text">บริษัท ฟอร์เวิร์ด วิชั่น คอนซัลแทนท์ มุ่งมั่นเป็นผู้ให้บริการด้านวิศวกรรมไฟฟ้า เครื่องกล และก่อสร้างที่มีประสิทธิภาพสูงสุด เพื่อสร้างความพึงพอใจสูงสุดแก่ลูกค้า</p>
       </div>
-    <div class="card" id="mission">
-      <span class="bar">พันธกิจ (Mission)</span>
-      <p style="margin:0">บริษัท ฟอร์เวิร์ด วิชั่น คอนซัลแทนท์ ให้บริการด้านวิศวกรรมด้วยเทคโนโลยีที่ทันสมัยและคุณภาพที่ได้มาตรฐานสากล</p>
+    <div class="card" data-pop style="--x:200px; --y:0; --delay:100ms;">
+      <span class="bar" data-i18n="mission">พันธกิจ</span>
+      <p style="margin:0" data-i18n="mission_text">บริษัท ฟอร์เวิร์ด วิชั่น คอนซัลแทนท์ ให้บริการด้านวิศวกรรมด้วยเทคโนโลยีที่ทันสมัยและคุณภาพที่ได้มาตรฐานสากล</p>
       </div>
     </div>
-    <!-- Subsidiaries -->
-    <section class="wrap">
-      <div class="grid cols-2">
-        <div class="card">
-          <h3 style="margin-top:0">FORWARD VISION CONSULTANT CO., LTD.</h3>
-          <p style="margin:0 0 10px">ผู้เชี่ยวชาญด้าน <b>การออกแบบและที่ปรึกษา</b></p>
-          <div class="pills">
-            <span class="pill">ออกแบบระบบไฟฟ้า/เครื่องกล/โยธา</span>
-            <span class="pill">ที่ปรึกษาโครงการ</span>
-            <span class="pill">ขออนุญาต IEAT</span>
-          </div>
-        </div>
-        <div class="card">
-        <h3 style="margin-top:0">THAI THARIT CO., LTD.</h3>
-        <p style="margin:0 0 10px">ผู้เชี่ยวชาญด้าน <b>วิศวกรรมและงานรับเหมาก่อสร้าง</b></p>
-          <div class="pills">
-            <span class="pill">ก่อสร้างครบวงจร</span>
-            <span class="pill">ติดตั้งระบบไฟฟ้า/เครื่องกล</span>
-          <span class="pill">บริหารงานก่อสร้าง</span>
-          </div>
-        </div>
+    
+  <!-- Group_companiess -->
+  <section class="section card" data-pop style="--x:0px; --y:200px; --delay:100ms;">
+    <span class="bar" data-i18n="Group_companies">กลุ่มบริษัท</span>
+    <div class="info-grid">
+      <div class="info-item">
+        <dd><h3 style="margin-top:0">FORWARD VISION CONSULTANT CO., LTD.</h3><ul style="margin:0 0 4px "><li data-i18n="FVC_text">ผู้เชี่ยวชาญด้าน การออกแบบและที่ปรึกษา</li></ul></dd>
       </div>
-    </section>  
+      <div class="info-item">
+        <dd><h3 style="margin-top:0">THAI THARIT CO.,LTD</h3><ul style="margin:0 0 4px "><li data-i18n="TTR_text">ผู้เชี่ยวชาญด้านวิศวกรรมและงานรับเหมาก่อสร้าง</li></ul></dd>
+      </div>
+    </div>
+  </section>
     <!-- COMPANY INFO -->
-    <section class="section card">
-      <span class="bar">ข้อมูลบริษัท</span>
+    <section class="section card" data-pop style="--x:0px; --y:200px; --delay:100ms;">
+      <span class="bar" data-i18n="company_information">ข้อมูลบริษัท</span>
       <div class="info-grid">
         <div class="info-item">
-          <dt>ชื่อบริษัท</dt><dd>บริษัท ฟอร์เวิร์ด วิชั่น คอนซัลแทนท์ จำกัด</dd>
+          <dt data-i18n="company_name">ชื่อบริษัท : </dt><dd data-i18n="Name_Company">บริษัท ฟอร์เวิร์ด วิชั่น คอนซัลแทนท์ จำกัด</dd>
         </div>
         <div class="info-item">
-          <dt>เลขทะเบียนนิติบุคคล</dt><dd>	0105554075826</dd>
+          <dt data-i18n="legal_entity_number">เลขทะเบียนนิติบุคคล : </dt><dd>	0105554075826</dd>
         </div>
         <div class="info-item">
-          <dt>ที่อยู่สำนักงาน</dt><dd>ที่อยู่: 104 หมู่บ้านไอดี-ไซน์ 21 ถนน เลียบคลองสอง แขวงบางชัน เขตคลองสามวา กรุงเทพมหานคร 10510</dd>
+          <dt data-i18n="address">ที่อยู่  : </dt><dd data-i18n="address_real">104 หมู่บ้านไอดี-ไซน์ 21 ถนน เลียบคลองสอง แขวงบางชัน เขตคลองสามวา กรุงเทพมหานคร 10510</dd>
         </div>
         <div class="info-item">
-          <dt>ทุนจดทะเบียน</dt><dd>10,000,000 บาท </dd>
+          <dt data-i18n="registered_capital">ทุนจดทะเบียน : </dt><dd>10,000,000 ฿ </dd>
         </div>
         <div class="info-item">
-          <dt>โทรศัพท์</dt><dd>02-5485986 -87</dd>
+          <dt data-i18n="phone">โทรศัพท์  : </dt><dd>02-5485986 -87</dd>
         </div>
         <div class="info-item">
-          <dt>อีเมล</dt><dd><a href="mailto:sorasak@fvc.co.th">sorasak@fvc.co.th</a></dd>
+          <dt data-i18n="email">อีเมล  : </dt><dd><a href="mailto:sorasak@fvc.co.th">sorasak@fvc.co.th</a></dd>
         </div>
         <div class="info-item">
-          <dt>วันก่อตั้ง</dt><dd> 2554</dd>
+          <dt data-i18n="founding_day">วันก่อตั้ง  : </dt><dd> 2554</dd>
         </div>
         <div class="info-item">
-          <dt>เว็บไซต์</dt><dd><a href="https://www.fvc.co.th/">www.fvc.co.th</a></dd>
+          <dt data-i18n="website">เว็บไซต์  : </dt><dd><a href="https://www.fvc.co.th/">www.fvc.co.th</a></dd>
         </div>
       </div>
     </section>
-
     <!-- REGISTRATION / SHARE / LICENSE -->
-    <section class="section card">
-      <span class="bar">ใบอนุญาต / มาตรฐาน</span>
+    <section class="section card" data-pop style="--x:0px; --y:200px; --delay:100ms;">
+      <span class="bar" data-i18n="license_standard">ใบอนุญาต / มาตรฐาน</span>
       <div class="info-grid">
         <div class="info-item">
-          <dt>มาตรฐาน</dt><dd>ระบบบริหารคุณภาพ ISO 9001:2015</dd>
+          <dt data-i18n="standard">มาตรฐาน  : </dt><dd data-i18n="standard_text">ระบบบริหารคุณภาพ ISO 9001:2015</dd>
         </div>
         <div class="info-item">
-          <dt>ความปลอดภัย</dt><dd>อบรม safety, Work Permit/JSR ตามระเบียบโรงงาน</dd>
+          <dt data-i18n="safety">ความปลอดภัย  : </dt><dd data-i18n="safety_text">อบรม safety, Work Permit/JSR ตามระเบียบโรงงาน</dd>
         </div>
       </div>
     </section>
   </section>
-  <!-- = By Save Chayapol = -->
   <!-- ===== Footer ===== -->
-  <section id="Footer" class="site-footer">
+  <section id="Footer" class="site-footer" >
     <div class="wrap">
       <div class="footer__grid">
         <div>

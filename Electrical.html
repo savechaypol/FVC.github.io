@@ -6,6 +6,7 @@
   <title>งานระบบไฟฟ้า | FVC</title>
   <meta name="description" content="งานระบบไฟฟ้า" />
   <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
   <link rel="icon" type="image/png" href="Pictures/FVC-Approve-Rev01.png">
   <style>
     :root{
@@ -17,33 +18,16 @@
       --hero-h:68vh;
       --maxw:1300px;
     }
-    body {margin: 0;font-family: sans-serif;min-height: 100vh;position: relative;overflow-x: hidden;}
-    body::before {content: "";position: fixed;top: 0; left: 0; right: 0; bottom: 0;background: url('Pictures/67382df8-c035-4632-991d-d7274420f6c6.png') no-repeat center center;background-size: cover;z-index: -1;}
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{font-family:"Kanit",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif; color:var(--text); background:#f8fafc; line-height:1.6}
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
-    /* ===== Header ===== */
-    .site-header{position:sticky;top:0;z-index:40;background:rgba(11,27,43,.85);backdrop-filter:saturate(150%) blur(8px);border-bottom:1px solid rgba(255,255,255,.08)}
-    .nav{max-width:var(--maxw);margin:auto;display:flex;align-items:center;gap:18px;padding:12px 20px;color:#e2e8f0}
-    .brand{display:flex;align-items:center;gap:12px}
-    .brand__name{font-weight:700;letter-spacing:.3px}
-    .nav__links{margin-left:auto;display:flex;gap:14px;align-items:center}
-    .nav__links a{padding:10px 12px;border-radius:10px;color:#e5e7eb}
-    .nav__links a:hover{background:rgba(235, 230, 230, 0.08)}
-    .btn-primary{display:flex;background:var(--primary); color:white; padding:10px 10px; border-radius:12px; font-weight:600; box-shadow:0 8px 18px rgba(14,165,233,.35)}
-    .btn-primary:hover{filter:brightness(1.1);}
-    .nav__toggle{display:none;margin-left:auto;background:transparent;border:1px solid rgba(255,255,255,.15);color:#e5e7eb;padding:8px 10px;border-radius:10px;}
     /* ===== Header Slider ===== */
-    .hero{position:relative;height:var(--hero-h);overflow:hidden;background:#000}
+    .hero_{position:relative;height:var(--hero-h);overflow:hidden;background:#000}
     .slides{height:100%;display:flex;transition:transform .8s ease}
     .slide{min-width:100%;height:100%;background-size:cover;background-position:center;position:relative}
     .slide::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.55),rgba(0,0,0,.62))}
     .hero__content{position:absolute;inset:0;display:grid;place-items:center;text-align:center;color:var(--text);padding:clamp(12px,2.5vw,32px)}
-    .hero__inner{max-width:950px;margin-inline:auto}
-    .hero h1{margin:0 0 .6rem;font-size:clamp(30px,5.2vw,56px);font-weight:800;letter-spacing:.3px;text-shadow:0 2px 14px rgba(0,0,0,.5)}
-    .hero p{margin:.25rem auto 0;opacity:.98;font-weight:300;font-size:clamp(15px,2vw,20px);line-height:1.9;text-shadow:0 1px 8px rgba(0,0,0,.35)}
+    .hero__in {max-width:950px;margin-inline:auto}
+    .hero_ h1{margin:0 0 .6rem;font-size:clamp(30px,5.2vw,56px);font-weight:800;letter-spacing:.3px;text-shadow:0 2px 14px rgba(0,0,0,.5)}
+    .hero_ p{margin:.25rem auto 0;opacity:.98;font-weight:300;font-size:clamp(15px,2vw,20px);line-height:1.9;text-shadow:0 1px 8px rgba(0,0,0,.35)}
+    .hero__nav{display: none;}
     .dots{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);display:flex;gap:8px}
     .dot{width:20px;height:20px;border-radius:50%;background:var(--dot);opacity:.9;cursor:pointer;border:1px solid rgb(255, 255, 255)}
     .dot.active{background:var(--dot-active)}
@@ -56,26 +40,8 @@
     .list li{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px dashed rgba(255,255,255,.15)}
     .list li:last-child{border-bottom:none}
     .bullet{flex:0 0 10px;width:10px;height:10px;margin-top:7px;border-radius:50%;background:#fff}
-    /* ===== Footer ===== */
-    section{padding:10px 20px;}
-    .site-footer{background:#0b1220;color:#ffffff;}
-    .wrap{max-width:var(--maxw); margin:auto;}
-    .footer__grid{display:grid; grid-template-columns: 1.2fr repeat(3,1fr); gap:20px;}
-    .footer__col h4{margin:0 0 10px;}
-    .footer__col a{display:block; color:#cbd5e1;/**/ padding:6px 0; opacity:.9;}
-    .footer__col a:hover{opacity:1;filter:brightness(10);}
-    .footer__bottom{border-top:1px solid rgba(255, 255, 255, 0.08); margin-top:26px; padding-top:16px; display:flex; align-items:center; justify-content:space-between; gap:12px;}
-    .chip {display: inline-block;background: #e5e5e7;color: #030303;font-size: 12px;font-weight: 600;padding: 4px 10px;border-radius: 999px;}
-    .chip:hover {transition: transform .4s ease, box-shadow .4s ease;transform: scale(1.2); box-shadow: 0 12px 24px rgba(0,0,0,0.2);}
-    /* ===== Mobile drawer ===== */
-    .drawer{ position:fixed; z-index:40;inset:0; background:rgba(2,6,23,.55); backdrop-filter: blur(4px);visibility:hidden;opacity:0;transition: opacity .6s ease, visibility 0s linear .6s;}
-    .drawer.is-open{visibility:visible;opacity:1;transition: opacity .6s ease;}
-    .drawer__panel{position:absolute; right:0; top:0; bottom:0; width:min(86vw,360px); background:#0e2136; color:#e5e7eb;padding:18px; box-shadow:-10px 0 30px rgba(2,8,23,.4);transform:translateX(100%);transition:transform .6s ease-in-out;}
-    .drawer.is-open .drawer__panel{transform:translateX(0);}
-    .drawer__panel a{display:block; padding:12px 10px; border-radius:10px;text-decoration:none;color:inherit;}
-    .drawer__panel a:hover{background:rgba(247,246,246,0.06);}
     @media (max-width: 1024px){
-    .hero__inner{grid-template-columns:1fr}}
+    .hero__in{grid-template-columns:1fr}}
     @media (max-width: 768px){
     .nav__links{display:none}
     .nav__toggle{display:inline-flex}
@@ -105,19 +71,18 @@
   <!-- ===== Header ===== -->
   <header class="site-header ">
     <nav class="nav">
-      <a onclick="window.history.back()" class="brand " aria-label="Forward Vision Consultant">
-        <div class="btn-primary">⬅ กลับไปก่อนหน้า
-        </div>
-        <div class="brand__name ">Forward Vision Consultant </div>
+      <a onclick="window.history.back()" 
+        style="padding:10px 20px; border:none; border-radius:12px;background:#0ea5e9; color:white; font-weight:600;box-shadow:0 6px 14px rgba(14,165,233,.35); cursor:pointer;">
+        <il data-i18n="back">⬅ กลับ</il>
       </a>
       <div class="nav__links ">
-        <a href="About.html">เกี่ยวกับเรา</a>
-        <a href="Services.html">บริการ</a>
-        <a href="Project.html">ผลงาน</a>
-        <a href="News.html">ข่าวสาร</a>
-        <a href="contact.html" class="btn-primary">ติดต่อเรา</a>
+        <a href="About.html" data-i18n="about">เกี่ยวกับเรา</a>
+        <a href="Services.html" data-i18n="services">บริการ</a>
+        <a href="Project.html" data-i18n="performance">ผลงาน</a>
+        <a href="News.html" data-i18n="news">ข่าวสาร</a>
+        <a href="contact.html" class="btn-primary" data-i18n="contact">ติดต่อเรา</a>
       </div>
-      <button class="nav__toggle" id="openMenu" aria-label="เปิดเมนู">เมนู</button>
+      <button class="nav__toggle" id="openMenu" aria-label="เปิดเมนู" data-i18n="menu">เมนู</button>
     </nav>
   </header>
   <!-- ===== Mobile drawer ===== -->
@@ -125,18 +90,41 @@
     <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="เมนูนำทาง">
       <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:10px">
         <div class="brand__name">Forward Vision Consultant</div>
-        <button id="closeMenu" class="nav__toggle" style="border-color:rgba(255,255,255,.25)">ปิด</button>
+        <button id="closeMenu" class="nav__toggle" style="border-color:rgba(255,255,255,.25)"  data-i18n="Close" >ปิด</button>
       </div>
-      <a href="index.html" onclick="toggleMenu(false)">หน้าแรก</a>
-      <a href="About.html" onclick="toggleMenu(false)">เกี่ยวกับเรา</a>
-      <a href="Services.html" onclick="toggleMenu(false)">บริการ</a>
-      <a href="Project.html" onclick="toggleMenu(false)">โครงการ</a>
-      <a href="News.html" onclick="toggleMenu(false)">ข่าวสาร</a>
-      <a href="contact.html" class="btn-primary" style="display:inline-block; margin-top:10px" onclick="toggleMenu(false)">ติดต่อเรา</a>
+      <a href="index.html" onclick="toggleMenu(false)" data-i18n="home_page" >หน้าแรก</a>
+      <a href="About.html" onclick="toggleMenu(false)" data-i18n="about">เกี่ยวกับเรา</a>
+      <a href="Services.html" onclick="toggleMenu(false)" data-i18n="services">บริการ</a>
+      <a href="Project.html" onclick="toggleMenu(false)" data-i18n="performance">ผลงาน</a>
+      <a href="News.html" onclick="toggleMenu(false)" data-i18n="news">ข่าวสาร</a>
+      <a href="contact.html" class="btn-primary" style="display:inline-block; margin-top:10px" onclick="toggleMenu(false)" data-i18n="contact">ติดต่อเรา</a>
     </div>
   </div>
-  <!-- ================= Hero ================= -->
-  <section class="hero" aria-label="ภาพงานระบบไฟฟ้า">
+  <!-- ===== language ===== -->
+  <div class="lang-container">
+    <div class="lang" id="langBox">
+      <button class="lang__btn" id="langBtn" aria-expanded="false" aria-controls="langMenu" data-i18n="lang_btn">
+        <img id="currentFlag" class="flag" src="https://flagcdn.com/w20/th.png" alt="">
+        <span id="currentLang">ไทย (TH)</span>
+        <svg class="lang__caret" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="lang__menu" id="langMenu" role="menu" aria-label="Select language">
+        <a href="#" data-lang="th" data-flag="https://flagcdn.com/w20/th.png" role="menuitem">
+          <img class="flag" src="https://flagcdn.com/w20/th.png" alt=""> ไทย (TH)
+        </a>
+        <a href="#" data-lang="en" data-flag="https://flagcdn.com/w20/gb.png" role="menuitem">
+          <img class="flag" src="https://flagcdn.com/w20/gb.png" alt=""> English (EN)
+        </a>
+        <a href="#" data-lang="zh" data-flag="https://flagcdn.com/w20/cn.png" role="menuitem">
+          <img class="flag" src="https://flagcdn.com/w20/cn.png" alt=""> 中文 (ZH)
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- ===== Hero ===== -->
+  <section class="hero_" aria-label="ภาพงานระบบไฟฟ้า">
     <div class="slides" id="slides">
       <div class="slide" style="background-image:url('https://www.ste-energy.com/wp-content/uploads/2020/05/High-Voltage-Systems.jpg');"></div>
       <div class="slide" style="background-image:url('https://www.idesuk.com/wp-content/uploads/2020/06/what-is-industrial-lighting-warehouse-lighting.jpg');"></div>
@@ -145,9 +133,9 @@
       <div class="slide" style="background-image:url('https://www.uac.co.th/storage/updates/knowledge-sharing/2021/08/solar.jpg');"></div>
     </div>
     <div class="hero__content">
-      <div class="hero__inner ">
-        <h1 class="text-animate">งานระบบไฟฟ้า</h1>
-        <p data-pop style="--delay:100ms">บริษัทให้บริการด้านระบบไฟฟ้าอย่างครบวงจร ซึ่งรวมถึงการ ก่อสร้างและติดตั้งอุปกรณ์ต่าง ๆ ระบบควบคุม ระบบไฟฟ้าและระบบสื่อสาร โดยบริการของบริษัทครอบคลุมงานระบบ ต่างๆ ดังนี้</p>
+      <div class="hero__in">
+        <h1 class="text-animate" data-i18n="electrical_work">งานระบบไฟฟ้า</h1>
+        <p data-pop style="--delay:100ms" data-i18n="electrical_work_text">บริษัทให้บริการด้านระบบไฟฟ้าอย่างครบวงจร ซึ่งรวมถึงการ ก่อสร้างและติดตั้งอุปกรณ์ต่าง ๆ ระบบควบคุม ระบบไฟฟ้าและระบบสื่อสาร โดยบริการของบริษัทครอบคลุมงานระบบ ต่างๆ ดังนี้</p>
       </div>
     </div>
     <div class="hero__nav" aria-hidden="true">
@@ -156,181 +144,58 @@
     </div>
     <div class="dots" id="dots" role="tablist" aria-label="ตัวบ่งชี้สไลด์"></div>
   </section>
-  <!-- ================= Services ================= -->
+  <!-- ===== Services ===== -->
   <section class="section" aria-label="บริการงานโยธา">
     <div class="container">
       <div class="grid">
-          <ul class="list"data-pop style="--x:200px; --y:0; --delay:100ms;">
-            <li><span class="bullet"></span><span>ไฟฟ้าแรงดันสูง/ไฟฟ้าแรงดังต่ำ</span></li>
-            <li><span class="bullet"></span><span>ระบบการจ่ายกระแสไฟฟ้า</span></li>
-            <li><span class="bullet"></span><span>อุปกรณ์จ่ายไฟฟ้า</span></li>
-            <li><span class="bullet"></span><span>ระบบไฟฟ้าส่องสว่าง</span></li>
+          <ul class="list" data-pop style="--x:-200px; --y:0; --delay:100ms;">
+            <li data-pop style="--delay:100ms;"><span class="bullet"></span><span data-i18n="electrical_1" >ไฟฟ้าแรงดันสูง/ไฟฟ้าแรงดังต่ำ</span></li>
+            <li data-pop style="--delay:300ms;"><span class="bullet"></span><span data-i18n="electrical_2" >ระบบการจ่ายกระแสไฟฟ้า</span></li>
+            <li data-pop style="--delay:500ms;"><span class="bullet"></span><span data-i18n="electrical_3" >PM ระบบไฟฟ้า</span></li>
+            <li data-pop style="--delay:700ms;"><span class="bullet"></span><span data-i18n="electrical_4" >ระบบไฟฟ้าส่องสว่าง</span></li>
           </ul>
-          <ul class="list"data-pop style="--x:-200px; --y:0; --delay:100ms;">
-            <li><span class="bullet"></span><span>ระบบควบคุมแสงไฟส่องสว่างอัตโนมัติ</span></li>
-            <li><span class="bullet"></span><span>ระบบป้องกันฟ้าผ่า</span></li>
-            <li><span class="bullet"></span><span>ระบบการต่อลงดิน</span></li>
-            <li><span class="bullet"></span><span>ระบบพลังงานแสงอาทิตย์</span></li>
+          <ul class="list"data-pop style="--x:200px; --y:0; --delay:100ms;">
+            <li data-pop style="--delay:100ms;"><span class="bullet"></span><span data-i18n="electrical_5" >ระบบควบคุมแสงไฟส่องสว่างอัตโนมัติ</span></li>
+            <li data-pop style="--delay:300ms;"><span class="bullet"></span><span data-i18n="electrical_6" >ระบบป้องกันฟ้าผ่า</span></li>
+            <li data-pop style="--delay:500ms;"><span class="bullet"></span><span data-i18n="electrical_7" >ระบบการต่อลงดิน</span></li>
+            <li data-pop style="--delay:700ms;"><span class="bullet"></span><span data-i18n="electrical_8" >ระบบพลังงานแสงอาทิตย์</span></li>
           </ul>
       </div>
     </div>
   </section>
   <!-- ===== Footer ===== -->
   <section id="Footer" class="site-footer">
-    <div class="wrap">
-      <div class="footer__grid">
-        <div class="footer__col">
-          <div class="brand" style="margin-bottom:8px">
-            <div class="btn-primary">FVC&nbsp;<img src="Pictures/FVC-Approve-Rev01.png" alt="FVC Emoji" width="25" height="25"></div>
-            <div class="brand__name">Forward Vision Consultant</div></div>
-          <p style="margin:0 0 10px; color:#94a3b8">ผู้รับเหมางานโครงการ</p>
+    <div class="wrap" id="Save">
+      <div class="footer__grid" id="Chayapol">
+        <div>
+          <a href="#" class="brand" style="margin-bottom:8px">
+            <img src="Pictures/Lago/logo_FVC_.jpg"   height="45">
+            <div class="brand__name">Forward Vision Consultant Co.,Ltd</div></a>
+          <p style="margin:0 0 10px; color:#94a3b8" data-i18n="FVC_title">ผู้รับเหมางานโครงการก่อสร้าง
+          </p>
         </div>
         <div class="footer__col">
-          <h4>บริษัท</h4>
-          <a href="index.html#about">ประวัติองค์กร</a>
-          <a href="index.html#about">วิสัยทัศน์และพันธกิจ</a>
-          <a href="index.html#about">โครงสร้างธุรกิจ</a>
+          <h4 data-i18n="about">บริษัท</h4>
+          <a href="About.html" data-i18n="Contact_us">เกี่ยวกับบริษัท</a>
+          <a href="#about" data-i18n="vision_and_mission">วิสัยทัศน์และพันธกิจ</a>
+          <a href="#about" data-i18n="Group_companies">กลุ่มบริษัท</a>
         </div>
         <div class="footer__col">
-          <h4>บริการ</h4>
+          <h4 data-i18n="services">บริการ</h4>
           <a href="Civil.html">Civil</a>
           <a href="Electrical.html">Electrical</a>
           <a href="Mechanical.html">Mechanical</a>
         </div>
         <div class="footer__col">
-          <h4>ติดต่อ</h4>
-          <a href="contact.html">ติดต่อเรา</a>
+          <h4 data-i18n="contact">ติดต่อ</h4>
+          <a href="contact.html" data-i18n="Contact_us">ติดต่อเรา</a>
         </div>
       </div>
       <div class="footer__bottom">
-        <small>COPYRIGHT© 2025 FORWARD VISION CONSULTANT CO.,LTD. ALL RIGHTS RESERVED</small>
+        <small>COPYRIGHT© <span id="y"></span> FORWARD VISION CONSULTANT CO.,LTD. ALL RIGHTS RESERVED</small>
       </div>
     </div>
   </section>
-  <script>//<!-- ===== แผงเมนูเลื่อนออกมาทางขวา ===== -->
-    const drawer = document.getElementById('drawer');
-    const openBtn = document.getElementById('openMenu');
-    const closeBtn = document.getElementById('closeMenu');
-    function toggleMenu(force){
-      const open = (typeof force === 'boolean') ? force : !drawer.classList.contains('is-open');
-      drawer.classList.toggle('is-open', open);
-      drawer.setAttribute('aria-hidden', String(!open));
-      if(open) document.body.style.overflow='hidden'; else document.body.style.overflow='';
-    }
-    openBtn.addEventListener('click', () => toggleMenu(true));
-    closeBtn.addEventListener('click', () => toggleMenu(false));
-    drawer.addEventListener('click', (e)=>{ if(e.target===drawer) toggleMenu(false) });
-    drawer.addEventListener('touchmove', (e) => {
-      if (!e.target.closest('.drawer__panel')) e.preventDefault();
-      }, { passive:false });
-  </script> 
-  <script>//<!-- ===== สไลด์รูปภาพ ===== -->
-    const slides = document.getElementById('slides');
-    const total = slides.children.length;
-    const dotsWrap = document.getElementById('dots');
-    const prevBtn = document.getElementById('prev');
-    const nextBtn = document.getElementById('next');
-    let i = 0, timer = 0;
-    //<!-- ===== สร้าง dot ตามจำนวนภาพ ===== -->
-    for(let k=0;k<total;k++){
-      const d=document.createElement('button');
-      d.className='dot';
-      d.setAttribute('role','tab');
-      d.setAttribute('aria-label','ไปยังสไลด์ที่ '+(k+1));
-      d.addEventListener('click',()=>go(k,true));
-      dotsWrap.appendChild(d);
-    }
-    function render(){
-      slides.style.transform = `translateX(-${i*100}%)`;
-      [...dotsWrap.children].forEach((el,idx)=>el.classList.toggle('active', idx===i));
-    }
-    function go(idx,manual=false){ i=(idx+total)%total; render(); if(manual) restart(); }
-    function next(){ go(i+1); }
-    function prev(){ go(i-1); }
-    prevBtn.addEventListener('click',()=>go(i-1,true));
-    nextBtn.addEventListener('click',()=>go(i+1,true));
-    function start(){ timer=setInterval(next,5000); }
-    function stop(){ clearInterval(timer); }
-    function restart(){ stop(); start(); }
-    document.querySelector('.hero').addEventListener('mouseenter',stop);
-    document.querySelector('.hero').addEventListener('mouseleave',start);
-    render();
-    start();
-  </script>
-  <script>//<!-- ===== เนื้อหาล่นลงมา ===== -->
-    (function(){
-      const SELECTOR   = 'h1.text-animate, h2.text-animate, h3.text-animate, h4.text-animate, p.text-animate, .text-animate';
-      const DELAY_STEP = 0.06;
-      const START_DELAY= 0.00;
-      const REPLAY     = false;
-      const hasSeg = 'Intl' in window && 'Segmenter' in Intl;
-      const seg    = hasSeg ? new Intl.Segmenter('th', { granularity:'grapheme' }) : null;
-      function splitToSpans(el){
-        if (!el.dataset.orig) el.dataset.orig = el.textContent;
-        const text  = el.dataset.orig;
-        el.textContent = '';
-        const units = seg ? Array.from(seg.segment(text), s => s.segment) : Array.from(text);
-        let i = 0;
-        for (const u of units){
-          if (u === ' '){
-            const sp = document.createElement('span');
-            sp.className = 'space';
-            sp.textContent = ' ';
-            el.appendChild(sp);
-            continue;
-          }
-          const span = document.createElement('span');
-          span.className = 'char';
-          span.textContent = u;
-          span.style.animationDelay = (START_DELAY + i * DELAY_STEP) + 's';
-          el.appendChild(span);
-          i++;
-        }
-        el.dataset.ready = '1';
-        requestAnimationFrame(()=> el.dataset.in = '1');
-      }
-      const io = new IntersectionObserver((entries)=>{
-        entries.forEach(e=>{
-          const el = e.target;
-          if (e.isIntersecting){
-            if (el.dataset.ready !== '1') splitToSpans(el);
-            else el.dataset.in = '1';
-            if (!REPLAY) io.unobserve(el); 
-          }else if (REPLAY){
-            el.dataset.in = '0';
-            el.textContent = el.dataset.orig || el.textContent;
-            el.dataset.ready = '0';
-          }
-        });
-      }, { threshold: 0.18, rootMargin: '0px 0px -8% 0px' });
-      document.querySelectorAll(SELECTOR).forEach(el => io.observe(el));
-    })();
-  </script>
-  <script>//<!-- ===== เนื้อหาค่อยๆโผล่ ===== -->
-    (function(){
-      const REPLAY = false;
-      function initPopReveal(){
-        const els = document.querySelectorAll('[data-pop]');
-        if(!els.length) return;
-        const io = new IntersectionObserver((entries)=>{
-          entries.forEach(e=>{
-            const el = e.target;
-            if(e.isIntersecting){
-              el.classList.add('is-in');
-              if(!REPLAY) io.unobserve(el);
-            }else if(REPLAY){
-              el.classList.remove('is-in');
-            }
-          });
-        }, { threshold: 0.12, rootMargin: '0px 0px -10% 0px' });
-        els.forEach(el => io.observe(el));
-      }
-      if(document.readyState === 'loading'){
-        document.addEventListener('DOMContentLoaded', initPopReveal, { once:true });
-      }else{
-        initPopReveal();
-      }
-    })();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
