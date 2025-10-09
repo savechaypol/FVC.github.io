@@ -135,12 +135,10 @@
       const langNames = {
         th: "ไทย (TH)",
         en: "English (EN)",
-        zh: "中文 (ZH)"
       };
       const langFlags = {
         th: "https://flagcdn.com/w20/th.png",
         en: "https://flagcdn.com/w20/gb.png",
-        zh: "https://flagcdn.com/w20/cn.png"
       };
 
       const currentLangEl = document.getElementById("currentLang");
@@ -220,7 +218,6 @@
           EE_details:"ให้บริการด้านระบบไฟฟ้า HV/LV รวมถึงระบบควบคุม ระบบไฟฟ้าและระบบสื่อสาร ฯลฯ",
           Me_details:"ให้บริการงานเครื่องกลครอบคลุมการติดตั้งระบบท่อ การติดตั้งเครื่องจักรและปรับฐานรากให้มั่นคง และระบบ Air Compressed ฯลฯ",
           project_title:"ตัวอย่างผลงานโครงการเด่นจากโครงกการทั้งหมดของเรา",
-          install_Tr_MDB:"ติดตั้งหม้อแปลงและตู้ MDB",
           customer:"ลูกค้าที่ไว้วางใจเรา",
           FVC_title:"ผู้รับเหมางานโครงการก่อสร้าง",
           Contact_us:"ติดต่อเรา",
@@ -232,6 +229,9 @@
           Bangkok:"กรุงเทพฯ",
           Chachoengsao:"ฉะเชิงเทรา",
           Ratchaburi:"ราชบุรี",
+          install_Tr_MDB:"ติดตั้งหม้อแปลงและตู้ MDB",
+          ins_ap:"งารติดตั้ง Accesport",
+          office_training:"ออกแบบและสร้าง – สำนักงานและศูนย์ฝึกอบรม",
           making_machine_floors:"ทำพื้นเครื่องจักร โรงไฟฟ้า",
           //News
           white_plant:" โรงงานสีขาว ระดับที่ 3",
@@ -249,6 +249,7 @@
           email:"อีเมล : ",
           time:"เวลาทำการ : ",
           address_real:" 104 หมู่บ้านไอดี-ไซน์ 21 ถนน เลียบคลองสอง แขวงบางชัน เขตคลองสามวา กรุงเทพมหานคร 10510",
+          day:"จันทร์–ศุกร์ 08:30–17:30",
           //About
           FVC_grup_title:"FVC GROUP ดำเนินธุรกิจหลัก 3 ด้าน: วิศวกรรมไฟฟ้า วิศวกรรมเครื่องกล และวิศวกรรมก่อสร้าง ด้วยประสบการณ์มากกว่า 10 ปี ทั้งภาครัฐและเอกชน พร้อมมาตรฐาน ISO 9001:2015",
           highlights:"จุดเด่น",
@@ -281,19 +282,46 @@
           //service_electrical
           electrical_work:"งานระบบไฟฟ้า",
           electrical_work_text:"บริษัทให้บริการด้านระบบไฟฟ้าอย่างครบวงจร ซึ่งรวมถึงการ ก่อสร้างและติดตั้งอุปกรณ์ต่าง ๆ ระบบควบคุม ระบบไฟฟ้าและระบบสื่อสาร โดยบริการของบริษัทครอบคลุมงานระบบ ต่างๆ ดังนี้",
-          electrical_1:"",
-          electrical_2:"",
-          electrical_3:"",
-          electrical_4:"",
-          electrical_5:"",
-          electrical_6:"",
-          electrical_7:"",
-          electrical_8:"",
+          electrical_1:"ไฟฟ้าแรงดันสูง/ไฟฟ้าแรงดังต่ำ",
+          electrical_2:"ระบบการจ่ายกระแสไฟฟ้า",
+          electrical_3:"PM ระบบไฟฟ้า",
+          electrical_4:"ระบบไฟฟ้าส่องสว่าง",
+          electrical_5:"ระบบควบคุมแสงไฟส่องสว่างอัตโนมัติ",
+          electrical_6:"ระบบป้องกันฟ้าผ่า",
+          electrical_7:"ระบบการต่อลงดิน",
+          electrical_8:"ระบบพลังงานแสงอาทิตย์",
+          //service_mechanical
+          mechanical_work:"งานเครื่องกล",
+          mechanical_work_text:"บริษัทให้บริการด้านระบบเครื่องกล ซึ่งรวมถึงการก่อสร้างและติดตั้งอุปกรณ์ต่าง ๆ ระบบท่อส่งน้ำและก๊าซ ระบบปรับอากาศและระบายอากาศ (HVAC) ระบบเครื่องจักรกลอุตสาหกรรม และระบบอัดอากาศ ครอบคลุมงานระบบต่างๆ ดังนี้",
+          mechanical_1:"ระบบท่อ",
+          mechanical_2:"ติดตั้งเครื่องจักร",
+          mechanical_3:"ระบบปรับอากาศและระบายอากาศ (HVAC)",
+          mechanical_4:"ระบบประปา",
+          mechanical_5:"ระบบป้องกันอัคคีภัย",
+          mechanical_6:"ระบบบำบัดน้ำเสียและอากาศเสีย",
+          mechanical_7:"ระบบน้ำหล่อเย็น",
         },
-        en: {
+        en: {//service_mechanical
+          mechanical_work:"Mechanical work",
+          mechanical_work_text:"The company provides mechanical system services, including construction and installation of various equipment, water and gas piping systems, air conditioning and ventilation (HVAC) systems, industrial machinery systems, and compressed air systems, covering the following systems:",
+          mechanical_1:"Pipe system",
+          mechanical_2:"Install machinery",
+          mechanical_3:"Air conditioning and ventilation systems (HVAC)",
+          mechanical_4:"Plumbing system",
+          mechanical_5:"Fire protection system",
+          mechanical_6:"Wastewater and air pollution treatment systems",
+          mechanical_7:"Cooling water system",
           //service_electrical
           electrical_work:"Electrical system work",
           electrical_work_text:"บริษัทให้บริการด้านระบบไฟฟ้าอย่างครบวงจร ซึ่งรวมถึงการ ก่อสร้างและติดตั้งอุปกรณ์ต่าง ๆ ระบบควบคุม ระบบไฟฟ้าและระบบสื่อสาร โดยบริการของบริษัทครอบคลุมงานระบบ ต่างๆ ดังนี้",
+          electrical_1:"High voltage/low voltage",
+          electrical_2:"Electrical distribution system",
+          electrical_3:"PM electrical system",
+          electrical_4:"ระบบไฟฟ้าส่องสว่าง",
+          electrical_5:"Electrical lighting system",
+          electrical_6:"Lightning protection system",
+          electrical_7:"Grounding system",
+          electrical_8:"Solar power system",
           //service_civil
           civil_1:"Infrastructure construction",
           civil_2:"Road construction",
@@ -322,7 +350,6 @@
           highlights_2:"Manage projects to reduce costs and increase efficiency.",
           highlights_3:"A team of expert engineers continuously develop their skills.",
           FVC_grup_title:"FVC GROUP operates in three main areas: electrical engineering, mechanical engineering, and construction engineering. With over 10 years of experience in both the public and private sectors, FVC Group is certified with ISO 9001:2015 standards.",
-          
           //contact
           address_real:" 104/21 Liapklongsong Road, Bangchan, Klongsamwa, Bangkok 10510 Thailand",
           time:"Business hours : ",
@@ -330,6 +357,7 @@
           phone:"Phone : ",
           contact_title:"Request a quote, schedule a site survey, or inquire about information.",
           back:"⬅ Back",
+          day:"Monday–Friday 8:30 AM–5:30 PM",
           //News
           white_plant:" White Factory Level 3",
           Quality:"Quality system ",
@@ -347,6 +375,9 @@
           Bangkok:"Bangkok",
           Chachoengsao:"Chachoengsao",
           Ratchaburi:"Ratchaburi",
+          install_Tr_MDB:"Install the transformer and MDB",
+          office_training:"Design & Build – Office & Training Center",
+          ins_ap:"Accesport installation work",
           making_machine_floors:"Make floors for machinery and power plants",
           //index
           about: "About us",
@@ -380,18 +411,10 @@
           EE_details:"Providing services in HV/LV electrical systems, including control systems, electrical systems, and communication systems, etc.",
           Me_details:"Providing mechanical services covering piping installation, machinery installation and foundation stabilization, and air compressed systems, etc.",
           project_title:"Examples of outstanding project work from all our projects",
-          install_Tr_MDB:"Install the transformer and MDB",
           customer:"Customers who trust us",
           FVC_title:"Construction project contractor",
           Contact_us:"Contact us",
         },
-        zh: {
-          about: "关于我们",
-          services: "服务",
-          project: "项目",
-          news: "新闻",
-          contact: "联系我们"
-        }
       };
 
     //<!-- ===== สไลด์รูปภาพ ===== -->
@@ -425,6 +448,44 @@
     document.querySelector('.hero_').addEventListener('mouseenter',stop);
     document.querySelector('.hero_').addEventListener('mouseleave',start);
     render();
+    start();
+    }
+
+    //<!-- ===== สไลด์รูปภาพ + เลือกรูปภาพ ===== -->
+    {const main = document.getElementById('main');
+    const thumbs = Array.from(document.querySelectorAll('.thumb'));
+    const dotsWrap = document.getElementById('dots');
+    let idx = 0, timer;
+    const INTERVAL = 4000;
+    function buildDots(){
+      dotsWrap.innerHTML='';
+      thumbs.forEach((_,i)=>{
+        const d=document.createElement('div');
+        d.className='dot'+(i===idx?' active':'');
+        d.addEventListener('click',()=>go(i,true));
+        dotsWrap.appendChild(d);
+      });
+    }
+    function setActive(i){
+      thumbs.forEach((b,j)=>b.classList.toggle('active', j===i));
+      [...dotsWrap.children].forEach((d,j)=>d.classList.toggle('active', j===i));
+    }
+    function show(i){
+      idx=(i+thumbs.length)%thumbs.length;
+      const url=thumbs[idx].dataset.src;
+      main.style.opacity=0;
+      const img=new Image();
+      img.onload=()=>{main.src=url;main.style.opacity=1;setActive(idx);};
+      img.src=url;
+    }
+    function go(i,manual=false){show(i);if(manual) restart();}
+    function next(){go(idx+1);}
+    function start(){if(!timer) timer=setInterval(next,INTERVAL);}
+    function stop(){clearInterval(timer);timer=null;}
+    function restart(){stop();start();}
+    thumbs.forEach((btn,i)=>btn.addEventListener('click',()=>go(i,true)));
+    buildDots();
+    show(0);
     start();
     }
 

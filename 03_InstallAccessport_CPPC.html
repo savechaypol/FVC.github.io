@@ -3,8 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>InstallAccesport_CPPC | FVC</title>
-  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  <title>Forward Vision Consultant</title>
+  <meta name="description" content="หน้าเว็บไซต์โครง FVC" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap" >
+  <link rel="stylesheet" href="style.css" >
+  <link rel="icon" type="image/png" href="Pictures/FVC-Approve-Rev01.png">
   <style>
     :root{
       --bg:#0b1427;         /* พื้นหลังเข้ม */
@@ -74,6 +77,27 @@
             <il data-i18n="back">⬅ กลับ</il>
     </button>
   </div>
+  <!-- ===== language ===== -->
+  <div class="lang-container">
+    <div class="lang" id="langBox">
+      <button class="lang__btn" id="langBtn" aria-expanded="false" aria-controls="langMenu" data-i18n="lang_btn">
+        <img id="currentFlag" class="flag" src="https://flagcdn.com/w20/th.png" alt="">
+        <span id="currentLang">ไทย (TH)</span>
+        <svg class="lang__caret" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="lang__menu" id="langMenu" role="menu" aria-label="Select language">
+        <a href="#" data-lang="th" data-flag="https://flagcdn.com/w20/th.png" role="menuitem">
+          <img class="flag" src="https://flagcdn.com/w20/th.png" alt=""> ไทย (TH)
+        </a>
+        <a href="#" data-lang="en" data-flag="https://flagcdn.com/w20/gb.png" role="menuitem">
+          <img class="flag" src="https://flagcdn.com/w20/gb.png" alt=""> English (EN)
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- ===== Project ===== -->
   <div class="overlay" aria-hidden="true"></div>
   <div class="wrap">
     <h1 class="title">โครงการ งารติดตั้ง Accesport </h1>
@@ -95,9 +119,9 @@
       <aside class="side" aria-label="รายละเอียดโครงการ">
         <h3 class="text-animate">Project Details</h3>
         <div class="kv"data-pop style="--delay:100ms">
-          <b>Scope of Work :</b> <span>ระบบไฟฟ้า</span>
-          <b>Owner :</b> <span>CPF (Thailand) Ltd.</span>
-          <b>Location :</b> <span>มหาชัย สมุครสาคร</span>
+          <b>Scope of Work :</b> <span>งานติดตั้งระบบไฟฟ้า</span>
+          <b>Owner :</b> <span>CPPC Public Co.,Ltd.</span>
+          <b>Location :</b> <span>บางปะกง ฉะเชิงเทรา</span>
         </div>
         <div class="desc">
           <h4 class="text-animate">Descriptions</h4>
@@ -106,120 +130,10 @@
       </aside>
     </div>
   </div>
-<script>
-  const main = document.getElementById('main');
-  const thumbs = Array.from(document.querySelectorAll('.thumb'));
-  const dotsWrap = document.getElementById('dots');
-  let idx = 0, timer;
-  const INTERVAL = 4000;
-  function buildDots(){
-    dotsWrap.innerHTML='';
-    thumbs.forEach((_,i)=>{
-      const d=document.createElement('div');
-      d.className='dot'+(i===idx?' active':'');
-      d.addEventListener('click',()=>go(i,true));
-      dotsWrap.appendChild(d);
-    });
-  }
-  function setActive(i){
-    thumbs.forEach((b,j)=>b.classList.toggle('active', j===i));
-    [...dotsWrap.children].forEach((d,j)=>d.classList.toggle('active', j===i));
-  }
-  function show(i){
-    idx=(i+thumbs.length)%thumbs.length;
-    const url=thumbs[idx].dataset.src;
-    main.style.opacity=0;
-    const img=new Image();
-    img.onload=()=>{main.src=url;main.style.opacity=1;setActive(idx);};
-    img.src=url;
-  }
-  function go(i,manual=false){show(i);if(manual) restart();}
-  function next(){go(idx+1);}
-  function start(){if(!timer) timer=setInterval(next,INTERVAL);}
-  function stop(){clearInterval(timer);timer=null;}
-  function restart(){stop();start();}
-  thumbs.forEach((btn,i)=>btn.addEventListener('click',()=>go(i,true)));
-  buildDots();
-  show(0);
-  start();
-</script>
-<script>//<!-- ===== เนื้อหาล่นลงมา ===== -->
-    (function(){
-      const SELECTOR   = 'h1.text-animate, h2.text-animate, h3.text-animate, h4.text-animate, p.text-animate, .text-animate';
-      const DELAY_STEP = 0.06;
-      const START_DELAY= 0.00;
-      const REPLAY     = false;
-      const hasSeg = 'Intl' in window && 'Segmenter' in Intl;
-      const seg    = hasSeg ? new Intl.Segmenter('th', { granularity:'grapheme' }) : null;
-      function splitToSpans(el){
-        if (!el.dataset.orig) el.dataset.orig = el.textContent;
-        const text  = el.dataset.orig;
-        el.textContent = '';
-        const units = seg ? Array.from(seg.segment(text), s => s.segment) : Array.from(text);
-        let i = 0;
-        for (const u of units){
-          if (u === ' '){
-            const sp = document.createElement('span');
-            sp.className = 'space';
-            sp.textContent = ' ';
-            el.appendChild(sp);
-            continue;
-          }
-          const span = document.createElement('span');
-          span.className = 'char';
-          span.textContent = u;
-          // ตั้งดีเลย์ทีละตัว
-          span.style.animationDelay = (START_DELAY + i * DELAY_STEP) + 's';
-          el.appendChild(span);
-          i++;
-        }
-        el.dataset.ready = '1';
-        // ให้เบราว์เซอร์คำนวณ layout ก่อน จากนั้นเปิดเล่น
-        requestAnimationFrame(()=> el.dataset.in = '1');
-      }
-      const io = new IntersectionObserver((entries)=>{
-        entries.forEach(e=>{
-          const el = e.target;
-          if (e.isIntersecting){
-            if (el.dataset.ready !== '1') splitToSpans(el);
-            else el.dataset.in = '1';
-            if (!REPLAY) io.unobserve(el); // เล่นครั้งเดียว
-          }else if (REPLAY){
-            // รีเซ็ตเพิ่อให้เล่นใหม่เมื่อกลับเข้าจอ
-            el.dataset.in = '0';
-            el.textContent = el.dataset.orig || el.textContent;
-            el.dataset.ready = '0';
-          }
-        });
-      }, { threshold: 0.18, rootMargin: '0px 0px -8% 0px' });
-      document.querySelectorAll(SELECTOR).forEach(el => io.observe(el));
-    })();
-  </script>
-  <script>//<!-- ===== เนื้อหาค่อยๆโผล่ ===== -->
-    (function(){
-      const REPLAY = false; // เล่นครั้งเดียว (false); ถ้าอยากเล่นซ้ำทุกครั้งให้เป็น true
-      function initPopReveal(){
-        const els = document.querySelectorAll('[data-pop]');
-        if(!els.length) return;
-        const io = new IntersectionObserver((entries)=>{
-          entries.forEach(e=>{
-            const el = e.target;
-            if(e.isIntersecting){
-              el.classList.add('is-in');
-              if(!REPLAY) io.unobserve(el);  // เล่นครั้งเดียวแล้วเลิกสังเกต
-            }else if(REPLAY){
-              el.classList.remove('is-in');  // รีเซ็ตเพื่อเล่นใหม่รอบหน้า
-            }
-          });
-        }, { threshold: 0.12, rootMargin: '0px 0px -10% 0px' });
-        els.forEach(el => io.observe(el));
-      }
-      if(document.readyState === 'loading'){
-        document.addEventListener('DOMContentLoaded', initPopReveal, { once:true });
-      }else{
-        initPopReveal();
-      }
-    })();
-  </script>
+    <!-- ===== Footer ===== -->
+  <div class="footer__bottom">
+    <small>COPYRIGHT© <span id="y"></span> FORWARD VISION CONSULTANT CO.,LTD. ALL RIGHTS RESERVED</small>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>

@@ -4,11 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>News | FVC</title>
-  <meta name="description" content="ใบรับรองระบบบริหารคุณภาพ ISO 9001:2015 ของ Forward Vision Consultant" />
+  <meta name="description" content="ข่าวสาร FVC" />
   <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
   <link rel="icon" type="image/png" href="Pictures/FVC-Approve-Rev01.png">
-  <style>
+  <style>/*CSS*/
     :root{
       --bg:#0b1220;
       --border:#3c3c8fa4;
@@ -41,17 +41,17 @@
     .tl-item small{color:var(--muted);display:block}
     /* lightbox */
     .lightbox { position:fixed; inset:0; background:#000c; display:none; align-items:center; justify-content:center; z-index:100 }
-.lightbox.open{ display:flex }
-.lightbox img{ max-width:92vw; max-height:86vh; border-radius:12px; border:1px solid #2b3a5d; box-shadow:0 10px 30px rgba(0,0,0,.25) }
-.lightbox .close{
+  .lightbox.open{ display:flex }
+  .lightbox img{ max-width:92vw; max-height:86vh; border-radius:12px; border:1px solid #2b3a5d; box-shadow:0 10px 30px rgba(0,0,0,.25) }
+  .lightbox .close{
   position:absolute; top:14px; right:14px; border:1px solid #ffffff33; background:#0b1220bb;
   color:#fff; border-radius:12px; padding:8px 12px; cursor:pointer;}
-.lightbox .nav{
+  .lightbox .nav{
   position:absolute; top:50%; transform:translateY(-50%);
   width:44px; height:44px; display:grid; place-items:center;
   border:1px solid #ffffff33; background:#0b1220bb; color:#fff; border-radius:999px; cursor:pointer;}
-.lightbox .prev{ left:16px } .lightbox .next{ right:16px}
-.lightbox .counter{
+  lightbox .prev{ left:16px } .lightbox .next{ right:16px}
+  .lightbox .counter{
   position:absolute; bottom:14px; left:50%; transform:translateX(-50%);
   background:#0b1220bb; color:#fff; border:1px solid #ffffff33; border-radius:999px; padding:6px 10px; font-size:12px;}
       /* เส้น Title */
@@ -108,9 +108,6 @@
         <a href="#" data-lang="en" data-flag="https://flagcdn.com/w20/gb.png" role="menuitem">
           <img class="flag" src="https://flagcdn.com/w20/gb.png" alt=""> English (EN)
         </a>
-        <a href="#" data-lang="zh" data-flag="https://flagcdn.com/w20/cn.png" role="menuitem">
-          <img class="flag" src="https://flagcdn.com/w20/cn.png" alt=""> 中文 (ZH)
-        </a>
       </div>
     </div>
   </div>
@@ -119,17 +116,17 @@
     <!-- 1 -->
     <div class="container hero-grid">
       <div>
-        <h1><il data-i18n="Quality">ระบบคุณภาพ</il><span  style="color:#5be6f8"> ISO 9001:2015 </span></h1>
+        <h1 class="text-animate"><il data-i18n="Quality">ระบบคุณภาพ</il><span> ISO 9001:2015 </span></h1>
         <div class="card" >
-        <h2 style="color:#5be6f8" data-i18n="Certificate_details" >รายละเอียดใบรับรอง</h2>
-        <p><strong>Company : </strong> FORWARD VISION CONSULTANT CO., LTD</p>
-        <p><strong data-i18n="address">ที่อยู่ : </strong data-i18n="address_real"> 104/21 Liapklongsong Road, Bangchan, Klongsamwa, Bangkok 10510 Thailand</p>
-        <p><strong data-i18n="standard">มาตรฐาน:</strong> ISO 9001:2015 • <strong data-i18n="Certification_body">หน่วยรับรอง:</strong> INTERCERT</p>
-        <p><strong>Registration No.:</strong> IC-QM-2412001</p>
+          <h2 class="text-animate" style="color:#5be6f8" data-i18n="Certificate_details" >รายละเอียดใบรับรอง</h2>
+          <p data-pop style="--x:200px; --y:0; --delay:100ms;"><strong>Company : </strong> FORWARD VISION CONSULTANT CO., LTD</p>
+          <p data-pop style="--x:200px; --y:0; --delay:300ms;"><strong data-i18n="address">ที่อยู่ : </strong data-i18n="address_real"> 104/21 Liapklongsong Road, Bangchan, Klongsamwa, Bangkok 10510 Thailand</p>
+          <p data-pop style="--x:200px; --y:0; --delay:500ms;"><strong data-i18n="standard">มาตรฐาน:</strong> ISO 9001:2015 • <strong data-i18n="Certification_body">หน่วยรับรอง:</strong> INTERCERT</p>
+          <p data-pop style="--x:200px; --y:0; --delay:700ms;"><strong>Registration No.:</strong> IC-QM-2412001</p>
         </div>
       </div>
       <!-- Certificate Card -->
-      <div class="card">
+      <div class="card" data-pop style="--delay:200ms;">
         <a href="Pictures/News/ISO 9001.png"
           data-lightbox
           data-lb-group="news"
@@ -143,14 +140,14 @@
     <!-- 2 -->
     <div class="container hero-grid">
       <div>
-        <h1><il data-i18n="project">โครงการ</il><span  style="color:#5be6f8" data-i18n="white_plant"> โรงงานสีขาว ระดับที่ 3  </span></h1>
-        <div class="card" >
-        <h2 style="color:#5be6f8" data-i18n="Certificate_details">รายละเอียดใบรับรอง</h2>
-        <p data-i18n="details_white_plant">กรมสวัสดิการและคุ้มครองแรงงาน (กระทรวงแรงงาน) มอบเกียรติบัตรรับรองว่า FVC มีระบบการจัดการด้านยาเสพติดในสถานประกอบกิจการที่มีประสิทธิภาพ ครอบคลุมการป้องกัน–เฝ้าระวัง–แก้ไข และการดูแลพนักงานตามระเบียบกฎหมาย โดยได้รับมอบเมื่อวันที่ 30 กันยายน 2567 สะท้อนความมุ่งมั่นในการสร้างสถานประกอบการปลอดยาเสพติดและสภาพแวดล้อมการทำงานที่ปลอดภัยอย่างยั่งยืน</p>
+        <h1 class="text-animate"><il data-i18n="project">โครงการ</il><span data-i18n="white_plant"> โรงงานสีขาว ระดับที่ 3  </span></h1>
+        <div class="card">
+          <h2 style="color:#5be6f8" class="text-animate" class="text-animate" data-i18n="Certificate_details">รายละเอียดใบรับรอง</h2>
+          <p data-i18n="details_white_plant" data-pop style="--x:200px; --y:0; --delay:300ms;">กรมสวัสดิการและคุ้มครองแรงงาน (กระทรวงแรงงาน) มอบเกียรติบัตรรับรองว่า FVC มีระบบการจัดการด้านยาเสพติดในสถานประกอบกิจการที่มีประสิทธิภาพ ครอบคลุมการป้องกัน–เฝ้าระวัง–แก้ไข และการดูแลพนักงานตามระเบียบกฎหมาย โดยได้รับมอบเมื่อวันที่ 30 กันยายน 2567 สะท้อนความมุ่งมั่นในการสร้างสถานประกอบการปลอดยาเสพติดและสภาพแวดล้อมการทำงานที่ปลอดภัยอย่างยั่งยืน</p>
         </div>
       </div>
       <!-- Certificate Card -->
-      <div class="card">
+      <div class="card" data-pop style="--delay:300ms;">
           <a href="Pictures/News/FVC โครงการโรงงานสีขาวระดับที่ 3-1.png"
           data-lightbox
           data-lb-group="news"
