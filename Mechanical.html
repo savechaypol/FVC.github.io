@@ -197,5 +197,40 @@
     </div>
   </section>
   <script src="script.js"></script>
+  <script>//<!-- ===== สไลด์รูปภาพ ===== -->
+    {const slides = document.getElementById('slides');
+    const total = slides.children.length;
+    const dotsWrap = document.getElementById('dots');
+    const prevBtn = document.getElementById('prev');
+    const nextBtn = document.getElementById('next');
+    let i = 0, timer = 0;
+    //<!-- ===== สร้าง dot ตามจำนวนภาพ ===== -->
+    for(let k=0;k<total;k++){
+      const d=document.createElement('button');
+      d.className='dot';
+      d.setAttribute('role','tab');
+      d.setAttribute('aria-label','ไปยังสไลด์ที่ '+(k+1));
+      d.addEventListener('click',()=>go(k,true));
+      dotsWrap.appendChild(d);
+    }
+    function render(){
+      slides.style.transform = `translateX(-${i*100}%)`;
+      [...dotsWrap.children].forEach((el,idx)=>el.classList.toggle('active', idx===i));
+    }
+    function go(idx,manual=false){ i=(idx+total)%total; render(); if(manual) restart(); }
+    function next(){ go(i+1); }
+    function prev(){ go(i-1); }
+    prevBtn.addEventListener('click',()=>go(i-1,true));
+    nextBtn.addEventListener('click',()=>go(i+1,true));
+    function start(){ timer=setInterval(next,5000); }
+    function stop(){ clearInterval(timer); }
+    function restart(){ stop(); start(); }
+    document.querySelector('.hero_').addEventListener('mouseenter',stop);
+    document.querySelector('.hero_').addEventListener('mouseleave',start);
+    render();
+    start();
+    }
+
+  </script>
 </body>
 </html>
