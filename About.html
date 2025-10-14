@@ -30,27 +30,44 @@
     margin:auto;
     padding:24px}
   /* hero */
-  .hero_About{display:grid;grid-template-columns:1fr 1.6fr;gap:var(--gap);margin-top:10px;margin-bottom: 50px;}
-  .hero__media img{background:linear-gradient(180deg, rgba(4, 232, 240, 0.404), rgba(255, 255, 255, 0.5)); border:1px solid rgb(0, 204, 255); border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden}
-  
-  .eyebrow{display:inline-block;background:var(--accent);color:#052d4b;font-weight:800;padding:6px 12px;border-radius:10px;margin-bottom:10px}
-  .hero_About h1{margin:.2rem 0 10px;font-size:clamp(20px,3.8vw,35px)}
-  .hero_About p{color:var(--muted);margin:10px}
+  .hero_About{
+    display:grid;
+    grid-template-columns:1fr 1.6fr;
+    gap:var(--gap);
+    margin-top:10px;
+    margin-bottom: 50px;}
+  .hero__media img{
+    background:linear-gradient(180deg, rgba(4, 232, 240, 0.404), rgba(255, 255, 255, 0.5));
+    border:1px solid rgb(0, 204, 255); border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    overflow:hidden}
+  .eyebrow{
+    display:inline-block;
+    background:var(--accent);
+    color:#052d4b;
+    font-weight:800;
+    padding:6px 12px;
+    border-radius:10px;
+    margin-bottom:10px}
+  .hero_About h1{
+    margin:.2rem 0 10px;font-size:clamp(20px,3.8vw,35px)}
+  .hero_About p{
+    color:var(--muted);
+    margin:10px}
   /* section boxes */
-  .section{margin-top:30px}
+  .section{
+    margin-top:30px}
   .card{
     background:linear-gradient(180deg,var(--panel),var(--panel-soft));
     border:1px solid var(--border);
     border-radius:var(--radius);
     padding:22px;
     position:relative;
-    overflow:hidden;
-  }
+    overflow:hidden;}
   .card::after{ /* ลายโค้งบาง ๆ ด้านหลัง */
     content:"";position:absolute;inset:-40% -20% auto auto;width:120%;height:120%;
     background:radial-gradient(600px 160px at 80% 0%, rgba(255,255,255,.06), transparent 60%);
-    pointer-events:none;
-  }
+    pointer-events:none;}
   /* section heading bar */
   .bar{
     display:inline-block;
@@ -59,8 +76,7 @@
     font-weight:800;
     padding:6px 12px;
     border-radius:8px;
-    margin-bottom:12px;
-  }
+    margin-bottom:12px;}
   /* definition list (2 คอลัมน์) */
   .info-grid{
     display:grid;
@@ -86,7 +102,10 @@
     .info-grid{grid-template-columns:1fr}
   }
   /* เส้นคั่นบาง */
-  .divider{height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.08),transparent);margin:16px 0}
+  .divider{
+    height:1px;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.08),transparent);
+    margin:16px 0}
 </style>
 </head>
 <body>
