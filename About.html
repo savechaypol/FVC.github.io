@@ -24,8 +24,11 @@
     --radius:18px;
     --gap:40px;
   }
-    /*container*/
-    .container{max-width:1300px;margin:auto;padding:24px}
+  /*container*/
+  .container{
+    max-width:1300px;
+    margin:auto;
+    padding:24px}
   /* hero */
   .hero_About{display:grid;grid-template-columns:1fr 1.6fr;gap:var(--gap);margin-top:10px;margin-bottom: 50px;}
   .hero__media img{background:linear-gradient(180deg, rgba(4, 232, 240, 0.404), rgba(255, 255, 255, 0.5)); border:1px solid rgb(0, 204, 255); border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden}
@@ -60,15 +63,25 @@
   }
   /* definition list (2 คอลัมน์) */
   .info-grid{
-    display:grid;grid-template-columns:1fr 1fr;gap:16px 24px;
-  }
-  .info-item{display:flex;gap:10px;align-items:flex-start}
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px 24px;}
+  .info-item{
+    display:flex;
+    gap:10px;
+    align-items:flex-start}
   .info-item dt{
-    min-width:130px;white-space:nowrap;
-    color:#cfe3ff;opacity:.9;font-weight:700
-  }
-  .info-item dd{margin:0;color:var(--text)}
-  @media (max-width:1000px){
+    min-width:130px;
+    color:#ffffff;
+    opacity:.9;
+    font-weight:700}
+  .info-item dd{
+    margin:0;
+    color:#e2e9ff}
+  .info-item a:hover{
+    filter:brightness(100);
+    color: #d0ff00;}
+  @media (max-width:1024px){
     .hero_About{grid-template-columns:1fr}
     .info-grid{grid-template-columns:1fr}
   }
@@ -180,48 +193,60 @@
       </div>
     </div>
   </section>
-    <!-- COMPANY INFO -->
-    <section class="section card" data-pop style="--x:0px; --y:200px; --delay:100ms;">
-      <span class="bar" data-i18n="company_information">ข้อมูลบริษัท</span>
-      <div class="info-grid">
-        <div class="info-item">
-          <dt data-i18n="company_name">ชื่อบริษัท : </dt><dd data-i18n="Name_Company">บริษัท ฟอร์เวิร์ด วิชั่น คอนซัลแทนท์ จำกัด</dd>
-        </div>
-        <div class="info-item">
-          <dt data-i18n="legal_entity_number">เลขทะเบียนนิติบุคคล : </dt><dd>	0105554075826</dd>
-        </div>
-        <div class="info-item">
-          <dt data-i18n="address">ที่อยู่  : </dt><dd data-i18n="address_real">104 หมู่บ้านไอดี-ไซน์ 21 ถนน เลียบคลองสอง แขวงบางชัน เขตคลองสามวา กรุงเทพมหานคร 10510</dd>
-        </div>
-        <div class="info-item">
-          <dt data-i18n="registered_capital">ทุนจดทะเบียน : </dt><dd>10,000,000 ฿ </dd>
-        </div>
-        <div class="info-item">
-          <dt data-i18n="phone">โทรศัพท์  : </dt><dd>02-5485986 -87</dd>
-        </div>
-        <div class="info-item">
-          <dt data-i18n="email">อีเมล  : </dt><dd><a href="mailto:sorasak@fvc.co.th">sorasak@fvc.co.th</a></dd>
-        </div>
-        <div class="info-item">
-          <dt data-i18n="founding_day">วันก่อตั้ง  : </dt><dd> 2554</dd>
-        </div>
-        <div class="info-item">
-          <dt data-i18n="website">เว็บไซต์  : </dt><dd><a href="https://www.fvc.co.th/">www.fvc.co.th</a></dd>
-        </div>
+  <!-- COMPANY INFO -->
+  <section class="section card" data-pop style="--x:0px; --y:200px; --delay:100ms;">
+    <span class="bar" data-i18n="company_information">ข้อมูลบริษัท</span>
+    <div class="info-grid">
+      <div class="info-item">
+        <dt data-i18n="company_name">ชื่อบริษัท:</dt><dd data-i18n="Name_Company">บริษัท ฟอร์เวิร์ด วิชั่น คอนซัลแทนท์ จำกัด</dd>
       </div>
-    </section>
+      <div class="info-item">
+        <dt data-i18n="legal_entity_number">เลขทะเบียนนิติบุคคล:</dt><dd>0105554075826</dd>
+      </div>
+      <div class="info-item">
+        <dt data-i18n="address">ที่อยู่:</dt><dd data-i18n="address_real">104 หมู่บ้านไอดี-ไซน์ 21 ถนน เลียบคลองสอง แขวงบางชัน เขตคลองสามวา กรุงเทพมหานคร 10510</dd>
+      </div>
+      <div class="info-item">
+        <dt data-i18n="registered_capital">ทุนจดทะเบียน:</dt><dd>10,000,000 ฿ </dd>
+      </div>
+      <div class="info-item ">
+        <dt data-i18n="phone">โทรศัพท์:</dt><dd><a href="tel:02-548-5986">02-5485986</a>-87</dd>
+      </div>
+      <div class="info-item">
+        <dt data-i18n="email">อีเมล:</dt><dd><a href="mailto:sorasak@fvc.co.th">sorasak@fvc.co.th</a></dd>
+      </div>
+      <div class="info-item">
+        <dt data-i18n="founding_day">วันก่อตั้ง:</dt><dd> 2554</dd>
+      </div>
+      <div class="info-item">
+        <dt data-i18n="website">เว็บไซต์:</dt><dd><a href="https://www.fvc.co.th/">www.fvc.co.th</a></dd>
+      </div>
+    </div>
+  </section>
     <!-- REGISTRATION / SHARE / LICENSE -->
-    <section class="section card" data-pop style="--x:0px; --y:200px; --delay:100ms;">
-      <span class="bar" data-i18n="license_standard">ใบอนุญาต / มาตรฐาน</span>
-      <div class="info-grid">
-        <div class="info-item">
-          <dt data-i18n="standard">มาตรฐาน  : </dt><dd data-i18n="standard_text">ระบบบริหารคุณภาพ ISO 9001:2015</dd>
-        </div>
-        <div class="info-item">
-          <dt data-i18n="safety">ความปลอดภัย  : </dt><dd data-i18n="safety_text">อบรม safety, Work Permit/JSR ตามระเบียบโรงงาน</dd>
-        </div>
+  <section class="section card" data-pop style="--x:0px; --y:200px; --delay:100ms;">
+    <span class="bar" data-i18n="company_information">ข้อมูลบริษัท</span>
+    <div class="info-grid">
+      <div class="info-item">
+        <dt data-i18n="company_name">ชื่อบริษัท:</dt><dd data-i18n="Name_Company">บริษัท ฟอร์เวิร์ด วิชั่น คอนซัลแทนท์ จำกัด</dd>
       </div>
-    </section>
+      <div class="info-item">
+        <dt data-i18n="address">ที่อยู่:</dt><dd data-i18n="address_real">104 หมู่บ้านไอดี-ไซน์ 21 ถนน เลียบคลองสอง แขวงบางชัน เขตคลองสามวา กรุงเทพมหานคร 10510</dd>
+      </div>
+    </div>
+  </section>
+  <!-- REGISTRATION / SHARE / LICENSE -->
+  <section class="section card" data-pop style="--x:0px; --y:200px; --delay:100ms;">
+    <span class="bar" data-i18n="license_standard">ใบอนุญาต / มาตรฐาน</span>
+    <div class="info-grid">
+      <div class="info-item">
+        <dt data-i18n="standard">มาตรฐาน:</dt><dd data-i18n="standard_text">ระบบบริหารคุณภาพ ISO 9001:2015</dd>
+      </div>
+      <div class="info-item">
+         <dt data-i18n="safety">ความปลอดภัย:</dt><dd data-i18n="safety_text">อบรม safety, Work Permit/JSR ตามระเบียบโรงงาน</dd>
+      </div>
+    </div>
+  </section>
   </section>
   <!-- ===== Footer ===== -->
   <section id="Footer" class="site-footer" >
