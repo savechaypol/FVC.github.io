@@ -184,7 +184,7 @@
       });
     })();
     
-    // ======= ภาษา =======
+        // <!-- ===== ภาษา ===== -->
     const i18n = { 
       th: {//index
         about: "เกี่ยวกับเรา",
@@ -248,9 +248,9 @@
         phone:"โทร : ",
         email:"อีเมล : ",
         time:"เวลาทำการ : ",
-        address_real:" 104 หมู่บ้านไอดี-ไซน์ 21 ถนน เลียบคลองสอง แขวงบางชัน เขตคลองสามวา กรุงเทพมหานคร 10510",
+        address_real:" 104/21 หมู่บ้านไอดี-ไซน์ ถนน เลียบคลองสอง แขวงบางชัน เขตคลองสามวา กรุงเทพมหานคร 10510",
         day:"จันทร์–ศุกร์ 08:30–17:30",
-        //About
+        //About 
         FVC_grup_title:"FVC GROUP ดำเนินธุรกิจหลัก 3 ด้าน: วิศวกรรมไฟฟ้า วิศวกรรมเครื่องกล และวิศวกรรมก่อสร้าง ด้วยประสบการณ์มากกว่า 10 ปี ทั้งภาครัฐและเอกชน พร้อมมาตรฐาน ISO 9001:2015",
         highlights:"จุดเด่น",
         highlights_1:"ให้บริการครบวงจร ตั้งแต่ออกแบบ ขออนุญาต (IEAT) ถึงก่อสร้างและส่งมอบ",
@@ -358,7 +358,8 @@
         civil_8:"Drainage and pipe work",
         civil_work:"Civil construction work",
         civil_work_text:"Civil construction services companies can assure their clients that the work they undertake is of high quality, safe, and meets all customer expectations.",
-        //About
+        //About license_standard
+        license_standard:"License/Standard",
         safety_text:"Safety training, Work Permit/JSR according to factory regulations",
         standard_text:"Quality management system ISO 9001:2015",
         safety:"Safety : ",
