@@ -416,9 +416,6 @@
       [data-pop].is-in{ 
         animation:none !important; }}
     /*ฟิกหน้าจอ*/
-    html, body{
-      max-width: 100%;
-      overflow-x: hidden;}
     @supports (overflow: clip){
       html, body{ overflow-x: clip; }}
     /* === เส้นเดี่ยวไล่โปร่งใส === */
