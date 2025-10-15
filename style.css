@@ -24,9 +24,6 @@
     .text_center{
       text-align: center;
       padding: 20px;}
-    html, body{
-      max-width: 100%;
-      overflow-x: hidden;}
     /* ===== Header ===== */
     .site-header{
       position:sticky;
@@ -417,8 +414,13 @@
         transform:none !important; 
         animation:none !important; }
       [data-pop].is-in{ 
-        animation:none !important; }
-}
+        animation:none !important; }}
+    /*ฟิกหน้าจอ*/
+    html, body{
+      max-width: 100%;
+      overflow-x: hidden;}
+    @supports (overflow: clip){
+      html, body{ overflow-x: clip; }}
     /* === เส้นเดี่ยวไล่โปร่งใส === */
     .sep--line{ 
       height:3px;
