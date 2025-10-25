@@ -230,7 +230,7 @@
         Chachoengsao:"ฉะเชิงเทรา",
         Ratchaburi:"ราชบุรี",
         install_Tr_MDB:"ติดตั้งหม้อแปลงและตู้ MDB",
-        ins_ap:"งารติดตั้ง Accesport",
+        ins_ap:"งานติดตั้ง Accessport",
         office_training:"ออกแบบและสร้าง – สำนักงานและศูนย์ฝึกอบรม",
         making_machine_floors:"ทำพื้นเครื่องจักร โรงไฟฟ้า",
         //News
@@ -403,7 +403,7 @@
         Ratchaburi:"Ratchaburi",
         install_Tr_MDB:"Install the Transformer and MDB",
         office_training:"Design & Build – Office & Training Center",
-        ins_ap:"Accesport installation work",
+        ins_ap:"Accessport Installation Work",
         making_machine_floors:"Make floors for machinery and power plants",
         //index
         about: "About us",
