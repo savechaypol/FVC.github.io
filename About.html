@@ -106,6 +106,30 @@
     height:1px;
     background:linear-gradient(90deg,transparent,rgba(255,255,255,.08),transparent);
     margin:16px 0}
+  /* ===== VIDEO ===== */
+  .video-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--radius);
+    margin: auto;
+    padding: 20px;
+  }
+  .video-container {
+    position: relative;
+    width: 80%;
+    max-width: 900px;
+    border: 2px solid var(--accent);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(0,255,255,0.2);
+  }
+  .video-container video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--radius);
+  }
 </style>
 </head>
 <body>
@@ -254,6 +278,14 @@
       </div>
     </div>
   </section>
+  </section>
+  <!-- ===== Videos ===== -->
+  <section class="video-section">
+    <div class="video-container" data-pop style="--x:0px; --y:200px; --delay:100ms;">
+      <video controls autoplay loop playsinline>
+        <source src="Videos/FVC Group โปรไฟล์ความเป็นเลิศ.mp4" type="video/mp4">
+      </video>
+    </div>
   </section>
   <!-- ===== Footer ===== -->
   <section id="Footer" class="site-footer">

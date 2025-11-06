@@ -233,6 +233,7 @@
         ins_ap:"งานติดตั้ง Accessport",
         office_training:"ออกแบบและสร้าง – สำนักงานและศูนย์ฝึกอบรม",
         making_machine_floors:"ทำพื้นเครื่องจักร โรงไฟฟ้า",
+        view_details:"ดูรายละเอียด",
         //News
         white_plant:" โรงงานสีขาว ระดับที่ 3",
         Quality:"ระบบคุณภาพ",
@@ -312,8 +313,15 @@
         //making_machine_floors
         photharam:"โพธาราม ราชบุรี",
         making_machine_floors_datail:"ทำพื้นเครื่องจักร โรงไฟฟ้า",
+        //location
+        
+
       },
       en: {
+        //location
+
+
+
         //making_machine_floors
         photharam:"Photharam, Ratchaburi",
         making_machine_floors_detail:"Make floors for machinery and power plants",
@@ -405,6 +413,7 @@
         office_training:"Design & Build – Office & Training Center",
         ins_ap:"Accessport Installation Work",
         making_machine_floors:"Make floors for machinery and power plants",
+        view_details:"View Details",
         //index
         about: "About us",
         services: "Services",
