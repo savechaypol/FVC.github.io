@@ -229,10 +229,18 @@
         Bangkok:"กรุงเทพฯ",
         Chachoengsao:"ฉะเชิงเทรา",
         Ratchaburi:"ราชบุรี",
+        Pathum_Thani:"ปทุมธานี",
+        Samut_Prakan:"สมุทรปราการ",
+        Rayong:"ระยอง",
         install_Tr_MDB:"ติดตั้งหม้อแปลงและตู้ MDB",
-        ins_ap:"งานติดตั้ง Accessport",
         office_training:"ออกแบบและสร้าง – สำนักงานและศูนย์ฝึกอบรม",
+        ins_ap:"งานติดตั้ง Accessport",
         making_machine_floors:"ทำพื้นเครื่องจักร โรงไฟฟ้า",
+        bird_grating:"งานติดตั้งตะแกรงกันนก",
+        dry_type:"งานเปลี่ยนแปลง Dry type 500 kVA",
+        install_HV:"งานติดตั้งระบบไฟฟ้าแรงสูงและแรงต่ำ",
+        foundation_cooling:"ทำพื้นวางเครื่อง Cooling",
+        renovate_scada:"ปรับปรุงห้องควบคุม SCADA",
         view_details:"ดูรายละเอียด",
         //News
         white_plant:" โรงงานสีขาว ระดับที่ 3",
@@ -306,31 +314,56 @@
         install_Tr_MDB_detail:"ติดตั้งนั่งร้านหม้อแปลง เสา 12 เมตร ระยะเป็นไปตามมาตรฐานการติดตั้งนั่งร้านหม้อแปลงของการไฟฟ้าภูมิภาค ติดตั้งท่อRSC ด้าน HV จากเสาต้นทางจากการไฟฟ้ามานั่งร้านหม้อแปลง ความยาว180 เมตร  ใช้สายXLPE ขนาด 50 sq.mm.3 เฟส 3เส้น ติดตั้ง ราง Cable ladder 400*100 จาก หม้อแปลงไปตู้ MDB ความยาว 35 เมตร ใช้สาย CV ขนาด 240 sq.mm. 3 เฟส 4 สาย 2 วงจร ติดตั้งตู้ MDB from 2B IP31 กว้างxสูงxยาว   1600x 1800 x 800 mm.",
         //desing_sonepar
         Prawet:"ประเวศ กรุงเทพฯ",
-        civil_work_detail:"ออกแบบและสร้าง – สำนักงานและศูนย์ฝึกอบรม",
+        office_training_detail:"จัดทำตั้งแต่ออกแบบโครงสร้างและสร้างสำนักงานศูนย์ฝึกอบรม",
         //ins ap
         bang_pakong:"บางปะกง ฉะเชิงเทรา",
         ins_ap_detail:"เดินสาย Fiber Optic เดินสายไฟเบอร์ออปติกจากห้อง Server เดิมไปยังอาคารใหม่ เดินสายภายในท่อ HDPE เพื่อความเรียบร้อยและปลอดภัย ติดตั้งตู้ RACK รวมทั้งหมด 5 ตู้ ติดตั้งในอาคารใหม่ตามชั้นต่างๆ ดังนี้: ชั้นที่ 1 จำนวน 2 ตู้ ชั้นที่ 2–4 ชั้นละ 1 ตู้ ติดตั้ง Access Point (AP) ติดตั้ง AP ชั้นละ 8 ตัว รวมทั้งหมด 30 ตัว ตำแหน่งการติดตั้งตามแบบแปลนที่กำหนดไว้ ติดตั้งอุปกรณ์สำรองไฟ (UPS) ติดตั้ง UPS 1 ชุด ต่อ 1 ตู้ RACK สำหรับแต่ละชั้น รวมทั้งหมด 5 ชุด เพื่อสำรองไฟให้กับอุปกรณ์เครือข่าย",
         //making_machine_floors
         photharam:"โพธาราม ราชบุรี",
         making_machine_floors_datail:"ทำพื้นเครื่องจักร โรงไฟฟ้า",
-        //location
-        
-
+        making_machine_floors_details:"ดำเนินการจัดทำ Foundation คอนกรีตเสริมเหล็ก สำหรับพื้นเครื่องจักรของ BGrimm",
+        //Renovate Scada Control Room
+        Lam_Luk_Ka:"ลำลูกกา ปทุมธานี", 
+        renovate_scada_detail:"ดำเนินโครงการ ปรับปรุงภายในห้องควบคุมท่อส่งน้ำมัน เนื่องจากสภาพการใช้งานปัจจุบันทำให้ อากาศหมุนเวียนไม่ดี และมี กลิ่นอับ ซึ่งอาจส่งผลกระทบต่อสุขภาพของพนักงาน จึงต้องดำเนินการ สำรวจ ออกแบบ แก้ไขปัญหา จัดหา ติดตั้ง และปรับปรุง ให้เหมาะสม",
+        //Bird Grating
+        bird_grating_detail:"ติดตั้งตะแกรงกันนกห้องหม้อแปลงไฟฟ้า ที่อาคาร Substation A และที่อาคาร Substation B",
+        //Dry Type
+        Phra_Pradaeng:"พระประแดง สมุทรปราการ",
+        dry_type_detail:"งานติดตั้งหม้อแปลงไฟฟ้าใหม่ แบบ Dry type ขนาด 500 KVA ดำเนินการติดตั้งให้ถูกต้องตามหลักวิศวกรรมและมาตรฐาน และ ปรับปรุงระบบไฟฟ้า เปลี่ยนสายไฟ HV/LV และเดินใน Cable tray พร้อมฝาปิด เดินสายไฟจาก RMU เข้าหาหม้อแปลง และเดินสายจากหม้อแปลงเข้าสู่ MDB หลัก",
+        //Install High And Low 
+        Nong_Chong:"หนองจอง กรุงเทพฯ",
+        install_HV_detail:"ดำเนินการติดตั้งระบบไฟฟ้าแรงสูงและระบบไฟฟ้าแรงต่ำ ติดตั้งนั่งงร้านหม้อแปลง ขนาด 630 kVA และติดตั้งระบบกราวด์ทั้งหมด รวมถึง งานติดตั้ง สาย MAIN ระบบไฟฟ้าแรงต่ำ งานติดตั้งตู้ MDB ประสานงานกับ กฟภ. เพื่อทำการขยาย ในการขอใช้หม้อแปลงเพิ่ม",
+        //Make A Floor For The Cooling Machine
+        Pluak_Daeng:"ปลวกแดง ระยอง",
+        foundation_cooling_detail:"ดำเนินการจัดทำ Founadation คอนกรีตเสริมเหล็ก สำหรับ ระบบ Cooling เครื่องจักร ของ BRIDGESTONE",
       },
       en: {
-        //location
-
-
-
+        //Make A Floor For The Cooling Machine
+        Pluak_Daeng:"Pluak Daeng, Rayong",
+        foundation_cooling_detail:"Proceed with the preparation of reinforced concrete foundation for the cooling system of BRIDGESTONE machinery.",
+        //Install High And Low 
+        Nong_Chong:"Nong Chong, Bangkok",
+        install_HV_detail:"Carry out the installation of high-voltage and low-voltage electrical systems, install scaffolding for a 630 kVA transformer and install all grounding systems, including the installation of low-voltage MAIN cables, MDB cabinet installation, and coordinate with the Provincial Electricity Authority (PEA) to expand the use of additional transformers.",
+        //Dry Type
+        Phra_Pradaeng:"Phra Pradaeng, Samut Prakan",
+        dry_type_detail:"Installation of a new 500 KVA dry type transformer. The installation was carried out correctly according to engineering principles and standards, and the electrical system was improved, the HV/LV wiring was replaced, and the wiring was installed in a cable tray with a cover. The wiring was run from the RMU to the transformer, and the wiring was run from the transformer to the main MDB.",
+        //Bird Grating
+        bird_grating_detail:"Install bird screens in the transformer room at Substation A and Substation B.",
+        //Renovate Scada Control Room
+        Lam_Luk_Ka:"Lam Luk Ka, Pathum Thani", 
+        renovate_scada_detail:"Implementing a project to renovate the interior of the oil pipeline control room. Due to the current operating conditions, the air circulation is poor and there is a musty smell, which may affect the health of employees. Therefore, it is necessary to survey, design, fix problems, procure, install and improve it as appropriate.",
         //making_machine_floors
         photharam:"Photharam, Ratchaburi",
         making_machine_floors_detail:"Make floors for machinery and power plants",
+        making_machine_floors_details:"Carry out the construction of a reinforced concrete foundation for the floors of BGrimm's machinery..",
         //ins ap
         bang_pakong:"Bang Pakong, Chachoengsao",
         ins_ap_detail:"Fiber Optic cabling. Run fiber optic cabling from the old server room to the new building. Run the cabling inside HDPE pipes for neatness and safety. Install 5 RACK cabinets in total. Install in the new building on different floors as follows: 1st floor, 2 cabinets. Floors 2-4, 1 cabinet per floor. Install Access Point (AP). Install 8 APs per floor, total 30 units. Installation locations according to the specified blueprint. Install uninterruptible power supplies (UPS). Install 1 UPS per 1 RACK cabinet for each floor, total 5 units, to provide backup power for network equipment.",
         //desing_sonepar
+        office_training:"Design & Build – Office & Training Center",
         Prawet:"Prawet, Bangkok",
         civil_work_detail:"Design and Build – Office and Training Center",
+        office_training_detail:"Organized from designing the structure and building the training center office",
         //install_TR-MDB
         mahachai:"Mahaschai, Samut Sakhon",
         install_Tr_MDB_detail:"Installed a transformer scaffolding pole, 12 meters, the distance is in accordance with the Provincial Electricity Authority's transformer scaffolding installation standards. Installed an RSC pipe on the HV side from the PEA's origin pole to the transformer scaffolding, length 180 meters, using XLPE cable, size 50 sq.mm., 3 phase, 3 lines. Installed a Cable ladder rail, 400*100, from the transformer to the MDB cabinet, length 35 meters, using CV cable, size 240 sq.mm., 3 phase, 4 wires, 2 circuits. Installed an MDB cabinet from 2B IP31, width x height x length 1600x 1800 x 800 mm.",
@@ -409,10 +442,17 @@
         Bangkok:"Bangkok",
         Chachoengsao:"Chachoengsao",
         Ratchaburi:"Ratchaburi",
-        install_Tr_MDB:"Install the Transformer and MDB",
-        office_training:"Design & Build – Office & Training Center",
+        Pathum_Thani:"Pathum Thani",
+        Samut_Prakan:"Samut Prakan",
+        Rayong:"Rayong",
+        install_Tr_MDB:"Install The Transformer And MDB",
         ins_ap:"Accessport Installation Work",
-        making_machine_floors:"Make floors for machinery and power plants",
+        making_machine_floors:"Make Floors For Machinery And Power Plants",
+        renovate_scada:"Renovate Scada Control Room",
+        bird_grating:"Bird Grating Installation Work",
+        dry_type:"Dry Type Transformer Replacement Work 500 KVA",
+        install_HV:"Install High And Low Voltage Electrical Systems",
+        foundation_cooling:"Make A Floor For The Cooling Machine",
         view_details:"View Details",
         //index
         about: "About us",
