@@ -510,3 +510,19 @@
       height: 14px;
       border-radius: 2px;
       object-fit: cover;}
+    /* === หิมะตก === */
+    .snow {
+    position: fixed;
+    top: -10px;
+    font-size: 30px;
+    user-select: none;
+    pointer-events: none;
+    animation: fall linear infinite;
+    z-index: 9999; /* อยู่หน้าสุดของทุกอย่าง */
+    color: #aaa;
+    }
+    @keyframes fall {
+      to {
+        transform: translateY(110vh);
+      }
+    }

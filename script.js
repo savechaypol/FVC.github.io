@@ -336,8 +336,16 @@
         //Make A Floor For The Cooling Machine
         Pluak_Daeng:"ปลวกแดง ระยอง",
         foundation_cooling_detail:"ดำเนินการจัดทำ Founadation คอนกรีตเสริมเหล็ก สำหรับ ระบบ Cooling เครื่องจักร ของ BRIDGESTONE",
+        //Punthai_Coffee_สินทวีการ์เด้นท์3
+        Punthai_Coffee_สินทวีการ์เด้นท์3:"ร้านกาแฟพันธ์ุไทย สาขา สินทวีการ์เด้นท์ 3",
+        Bang_Khun_Thian:"บางขุนเทียน  กรุงเทพฯ",
+        Punthai_Coffee_สินทวีการ์เด้นท์3_detail:"ดำเนินการจัดทำตั้งแต่หมวดงงานรื้อถอน งานปรับระดับพื้นดิน งานฐานราก งานระบบสุขภิบาล งานโครงสร้าง งานระบบไฟฟ้า งานเฟอร์นิเจอร์",
       },
       en: {
+        //Punthai_Coffee_สินทวีการ์เด้นท์3
+        Punthai_Coffee_สินทวีการ์เด้นท์3:"Phanthai Coffee Shop, Sinthawee Garden 3 Branch",
+        Bang_Khun_Thian:"Bang Khun Thian, Bangkok",
+        Punthai_Coffee_สินทวีการ์เด้นท์3_detail:"We handle all aspects of the project, from demolition and ground leveling to foundation work, sanitary systems, structural work, electrical systems, and furniture installation.",
         //Make A Floor For The Cooling Machine
         Pluak_Daeng:"Pluak Daeng, Rayong",
         foundation_cooling_detail:"Proceed with the preparation of reinforced concrete foundation for the cooling system of BRIDGESTONE machinery.",
@@ -491,7 +499,20 @@
         Contact_us:"Contact us",
       },
     };
-    
+        //<!-- ===== หิมะตก ===== -->
+    {function createSnow() {
+    const snow = document.createElement("div");
+    snow.classList.add("snow");
+    snow.innerText = "❄";
+    snow.style.left = Math.random() * 100 + "vw";
+    snow.style.animationDuration = 4 + Math.random() * 4 + "s";
+    snow.style.opacity = 0.3 + Math.random() * 0.7;
+    document.body.appendChild(snow);
+
+    setTimeout(() => snow.remove(), 9000);
+    }
+    setInterval(createSnow, 500);}
+
     //<!-- ===== สไลด์รูปภาพ + เลือกรูปภาพ ===== -->
     {const main = document.getElementById('main');
     const thumbs = Array.from(document.querySelectorAll('.thumb'));
@@ -505,6 +526,7 @@
         d.className='dot'+(i===idx?' active':'');
         d.addEventListener('click',()=>go(i,true));
         dotsWrap.appendChild(d);
+        
       });
     }
     function setActive(i){
@@ -529,7 +551,7 @@
     show(0);
     start();
     }
-
+    
 
 
 
